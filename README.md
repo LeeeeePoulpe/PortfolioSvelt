@@ -1,58 +1,93 @@
-# Svelte library
+# 🚀 Portfolio Personnel
 
-Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
+Un portfolio moderne et élégant conçu pour mettre en avant mon parcours professionnel, mes compétences et mes réalisations.
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+## 📋 À propos
 
-## Creating a project
+Ce portfolio a été développé pour présenter de manière interactive et professionnelle :
 
-If you're seeing this, you've probably already done this step. Congrats!
+- 🎓 **Formation & Diplômes** - Mon parcours académique et mes qualifications
+- 💼 **Expériences professionnelles** - Les postes occupés et missions réalisées
+- 🛠️ **Projets** - Une vitrine de mes réalisations durant mes études et projets personnels
+- 🌍 **Langues** - Les langues que je maîtrise
+- 📬 **Contact** - Différents moyens pour me joindre
 
-```sh
-# create a new project in the current directory
-npx sv create
+## 🛠️ Technologies utilisées
 
-# create a new project in my-app
-npx sv create my-app
+Ce site a été développé avec des technologies modernes et performantes :
+
+- **[SvelteKit](https://kit.svelte.dev/)** - Framework web moderne et réactif
+- **[Svelte](https://svelte.dev/)** - Compilateur de composants UI
+- **[TypeScript](https://www.typescriptlang.org/)** - Typage statique pour JavaScript
+- **[Vite](https://vitejs.dev/)** - Build tool ultra-rapide
+- **[TailwindCSS](https://tailwindcss.com/)** - Simplification du développement CSS
+- **[shadcn-svelte](https://shadcn-svelte.com/)** - Bibliothèque de composants UI accessibles et personnalisables
+
+
+## 🚀 Installation et lancement
+
+### Prérequis
+
+- Node.js (version 18 ou supérieure)
+- npm ou pnpm
+
+### Installation
+
+```bash
+# Cloner le repository
+git clone <url-du-repo>
+
+# Installer les dépendances
+npm install
 ```
 
-## Developing
+### Développement
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+```bash
+# Lancer le serveur de développement
 npm run dev
 
-# or start the server and open the app in a new browser tab
+# Ou ouvrir automatiquement dans le navigateur
 npm run dev -- --open
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+Le site sera accessible sur `http://localhost:5173`
 
-## Building
+## 📦 Build et déploiement
 
-To build your library:
-
-```sh
-npm pack
-```
-
-To create a production version of your showcase app:
-
-```sh
+```bash
+# Créer une version de production
 npm run build
+
+# Prévisualiser la version de production
+npm run preview
 ```
 
-You can preview the production build with `npm run preview`.
+## 📁 Structure du projet
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```sh
-npm publish
 ```
+PortfolioSvelt/
+├── src/
+│   ├── routes/          # Pages et routes de l'application
+│   ├── lib/             # Composants et utilitaires réutilisables
+│   ├── app.html         # Template HTML principal
+│   └── app.css          # Styles globaux
+├── static/              # Fichiers statiques (images, favicon, etc.)
+└── package.json         # Dépendances et scripts
+```
+
+## ✨ Fonctionnalités
+
+- ⚡ **Performance optimale** - Temps de chargement ultra-rapide
+- 📱 **Design responsive** - Adapté à tous les écrans
+- 🎨 **Interface moderne** - Design épuré et professionnel
+- ♿ **Accessible** - Respecte les standards d'accessibilité
+- 🔍 **SEO optimisé** - Référencement naturel optimisé
+
+## 📝 License
+
+Ce projet est personnel et privé.
+
+## 📧 Contact
+
+Pour toute question ou opportunité professionnelle, n'hésitez pas à me contacter via les informations présentes sur le portfolio.
