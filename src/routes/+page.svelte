@@ -6,7 +6,6 @@
 	
 	let isVisible = $state(false);
 	
-	// Activer les animations après le montage
 	$effect(() => {
 		isVisible = true;
 	});

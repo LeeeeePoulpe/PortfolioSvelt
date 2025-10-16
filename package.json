@@ -67,6 +67,7 @@
 		"svelte"
 	],
 	"dependencies": {
+		"@vercel/analytics": "^1.5.0",
 		"geist": "^1.5.1"
 	}
 }
