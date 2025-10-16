@@ -68,6 +68,8 @@
 	],
 	"dependencies": {
 		"@vercel/analytics": "^1.5.0",
-		"geist": "^1.5.1"
+		"geist": "^1.5.1",
+		"motion": "^12.23.24",
+		"svelte-motion": "^0.12.2"
 	}
 }
