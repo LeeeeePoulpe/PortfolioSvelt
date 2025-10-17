@@ -33,19 +33,17 @@
 		<div use:motion class="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
 			<Motion let:motion whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
 				<div use:motion>
-					<Button size="lg" class="group">
-						<a href="/projects" class="flex items-center">
-							Voir mes projets
-							<ArrowRight class="ml-2 h-4 w-4" />
-						</a>
+					<Button size="lg" class="group" href="/projects">
+						Voir mes projets
+						<ArrowRight class="ml-2 h-4 w-4" />
 					</Button>
 				</div>
 			</Motion>
 
 			<Motion let:motion whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
 				<div use:motion>
-					<Button variant="outline" size="lg">
-						<a href="/contact">Me contacter</a>
+					<Button variant="outline" size="lg" href="/contact">
+						Me contacter
 					</Button>
 				</div>
 			</Motion>
