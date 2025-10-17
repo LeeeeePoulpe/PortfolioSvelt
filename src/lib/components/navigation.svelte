@@ -15,7 +15,6 @@
 	
 	// Équivalent de usePathname() en Svelte
 	$effect(() => {
-		// Fermer le menu mobile lors du changement de page
 		mobileMenuOpen = false;
 	});
 </script>
@@ -36,13 +35,13 @@
 					<a
 						href={item.href}
 						class={cn(
-							'text-sm font-medium transition-colors hover:text-secondary relative',
-							$page.url.pathname === item.href ? 'text-secondary' : 'text-muted-foreground'
+							'text-sm font-medium transition-colors hover:text-primary-navbar relative',
+							$page.url.pathname === item.href ? 'text-primary-navbar' : 'text-foreground'
 						)}
 					>
 						{item.label}
 						{#if $page.url.pathname === item.href}
-							<span class="absolute -bottom-[21px] left-0 right-0 h-0.5 bg-secondary"></span>
+							<span class="absolute -bottom-[21px] left-0 right-0 h-0.5 bg-primary-navbar"></span>
 						{/if}
 					</a>
 				{/each}
@@ -76,8 +75,8 @@
 						class={cn(
 							'block py-2 text-base font-medium transition-colors',
 							$page.url.pathname === item.href
-								? 'text-secondary'
-								: 'text-muted-foreground hover:text-secondary'
+								? 'text-primary-navbar'
+								: 'text-muted-foreground hover:text-primary-navbar'
 						)}
 					>
 						{item.label}
