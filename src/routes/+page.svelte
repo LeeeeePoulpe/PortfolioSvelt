@@ -72,7 +72,7 @@
 			>
 				<div use:motion class="flex items-center justify-center gap-6">
 					<a
-						href="https://github.com/hugofollmi"
+						href="https://github.com/LeeeeePoulpe"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="text-muted-foreground transition-colors hover:text-secondary"
@@ -81,7 +81,7 @@
 						<Github size={24} />
 					</a>
 					<a
-						href="https://linkedin.com/in/hugofollmi"
+						href="https://www.linkedin.com/in/hugo-follmi-71a971214/"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="text-muted-foreground transition-colors hover:text-secondary"
@@ -90,7 +90,7 @@
 						<Linkedin size={24} />
 					</a>
 					<a
-						href="mailto:contact@hugofollmi.com"
+						href="mailto:contact@hugofollmi@gmail.com"
 						class="text-muted-foreground transition-colors hover:text-secondary"
 						aria-label="Email"
 					>
