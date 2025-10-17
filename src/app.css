@@ -4,9 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Geist Font */
-@import url('https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/geist.css');
-
 :root {
   /* Polices */
   --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
