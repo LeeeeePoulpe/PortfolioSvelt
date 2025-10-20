@@ -52,7 +52,7 @@
 	}
 </script>
 
-<main class="min-h-screen px-4 pb-16 pt-24 sm:px-6 lg:px-8">
+<main class="min-h-screen px-4 pb-16 pt-32 sm:px-6 lg:px-8">
 	<div class="mx-auto max-w-5xl">
 		<Motion
 			initial={{ opacity: 0, y: 20 }}
