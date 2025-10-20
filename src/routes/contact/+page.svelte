@@ -17,25 +17,25 @@
 		{
 			icon: Mail,
 			label: 'Email',
-			value: 'contact@hugofollmi.com',
-			href: 'mailto:contact@hugofollmi.com'
+			value: 'hugofollmi@gmail.com',
+			href: 'mailto:hugofollmi@gmail.com'
 		},
 		{
 			icon: Github,
 			label: 'GitHub',
-			value: 'github.com/hugofollmi',
-			href: 'https://github.com/hugofollmi'
+			value: 'github.com',
+			href: 'https://www.github.com/LeeeeePoulpe'
 		},
 		{
 			icon: Linkedin,
 			label: 'LinkedIn',
-			value: 'linkedin.com/in/hugofollmi',
-			href: 'https://linkedin.com/in/hugofollmi'
+			value: 'linkedin.com',
+			href: 'https://www.linkedin.com/in/hugo-follmi-71a971214/'
 		},
 		{
 			icon: MapPin,
 			label: 'Localisation',
-			value: 'France',
+			value: 'Grenoble, France',
 			href: null
 		}
 	];
@@ -159,29 +159,38 @@
 									transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
 									let:motion
 								>
-									<div
-										use:motion
-										class="flex items-start gap-4 rounded-lg p-3 transition-colors hover:bg-muted/50"
-									>
-										<div class="rounded-lg bg-secondary/10 p-2">
-											<Icon class="h-5 w-5 text-secondary" />
-										</div>
-										<div class="flex-1">
-											<p class="mb-1 text-sm font-medium text-foreground">{info.label}</p>
-											{#if info.href}
-												<a
-													href={info.href}
-													target="_blank"
-													rel="noopener noreferrer"
-													class="text-sm text-muted-foreground transition-colors hover:text-secondary"
-												>
+									{#if info.href}
+										<a
+											use:motion
+											href={info.href}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="flex items-start gap-4 rounded-lg p-3 transition-colors hover:bg-muted/50 hover:cursor-pointer"
+										>
+											<div class="rounded-lg bg-secondary/10 p-2">
+												<Icon class="h-5 w-5 text-secondary" />
+											</div>
+											<div class="flex-1">
+												<p class="mb-1 text-sm font-medium text-foreground">{info.label}</p>
+												<p class="text-sm text-muted-foreground transition-colors group-hover:text-secondary">
 													{info.value}
-												</a>
-											{:else}
+												</p>
+											</div>
+										</a>
+									{:else}
+										<div
+											use:motion
+											class="flex items-start gap-4 rounded-lg p-3 transition-colors"
+										>
+											<div class="rounded-lg bg-secondary/10 p-2">
+												<Icon class="h-5 w-5 text-secondary" />
+											</div>
+											<div class="flex-1">
+												<p class="mb-1 text-sm font-medium text-foreground">{info.label}</p>
 												<p class="text-sm text-muted-foreground">{info.value}</p>
-											{/if}
+											</div>
 										</div>
-									</div>
+									{/if}
 								</Motion>
 							{/each}
 						</CardContent>
