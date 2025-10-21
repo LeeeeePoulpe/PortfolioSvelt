@@ -32,45 +32,53 @@
 	import IconDocker from '~icons/devicon/docker';
 	import IconShadcn from '~icons/simple-icons/shadcnui';
 
-	const skills = [
+	type Skill = {
+		name: string;
+		icon: any;
+		color: string;
+		url: string;
+	};
+
+	const languages: Skill[] = [
 		{
-			category: 'Langages & Frameworks Frontend',
-			items: [
-				{ name: 'Vue.js', icon: IconVuejs, color: '#4FC08D', url: 'https://vuejs.org/' },
-				{ name: 'React', icon: IconReact, color: '#61DAFB', url: 'https://react.dev/' },
-				{ name: 'Angular', icon: IconAngular, color: '#DD0031', url: 'https://angular.dev/' },
-				{ name: 'Svelte', icon: IconSvelte, color: '#FF3E00', url: 'https://svelte.dev/' },
-				{ name: 'JavaScript', icon: IconJavascript, color: '#F7DF1E', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
-				{ name: 'TypeScript', icon: IconTypescript, color: '#3178C6', url: 'https://www.typescriptlang.org/' },
-				{ name: 'Node.js', icon: IconNodejs, color: '#339933', url: 'https://nodejs.org/' },
-				{ name: 'Python', icon: IconPython, color: '#3776AB', url: 'https://www.python.org/' }
-			]
+			name: 'JavaScript',
+			icon: IconJavascript,
+			color: '#F7DF1E',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
 		},
 		{
-			category: 'Backend & Bases de données',
-			items: [
-				{ name: 'Android', icon: IconAndroid, color: '#3DDC84', url: 'https://developer.android.com/' },
-				{ name: 'Java', icon: IconJava, color: '#007396', url: 'https://docs.oracle.com/en/java/' },
-				{ name: 'Symfony', icon: IconSymfony, color: '#000000', url: 'https://symfony.com/doc/current/index.html' },
-				{ name: 'PHP', icon: IconPhp, color: '#777BB4', url: 'https://www.php.net/' },
-				{ name: 'MongoDB', icon: IconMongodb, color: '#47A248', url: 'https://www.mongodb.com/docs/' },
-				{ name: 'Neo4j', icon: IconNeo4j, color: '#008CC1', url: 'https://neo4j.com/docs/' },
-				{ name: 'Elasticsearch', icon: IconElasticsearch, color: '#005571', url: 'https://www.elastic.co/guide/index.html' }
-			]
+			name: 'TypeScript',
+			icon: IconTypescript,
+			color: '#3178C6',
+			url: 'https://www.typescriptlang.org'
 		},
-		{
-			category: 'Outils de développement',
-			items: [
-				{ name: 'VS Code', icon: IconVscode, color: '#007ACC', url: 'https://code.visualstudio.com/docs' },
-				{ name: 'Git', icon: IconGit, color: '#F05032', url: 'https://git-scm.com/doc' },
-				{ name: 'Figma', icon: IconFigma, color: '#F24E1E', url: 'https://help.figma.com/' },
-				{ name: 'Shadcn UI', icon: IconShadcn, color: '#000000', url: 'https://ui.shadcn.com/' },
-				{ name: 'Swagger', icon: IconSwagger, color: '#85EA2D', url: 'https://swagger.io/docs/' },
-				{ name: 'Confluence', icon: IconConfluence, color: '#172B4D', url: 'https://support.atlassian.com/confluence-cloud/' },
-				{ name: 'Jira', icon: IconJira, color: '#0052CC', url: 'https://support.atlassian.com/jira-software-cloud/' },
-				{ name: 'Docker', icon: IconDocker, color: '#2496ED', url: 'https://docs.docker.com/' }
-			]
-		}
+		{ name: 'Python', icon: IconPython, color: '#3776AB', url: 'https://www.python.org' },
+		{ name: 'Java', icon: IconJava, color: '#007396', url: 'https://www.java.com' },
+		{ name: 'PHP', icon: IconPhp, color: '#777BB4', url: 'https://www.php.net' }
+	];
+
+	const frameworks: Skill[] = [
+		{ name: 'React', icon: IconReact, color: '#61DAFB', url: 'https://react.dev' },
+		{ name: 'Vue.js', icon: IconVuejs, color: '#4FC08D', url: 'https://vuejs.org' },
+		{ name: 'Angular', icon: IconAngular, color: '#DD0031', url: 'https://angular.io' },
+		{ name: 'Svelte', icon: IconSvelte, color: '#FF3E00', url: 'https://svelte.dev' },
+		{ name: 'Node.js', icon: IconNodejs, color: '#339933', url: 'https://nodejs.org' },
+		{ name: 'Symfony', icon: IconSymfony, color: '#000000', url: 'https://symfony.com' },
+		{ name: 'Android', icon: IconAndroid, color: '#3DDC84', url: 'https://developer.android.com' }
+	];
+
+	const tools: Skill[] = [
+		{ name: 'VS Code', icon: IconVscode, color: '#007ACC', url: 'https://code.visualstudio.com' },
+		{ name: 'Git', icon: IconGit, color: '#F05032', url: 'https://git-scm.com' },
+		{ name: 'Docker', icon: IconDocker, color: '#2496ED', url: 'https://www.docker.com' },
+		{ name: 'MongoDB', icon: IconMongodb, color: '#47A248', url: 'https://www.mongodb.com' },
+		{ name: 'Neo4j', icon: IconNeo4j, color: '#4581C3', url: 'https://neo4j.com' },
+		{ name: 'Elasticsearch', icon: IconElasticsearch, color: '#005571', url: 'https://www.elastic.co' },
+		{ name: 'Figma', icon: IconFigma, color: '#F24E1E', url: 'https://www.figma.com' },
+		{ name: 'Swagger', icon: IconSwagger, color: '#85EA2D', url: 'https://swagger.io' },
+		{ name: 'Confluence', icon: IconConfluence, color: '#172B4D', url: 'https://www.atlassian.com/software/confluence' },
+		{ name: 'Jira', icon: IconJira, color: '#0052CC', url: 'https://www.atlassian.com/software/jira' },
+		{ name: 'Shadcn/ui', icon: IconShadcn, color: '#000000', url: 'https://ui.shadcn.com' }
 	];
 
 	const values = [
@@ -97,8 +105,9 @@
 	];
 </script>
 
-<main class="min-h-screen px-4 pt-32 pb-16 sm:px-6 lg:px-8">
-	<div class="mx-auto max-w-5xl">
+<main class="min-h-screen pt-32 pb-16">
+	<div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+		<!-- Introduction Section -->
 		<Motion
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
@@ -123,13 +132,50 @@
 				</div>
 			</div>
 		</Motion>
+	</div>
 
+	<!-- Languages Carousel -->
+	<Motion
+		let:motion
+		initial={{ opacity: 0, y: 20 }}
+		animate={{ opacity: 1, y: 0 }}
+		transition={{ duration: 0.6, delay: 0.2 }}
+	>
+		<div use:motion class="mt-12">
+			<div
+				class="relative -mx-4 overflow-hidden border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
+			>
+				<div class="animate-scroll flex flex-row flex-nowrap gap-12 px-8">
+					{#each [...languages, ...languages, ...languages, ...languages] as skill}
+						<a
+							href={skill.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex-shrink-0 cursor-pointer transition-transform hover:scale-125"
+						>
+							<svelte:component this={skill.icon} class="h-16 w-16" style="color: {skill.color}" />
+						</a>
+					{/each}
+				</div>
+
+				<!-- Gradient overlays -->
+				<div
+					class="pointer-events-none absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-background/80 to-transparent"
+				></div>
+				<div
+					class="pointer-events-none absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-background/80 to-transparent"
+				></div>
+			</div>
+		</div>
+	</Motion>
+
+	<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
 		<!-- Values Section -->
 		<Motion
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.2 }}
+			transition={{ duration: 0.6, delay: 0.3 }}
 		>
 			<div use:motion class="mt-16">
 				<h2 class="font-display mb-8 text-3xl font-bold text-foreground">Mes valeurs</h2>
@@ -139,7 +185,7 @@
 							let:motion
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+							transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
 						>
 							<div use:motion>
 								<Card class="h-full transition-shadow hover:shadow-lg">
@@ -157,70 +203,115 @@
 				</div>
 			</div>
 		</Motion>
+	</div>
 
-		<!-- Skills Section -->
+	<!-- Frameworks Carousel -->
+	<Motion
+		let:motion
+		initial={{ opacity: 0, y: 20 }}
+		animate={{ opacity: 1, y: 0 }}
+		transition={{ duration: 0.6, delay: 0.5 }}
+	>
+		<div use:motion class="mt-16">
+			<div
+				class="relative -mx-4 overflow-hidden border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
+			>
+				<div class="animate-scroll flex flex-row flex-nowrap gap-12 px-8">
+					{#each [...frameworks, ...frameworks, ...frameworks, ...frameworks] as skill}
+						<a
+							href={skill.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex-shrink-0 cursor-pointer transition-transform hover:scale-125"
+						>
+							<svelte:component this={skill.icon} class="h-16 w-16" style="color: {skill.color}" />
+						</a>
+					{/each}
+				</div>
+
+				<!-- Gradient overlays -->
+				<div
+					class="pointer-events-none absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-background/80 to-transparent"
+				></div>
+				<div
+					class="pointer-events-none absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-background/80 to-transparent"
+				></div>
+			</div>
+		</div>
+	</Motion>
+
+	<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+		<!-- Parcours Section -->
 		<Motion
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.4 }}
+			transition={{ duration: 0.6, delay: 0.6 }}
 		>
 			<div use:motion class="mt-16">
-				<h2 class="font-display mb-8 text-3xl font-bold text-foreground">Compétences</h2>
-				<div class="space-y-8">
-					{#each skills as skillGroup, groupIndex}
-						<Motion
-							let:motion
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.6, delay: 0.5 + groupIndex * 0.1 }}
-						>
-							<div use:motion>
-								<h3 class="font-display mb-4 text-xl font-semibold text-foreground">
-									{skillGroup.category}
-								</h3>
-								<div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-									{#each skillGroup.items as skill, index}
-										<Motion
-											let:motion
-											initial={{ opacity: 0, scale: 0.8 }}
-											animate={{ opacity: 1, scale: 1 }}
-											transition={{ duration: 0.4, delay: 0.6 + groupIndex * 0.1 + index * 0.05 }}
-											whileHover={{ scale: 1.05, y: -5 }}
-										>
-											<div use:motion>
-												<a
-													href={skill.url}
-													target="_blank"
-													rel="noopener noreferrer"
-													class="block h-full"
-												>
-													<Card
-														class="group h-full cursor-pointer transition-all hover:border-accent hover:shadow-lg"
-													>
-														<CardContent class="flex flex-col items-center justify-center gap-3 p-4">
-															<svelte:component
-																this={skill.icon}
-																class="h-10 w-10 transition-colors"
-																style="color: {skill.color}"
-															/>
-															<span
-																class="text-center text-sm font-medium text-muted-foreground transition-colors group-hover:text-foreground"
-															>
-																{skill.name}
-															</span>
-														</CardContent>
-													</Card>
-												</a>
-											</div>
-										</Motion>
-									{/each}
-								</div>
-							</div>
-						</Motion>
-					{/each}
+				<h2 class="font-display mb-6 text-3xl font-bold text-foreground">Mon parcours</h2>
+				<div class="prose prose-lg max-w-none">
+					<p class="mb-6 text-lg leading-relaxed text-muted-foreground">
+						Passionné par la technologie depuis mon plus jeune âge, j'ai commencé à coder en
+						autodidacte avant de me former de manière plus structurée. Chaque projet est pour moi
+						une opportunité d'apprendre et de perfectionner mes compétences.
+					</p>
 				</div>
 			</div>
 		</Motion>
 	</div>
+
+	<!-- Tools Carousel -->
+	<Motion
+		let:motion
+		initial={{ opacity: 0, y: 20 }}
+		animate={{ opacity: 1, y: 0 }}
+		transition={{ duration: 0.6, delay: 0.7 }}
+	>
+		<div use:motion class="mt-16">
+			<div
+				class="relative -mx-4 overflow-hidden border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
+			>
+				<div class="animate-scroll flex flex-row flex-nowrap gap-12 px-8">
+					{#each [...tools, ...tools, ...tools, ...tools] as skill}
+						<a
+							href={skill.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex-shrink-0 cursor-pointer transition-transform hover:scale-125"
+						>
+							<svelte:component this={skill.icon} class="h-16 w-16" style="color: {skill.color}" />
+						</a>
+					{/each}
+				</div>
+
+				<!-- Gradient overlays -->
+				<div
+					class="pointer-events-none absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-background/80 to-transparent"
+				></div>
+				<div
+					class="pointer-events-none absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-background/80 to-transparent"
+				></div>
+			</div>
+		</div>
+	</Motion>
 </main>
+
+<style>
+	@keyframes scroll {
+		0% {
+			transform: translateX(0%);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+
+	.animate-scroll {
+		animation: scroll 60s linear infinite alternate;
+	}
+
+	.animate-scroll:hover {
+		animation-play-state: paused;
+	}
+</style>
