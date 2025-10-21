@@ -96,8 +96,8 @@
 	];
 </script>
 
-<main class="min-h-screen pt-24 pb-16">
-	<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+<main class="min-h-screen pt-32 pb-16">
+	<div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
 		<!-- Introduction Section -->
 		<Motion
 			let:motion
