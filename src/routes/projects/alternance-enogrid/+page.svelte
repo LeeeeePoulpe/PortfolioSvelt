@@ -2,7 +2,8 @@
 	import { Motion } from 'svelte-motion';
 	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
-	import { ExternalLink, Calendar, Users, Code, Database, GitBranch } from '@lucide/svelte';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import { ExternalLink, Calendar, Users, Code, Database, GitBranch, ArrowLeft } from '@lucide/svelte';
 
 	const technologies = [
 		{ name: 'React', color: '#61DAFB' },
@@ -42,6 +43,21 @@
 
 <main class="min-h-screen pt-32 pb-16">
 	<div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+		<!-- Back Button -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, x: -20 }}
+			animate={{ opacity: 1, x: 0 }}
+			transition={{ duration: 0.4 }}
+		>
+			<div use:motion class="mb-6">
+				<Button variant="ghost" href="/projects" class="gap-2">
+					<ArrowLeft class="h-4 w-4" />
+					Retour aux projets
+				</Button>
+			</div>
+		</Motion>
+
 		<!-- Header Section -->
 		<Motion
 			let:motion
