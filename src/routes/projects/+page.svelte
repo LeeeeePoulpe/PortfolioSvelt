@@ -104,7 +104,7 @@
 							<CardContent class="flex flex-1 flex-col justify-between">
 								<div class="mb-4 flex flex-wrap gap-2">
 									{#each project.tags as tag}
-										<Badge variant="secondary">
+										<Badge variant="default">
 											{tag}
 										</Badge>
 									{/each}
