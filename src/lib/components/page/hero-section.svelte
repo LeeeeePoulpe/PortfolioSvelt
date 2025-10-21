@@ -63,7 +63,7 @@
 					href="https://github.com/LeeeeePoulpe"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="text-muted-foreground transition-colors hover:text-secondary"
+					class="text-black transition-colors hover:text-secondary"
 					aria-label="GitHub"
 				>
 					<Github size={24} />
@@ -72,14 +72,14 @@
 					href="https://www.linkedin.com/in/hugo-follmi-71a971214/"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="text-muted-foreground transition-colors hover:text-secondary"
+					class="text-black transition-colors hover:text-secondary"
 					aria-label="LinkedIn"
 				>
 					<Linkedin size={24} />
 				</a>
 				<a
 					href="mailto:contact@hugofollmi@gmail.com"
-					class="text-muted-foreground transition-colors hover:text-secondary"
+					class="text-black transition-colors hover:text-secondary"
 					aria-label="Email"
 				>
 					<Mail size={24} />
