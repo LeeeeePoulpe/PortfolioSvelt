@@ -94,30 +94,11 @@
 			description: "Travail d'équipe et communication efficace"
 		}
 	];
-
 </script>
 
-<style>
-	@keyframes scroll {
-		0% {
-			transform: translateX(0%);
-		}
-		100% {
-			transform: translateX(-50%);
-		}
-	}
-
-	.animate-scroll {
-		animation: scroll 60s linear infinite alternate;
-	}
-
-	.animate-scroll:hover {
-		animation-play-state: paused;
-	}
-</style>
-
-<main class="min-h-screen px-4 pt-32 pb-16 sm:px-6 lg:px-8">
-	<div class="mx-auto max-w-4xl">
+<main class="min-h-screen pt-24 pb-16">
+	<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+		<!-- Introduction Section -->
 		<Motion
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
@@ -142,57 +123,18 @@
 				</div>
 			</div>
 		</Motion>
-
-		<!-- Values Section -->
-		<Motion
-			let:motion
-			initial={{ opacity: 0, y: 20 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.2 }}
-		>
-			<div use:motion class="mt-16">
-				<h2 class="font-display mb-8 text-3xl font-bold text-foreground">Mes valeurs</h2>
-				<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-					{#each values as value, index}
-						<Motion
-							let:motion
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-						>
-							<div use:motion>
-								<Card class="h-full transition-shadow hover:shadow-lg">
-									<CardContent class="p-6">
-										<svelte:component this={value.icon} class="mb-4 h-10 w-10 text-secondary" />
-										<h3 class="font-display mb-2 text-xl font-semibold text-foreground">
-											{value.title}
-										</h3>
-										<p class="leading-relaxed text-muted-foreground">{value.description}</p>
-									</CardContent>
-								</Card>
-							</div>
-						</Motion>
-					{/each}
-				</div>
-			</div>
-		</Motion>
 	</div>
 
-	<!-- Skills Section -->
+	<!-- Languages Carousel -->
 	<Motion
 		let:motion
 		initial={{ opacity: 0, y: 20 }}
 		animate={{ opacity: 1, y: 0 }}
-		transition={{ duration: 0.6, delay: 0.4 }}
+		transition={{ duration: 0.6, delay: 0.2 }}
 	>
-		<div use:motion class="mt-16">
-			<div class="mx-auto mb-8 max-w-4xl px-4 sm:px-6 lg:px-8">
-				<h2 class="font-display text-3xl font-bold text-foreground">Compétences</h2>
-			</div>
-
-			<!-- Languages Banner -->
+		<div use:motion class="mt-12">
 			<div
-				class="relative -mx-4 mb-8 overflow-hidden border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
+				class="relative -mx-4 overflow-hidden border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
 			>
 				<div class="animate-scroll flex flex-row flex-nowrap gap-12 px-8">
 					{#each [...languages, ...languages, ...languages, ...languages] as skill}
@@ -215,10 +157,55 @@
 					class="pointer-events-none absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-background/80 to-transparent"
 				></div>
 			</div>
+		</div>
+	</Motion>
 
-			<!-- Frameworks Banner -->
+	<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+		<!-- Values Section -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.3 }}
+		>
+			<div use:motion class="mt-16">
+				<h2 class="font-display mb-8 text-3xl font-bold text-foreground">Mes valeurs</h2>
+				<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+					{#each values as value, index}
+						<Motion
+							let:motion
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+						>
+							<div use:motion>
+								<Card class="h-full transition-shadow hover:shadow-lg">
+									<CardContent class="p-6">
+										<svelte:component this={value.icon} class="mb-4 h-10 w-10 text-secondary" />
+										<h3 class="font-display mb-2 text-xl font-semibold text-foreground">
+											{value.title}
+										</h3>
+										<p class="leading-relaxed text-muted-foreground">{value.description}</p>
+									</CardContent>
+								</Card>
+							</div>
+						</Motion>
+					{/each}
+				</div>
+			</div>
+		</Motion>
+	</div>
+
+	<!-- Frameworks Carousel -->
+	<Motion
+		let:motion
+		initial={{ opacity: 0, y: 20 }}
+		animate={{ opacity: 1, y: 0 }}
+		transition={{ duration: 0.6, delay: 0.5 }}
+	>
+		<div use:motion class="mt-16">
 			<div
-				class="relative -mx-4 mb-8 overflow-hidden border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
+				class="relative -mx-4 overflow-hidden border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
 			>
 				<div class="animate-scroll flex flex-row flex-nowrap gap-12 px-8">
 					{#each [...frameworks, ...frameworks, ...frameworks, ...frameworks] as skill}
@@ -241,10 +228,40 @@
 					class="pointer-events-none absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-background/80 to-transparent"
 				></div>
 			</div>
+		</div>
+	</Motion>
 
-			<!-- Tools Banner -->
+	<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+		<!-- Parcours Section -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.6 }}
+		>
+			<div use:motion class="mt-16">
+				<h2 class="font-display mb-6 text-3xl font-bold text-foreground">Mon parcours</h2>
+				<div class="prose prose-lg max-w-none">
+					<p class="mb-6 text-lg leading-relaxed text-muted-foreground">
+						Passionné par la technologie depuis mon plus jeune âge, j'ai commencé à coder en
+						autodidacte avant de me former de manière plus structurée. Chaque projet est pour moi
+						une opportunité d'apprendre et de perfectionner mes compétences.
+					</p>
+				</div>
+			</div>
+		</Motion>
+	</div>
+
+	<!-- Tools Carousel -->
+	<Motion
+		let:motion
+		initial={{ opacity: 0, y: 20 }}
+		animate={{ opacity: 1, y: 0 }}
+		transition={{ duration: 0.6, delay: 0.7 }}
+	>
+		<div use:motion class="mt-16">
 			<div
-				class="relative -mx-4 mb-8 overflow-hidden border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
+				class="relative -mx-4 overflow-hidden border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
 			>
 				<div class="animate-scroll flex flex-row flex-nowrap gap-12 px-8">
 					{#each [...tools, ...tools, ...tools, ...tools] as skill}
@@ -270,3 +287,22 @@
 		</div>
 	</Motion>
 </main>
+
+<style>
+	@keyframes scroll {
+		0% {
+			transform: translateX(0%);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+
+	.animate-scroll {
+		animation: scroll 60s linear infinite alternate;
+	}
+
+	.animate-scroll:hover {
+		animation-play-state: paused;
+	}
+</style>
