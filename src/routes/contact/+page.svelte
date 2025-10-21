@@ -41,10 +41,6 @@
 	];
 
 	let status = $state('');
-
-	// Clé d'accès Web3Forms
-	// Pour configurer : créez un fichier .env à la racine avec PUBLIC_WEB3FORMS_ACCESS_KEY=votre_clé
-	// Obtenez votre clé gratuite sur https://web3forms.com
 	const WEB3FORMS_ACCESS_KEY =
 		import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '0950e898-368a-4c48-869a-ccf5a9801931';
 
@@ -52,7 +48,6 @@
 		e.preventDefault();
 		status = 'Envoi en cours...';
 
-		// Sauvegarder la référence au formulaire avant l'appel async
 		const form = e.currentTarget as HTMLFormElement;
 		const formData = new FormData(form);
 		const object = Object.fromEntries(formData);
@@ -71,28 +66,25 @@
 			const result = await response.json();
 			console.log('Réponse complète:', result);
 
-			// Web3Forms renvoie { success: true } en cas de succès
 			if (result.success === true) {
 				status = 'Message envoyé avec succès ! Je vous répondrai bientôt.';
-				// Réinitialiser le formulaire
 				form.reset();
 			} else {
 				console.error('Erreur Web3Forms:', result);
-				status = result.message || "Une erreur est survenue. Veuillez réessayer.";
+				status = result.message || 'Une erreur est survenue. Veuillez réessayer.';
 			}
 		} catch (error) {
 			console.error('Erreur lors de la requête:', error);
-			status = "Une erreur est survenue. Veuillez réessayer.";
+			status = 'Une erreur est survenue. Veuillez réessayer.';
 		}
 
-		// Réinitialiser le message après 5 secondes
 		setTimeout(() => {
 			status = '';
 		}, 5000);
 	};
 </script>
 
-<main class="min-h-screen px-4 pb-16 pt-32 sm:px-6 lg:px-8">
+<main class="min-h-screen px-4 pt-32 pb-16 sm:px-6 lg:px-8">
 	<div class="mx-auto max-w-5xl">
 		<Motion
 			initial={{ opacity: 0, y: 20 }}
@@ -101,7 +93,7 @@
 			let:motion
 		>
 			<div use:motion>
-				<h1 class="mb-4 font-display text-4xl font-bold text-foreground sm:text-5xl">
+				<h1 class="font-display mb-4 text-4xl font-bold text-foreground sm:text-5xl">
 					Me contacter
 				</h1>
 				<p class="mb-8 text-lg leading-relaxed text-muted-foreground">
@@ -110,7 +102,6 @@
 			</div>
 		</Motion>
 
-		<!-- Carte de disponibilité -->
 		<Motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
@@ -120,9 +111,7 @@
 			<div use:motion class="mb-8">
 				<Card class="bg-muted/30">
 					<CardContent class="px-6 py-2">
-						<h3 class="mb-2 font-display text-lg font-semibold text-foreground">
-							Disponibilité
-						</h3>
+						<h3 class="font-display mb-2 text-lg font-semibold text-foreground">Disponibilité</h3>
 						<p class="leading-relaxed text-muted-foreground">
 							Je suis actuellement à la recherche d'opportunités professionnelles. N'hésitez pas à
 							me contacter pour discuter de vos besoins !
@@ -133,7 +122,6 @@
 		</Motion>
 
 		<div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
-			<!-- Formulaire de contact -->
 			<Motion
 				initial={{ opacity: 0, x: -20 }}
 				animate={{ opacity: 1, x: 0 }}
@@ -149,7 +137,7 @@
 						<CardContent>
 							<form class="space-y-4" onsubmit={handleSubmit}>
 								<input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
-								
+
 								<div class="space-y-2">
 									<Label for="name">Nom</Label>
 									<Input id="name" name="name" placeholder="Votre nom" required />
@@ -187,7 +175,8 @@
 
 								{#if status}
 									<div
-										class="rounded-lg p-3 text-sm {status.includes('succès') || status.includes('Success')
+										class="rounded-lg p-3 text-sm {status.includes('succès') ||
+										status.includes('Success')
 											? 'bg-green-500/10 text-green-600 dark:text-green-400'
 											: status === 'Envoi en cours...'
 												? 'bg-blue-500/10 text-blue-600 dark:text-blue-400'
@@ -206,7 +195,6 @@
 				</div>
 			</Motion>
 
-			<!-- Informations de contact -->
 			<Motion
 				initial={{ opacity: 0, x: 20 }}
 				animate={{ opacity: 1, x: 0 }}
@@ -234,23 +222,22 @@
 											href={info.href}
 											target="_blank"
 											rel="noopener noreferrer"
-											class="flex items-start gap-4 rounded-lg p-3 transition-colors hover:bg-muted/50 hover:cursor-pointer"
+											class="flex items-start gap-4 rounded-lg p-3 transition-colors hover:cursor-pointer hover:bg-muted/50"
 										>
 											<div class="rounded-lg bg-secondary/10 p-2">
 												<Icon class="h-5 w-5 text-secondary" />
 											</div>
 											<div class="flex-1">
 												<p class="mb-1 text-sm font-medium text-foreground">{info.label}</p>
-												<p class="text-sm text-muted-foreground transition-colors group-hover:text-secondary">
+												<p
+													class="text-sm text-muted-foreground transition-colors group-hover:text-secondary"
+												>
 													{info.value}
 												</p>
 											</div>
 										</a>
 									{:else}
-										<div
-											use:motion
-											class="flex items-start gap-4 rounded-lg p-3 transition-colors"
-										>
+										<div use:motion class="flex items-start gap-4 rounded-lg p-3 transition-colors">
 											<div class="rounded-lg bg-secondary/10 p-2">
 												<Icon class="h-5 w-5 text-secondary" />
 											</div>
@@ -269,4 +256,3 @@
 		</div>
 	</div>
 </main>
-
