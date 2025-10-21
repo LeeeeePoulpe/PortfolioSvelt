@@ -1,19 +1,19 @@
 <script module lang="ts">
 	import { writable } from 'svelte/store';
-	
+
 	type Theme = 'dark' | 'light' | 'system';
-	
+
 	interface ThemeStore {
 		theme: Theme;
 		setTheme: (theme: Theme) => void;
 	}
-	
+
 	// Store global pour le thème
 	const themeStore = writable<ThemeStore>({
 		theme: 'system',
 		setTheme: () => {}
 	});
-	
+
 	// Export pour utilisation dans d'autres composants (équivalent de useTheme)
 	export function useTheme() {
 		return themeStore;
@@ -30,11 +30,7 @@
 		children?: import('svelte').Snippet;
 	}
 
-	let { 
-		defaultTheme = 'system',
-		storageKey = 'portfolio-theme',
-		children
-	}: Props = $props();
+	let { defaultTheme = 'system', storageKey = 'portfolio-theme', children }: Props = $props();
 
 	let theme = $state<Theme>(defaultTheme);
 	let mounted = $state(false);
@@ -46,8 +42,8 @@
 		root.classList.remove('light', 'dark');
 
 		if (newTheme === 'system') {
-			const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches 
-				? 'dark' 
+			const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+				? 'dark'
 				: 'light';
 			root.classList.add(systemTheme);
 		} else {
@@ -60,7 +56,7 @@
 		if (browser) {
 			localStorage.setItem(storageKey, newTheme);
 			applyTheme(newTheme);
-			
+
 			// Mettre à jour le store global
 			themeStore.set({
 				theme: newTheme,
@@ -87,13 +83,13 @@
 		};
 
 		mediaQuery.addEventListener('change', handleChange);
-		
+
 		// Initialiser le store global
 		themeStore.set({
 			theme,
 			setTheme
 		});
-		
+
 		mounted = true;
 
 		return () => {
@@ -110,4 +106,3 @@
 		{@render children?.()}
 	</div>
 {/if}
-

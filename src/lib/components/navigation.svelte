@@ -54,7 +54,7 @@
 			</div>
 
 			<!-- Mobile Menu Button -->
-			<div class="flex items-center gap-2 md:hidden hover:cursor-pointer">
+			<div class="flex items-center gap-2 hover:cursor-pointer md:hidden">
 				<ThemeToggle />
 				<Button
 					variant="ghost"
@@ -62,7 +62,10 @@
 					onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
 					aria-label="Toggle menu"
 				>
-					<div class="transition-transform duration-300" style="transform: rotate({mobileMenuOpen ? 90 : 0}deg);">
+					<div
+						class="transition-transform duration-300"
+						style="transform: rotate({mobileMenuOpen ? 90 : 0}deg);"
+					>
 						{#if mobileMenuOpen}
 							<X size={24} />
 						{:else}

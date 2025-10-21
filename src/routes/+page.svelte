@@ -5,5 +5,5 @@
 
 <main class="min-h-screen pt-16">
 	<HeroSection />
-    <AboutSection />
+	<AboutSection />
 </main>

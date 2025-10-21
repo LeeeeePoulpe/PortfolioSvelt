@@ -2,7 +2,7 @@
 	import { Motion } from 'svelte-motion';
 	import { Card, CardContent } from '$lib/components/ui/card/index.js';
 	import { Code2, Palette, Rocket, Users } from '@lucide/svelte';
-	
+
 	// Langages
 	import IconVuejs from '~icons/devicon/vuejs';
 	import IconReact from '~icons/devicon/react';
@@ -12,7 +12,7 @@
 	import IconTypescript from '~icons/devicon/typescript';
 	import IconNodejs from '~icons/devicon/nodejs';
 	import IconPython from '~icons/devicon/python';
-	
+
 	// Frameworks & Outils
 	import IconJava from '~icons/devicon/java';
 	import IconSymfony from '~icons/devicon/symfony';
@@ -21,7 +21,7 @@
 	import IconNeo4j from '~icons/simple-icons/neo4j';
 	import IconElasticsearch from '~icons/simple-icons/elasticsearch';
 	import IconAndroid from '~icons/devicon/android';
-	
+
 	// Outils de développement
 	import IconVscode from '~icons/devicon/vscode';
 	import IconGit from '~icons/devicon/git';
@@ -97,7 +97,7 @@
 	];
 </script>
 
-<main class="min-h-screen px-4 pb-16 pt-32 sm:px-6 lg:px-8">
+<main class="min-h-screen px-4 pt-32 pb-16 sm:px-6 lg:px-8">
 	<div class="mx-auto max-w-4xl">
 		<Motion
 			let:motion
@@ -144,10 +144,7 @@
 							<div use:motion>
 								<Card class="h-full transition-shadow hover:shadow-lg">
 									<CardContent class="p-6">
-										<svelte:component
-											this={value.icon}
-											class="mb-4 h-10 w-10 text-secondary"
-										/>
+										<svelte:component this={value.icon} class="mb-4 h-10 w-10 text-secondary" />
 										<h3 class="font-display mb-2 text-xl font-semibold text-foreground">
 											{value.title}
 										</h3>
@@ -192,7 +189,9 @@
 											whileHover={{ scale: 1.05, y: -5 }}
 										>
 											<div use:motion>
-												<Card class="h-full transition-all hover:border-accent hover:shadow-lg group">
+												<Card
+													class="group h-full transition-all hover:border-accent hover:shadow-lg"
+												>
 													<CardContent class="flex flex-col items-center justify-center gap-3 p-4">
 														<svelte:component
 															this={skill.icon}
@@ -218,4 +217,3 @@
 		</Motion>
 	</div>
 </main>
-

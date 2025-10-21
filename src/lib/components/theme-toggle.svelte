@@ -5,7 +5,7 @@
 
 	const themeStore = useTheme();
 	let currentTheme = $state($themeStore.theme);
-	
+
 	// Réagir aux changements du store
 	$effect(() => {
 		currentTheme = $themeStore.theme;
@@ -21,10 +21,13 @@
 	variant="ghost"
 	size="icon"
 	onclick={toggleTheme}
-	class="relative w-9 h-9 rounded-full"
+	class="relative h-9 w-9 rounded-full"
 	aria-label="Toggle theme"
 >
-	<Sun class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-	<Moon class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+	<Sun
+		class="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"
+	/>
+	<Moon
+		class="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
+	/>
 </Button>
-
