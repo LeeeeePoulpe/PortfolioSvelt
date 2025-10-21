@@ -36,39 +36,39 @@
 		{
 			category: 'Langages & Frameworks Frontend',
 			items: [
-				{ name: 'Vue.js', icon: IconVuejs, color: '#4FC08D' },
-				{ name: 'React', icon: IconReact, color: '#61DAFB' },
-				{ name: 'Angular', icon: IconAngular, color: '#DD0031' },
-				{ name: 'Svelte', icon: IconSvelte, color: '#FF3E00' },
-				{ name: 'JavaScript', icon: IconJavascript, color: '#F7DF1E' },
-				{ name: 'TypeScript', icon: IconTypescript, color: '#3178C6' },
-				{ name: 'Node.js', icon: IconNodejs, color: '#339933' },
-				{ name: 'Python', icon: IconPython, color: '#3776AB' }
+				{ name: 'Vue.js', icon: IconVuejs, color: '#4FC08D', url: 'https://vuejs.org/' },
+				{ name: 'React', icon: IconReact, color: '#61DAFB', url: 'https://react.dev/' },
+				{ name: 'Angular', icon: IconAngular, color: '#DD0031', url: 'https://angular.dev/' },
+				{ name: 'Svelte', icon: IconSvelte, color: '#FF3E00', url: 'https://svelte.dev/' },
+				{ name: 'JavaScript', icon: IconJavascript, color: '#F7DF1E', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+				{ name: 'TypeScript', icon: IconTypescript, color: '#3178C6', url: 'https://www.typescriptlang.org/' },
+				{ name: 'Node.js', icon: IconNodejs, color: '#339933', url: 'https://nodejs.org/' },
+				{ name: 'Python', icon: IconPython, color: '#3776AB', url: 'https://www.python.org/' }
 			]
 		},
 		{
 			category: 'Backend & Bases de données',
 			items: [
-				{ name: 'Android', icon: IconAndroid, color: '#3DDC84' },
-				{ name: 'Java', icon: IconJava, color: '#007396' },
-				{ name: 'Symfony', icon: IconSymfony, color: '#000000' },
-				{ name: 'PHP', icon: IconPhp, color: '#777BB4' },
-				{ name: 'MongoDB', icon: IconMongodb, color: '#47A248' },
-				{ name: 'Neo4j', icon: IconNeo4j, color: '#008CC1' },
-				{ name: 'Elasticsearch', icon: IconElasticsearch, color: '#005571' }
+				{ name: 'Android', icon: IconAndroid, color: '#3DDC84', url: 'https://developer.android.com/' },
+				{ name: 'Java', icon: IconJava, color: '#007396', url: 'https://docs.oracle.com/en/java/' },
+				{ name: 'Symfony', icon: IconSymfony, color: '#000000', url: 'https://symfony.com/doc/current/index.html' },
+				{ name: 'PHP', icon: IconPhp, color: '#777BB4', url: 'https://www.php.net/' },
+				{ name: 'MongoDB', icon: IconMongodb, color: '#47A248', url: 'https://www.mongodb.com/docs/' },
+				{ name: 'Neo4j', icon: IconNeo4j, color: '#008CC1', url: 'https://neo4j.com/docs/' },
+				{ name: 'Elasticsearch', icon: IconElasticsearch, color: '#005571', url: 'https://www.elastic.co/guide/index.html' }
 			]
 		},
 		{
 			category: 'Outils de développement',
 			items: [
-				{ name: 'VS Code', icon: IconVscode, color: '#007ACC' },
-				{ name: 'Git', icon: IconGit, color: '#F05032' },
-				{ name: 'Figma', icon: IconFigma, color: '#F24E1E' },
-				{ name: 'Shadcn UI', icon: IconShadcn, color: '#000000' },
-				{ name: 'Swagger', icon: IconSwagger, color: '#85EA2D' },
-				{ name: 'Confluence', icon: IconConfluence, color: '#172B4D' },
-				{ name: 'Jira', icon: IconJira, color: '#0052CC' },
-				{ name: 'Docker', icon: IconDocker, color: '#2496ED' }
+				{ name: 'VS Code', icon: IconVscode, color: '#007ACC', url: 'https://code.visualstudio.com/docs' },
+				{ name: 'Git', icon: IconGit, color: '#F05032', url: 'https://git-scm.com/doc' },
+				{ name: 'Figma', icon: IconFigma, color: '#F24E1E', url: 'https://help.figma.com/' },
+				{ name: 'Shadcn UI', icon: IconShadcn, color: '#000000', url: 'https://ui.shadcn.com/' },
+				{ name: 'Swagger', icon: IconSwagger, color: '#85EA2D', url: 'https://swagger.io/docs/' },
+				{ name: 'Confluence', icon: IconConfluence, color: '#172B4D', url: 'https://support.atlassian.com/confluence-cloud/' },
+				{ name: 'Jira', icon: IconJira, color: '#0052CC', url: 'https://support.atlassian.com/jira-software-cloud/' },
+				{ name: 'Docker', icon: IconDocker, color: '#2496ED', url: 'https://docs.docker.com/' }
 			]
 		}
 	];
@@ -189,22 +189,29 @@
 											whileHover={{ scale: 1.05, y: -5 }}
 										>
 											<div use:motion>
-												<Card
-													class="group h-full transition-all hover:border-accent hover:shadow-lg"
+												<a
+													href={skill.url}
+													target="_blank"
+													rel="noopener noreferrer"
+													class="block h-full"
 												>
-													<CardContent class="flex flex-col items-center justify-center gap-3 p-4">
-														<svelte:component
-															this={skill.icon}
-															class="h-10 w-10 transition-colors"
-															style="color: {skill.color}"
-														/>
-														<span
-															class="text-center text-sm font-medium text-muted-foreground transition-colors group-hover:text-foreground"
-														>
-															{skill.name}
-														</span>
-													</CardContent>
-												</Card>
+													<Card
+														class="group h-full cursor-pointer transition-all hover:border-accent hover:shadow-lg"
+													>
+														<CardContent class="flex flex-col items-center justify-center gap-3 p-4">
+															<svelte:component
+																this={skill.icon}
+																class="h-10 w-10 transition-colors"
+																style="color: {skill.color}"
+															/>
+															<span
+																class="text-center text-sm font-medium text-muted-foreground transition-colors group-hover:text-foreground"
+															>
+																{skill.name}
+															</span>
+														</CardContent>
+													</Card>
+												</a>
 											</div>
 										</Motion>
 									{/each}
