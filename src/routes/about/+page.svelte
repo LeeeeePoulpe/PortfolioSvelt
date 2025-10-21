@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { Motion } from 'svelte-motion';
 	import { Card, CardContent } from '$lib/components/ui/card/index.js';
 	import { Code2, Palette, Rocket, Users } from '@lucide/svelte';
@@ -96,96 +95,23 @@
 		}
 	];
 
-	// Système de défilement infini avec reset invisible
-	function createInfiniteScroll(wrapper: HTMLElement, speed: number = 0.5) {
-		const container = wrapper.querySelector('.infinite-scroll-container') as HTMLElement;
-		if (!container) return () => {};
-
-		let animationId: number;
-		let isPaused = false;
-		let scrollPosition = 0;
-
-		// Sauvegarder les enfants originaux
-		const originalChildren = Array.from(container.children);
-		
-		// Calculer la largeur totale d'un set (plus précise)
-		let totalWidth = 0;
-		originalChildren.forEach((child) => {
-			const rect = (child as HTMLElement).getBoundingClientRect();
-			totalWidth += rect.width;
-		});
-		// Ajouter les gaps (3rem = 48px)
-		totalWidth += 48 * (originalChildren.length - 1);
-
-		// Dupliquer BEAUCOUP plus pour éviter les blancs
-		// On veut au moins 2x la largeur de l'écran
-		const screenWidth = wrapper.offsetWidth;
-		const copiesNeeded = Math.ceil((screenWidth * 3) / totalWidth);
-		
-		for (let i = 0; i < copiesNeeded; i++) {
-			originalChildren.forEach((child) => {
-				const clone = child.cloneNode(true) as HTMLElement;
-				container.appendChild(clone);
-			});
-		}
-
-		function animate() {
-			if (!isPaused) {
-				scrollPosition += speed;
-				
-				// Reset invisible quand on a défilé d'un set complet
-				if (scrollPosition >= totalWidth) {
-					scrollPosition = scrollPosition % totalWidth;
-				}
-				
-				container.style.transform = `translateX(-${scrollPosition}px)`;
-			}
-
-			animationId = requestAnimationFrame(animate);
-		}
-
-		// Pause au hover
-		wrapper.addEventListener('mouseenter', () => {
-			isPaused = true;
-		});
-		wrapper.addEventListener('mouseleave', () => {
-			isPaused = false;
-		});
-
-		animate();
-
-		return () => {
-			cancelAnimationFrame(animationId);
-		};
-	}
-
-	onMount(() => {
-		const wrappers = document.querySelectorAll('.infinite-scroll-wrapper');
-		const cleanups: (() => void)[] = [];
-
-		wrappers.forEach((wrapper) => {
-			const cleanup = createInfiniteScroll(wrapper as HTMLElement, 0.5);
-			cleanups.push(cleanup);
-		});
-
-		return () => {
-			cleanups.forEach((cleanup) => cleanup());
-		};
-	});
 </script>
 
 <style>
-	.infinite-scroll-wrapper {
-		overflow: hidden;
+	@keyframes scroll {
+		0% {
+			transform: translateX(0%);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
 	}
 
-	.infinite-scroll-container {
-		display: flex;
-		gap: 3rem;
-		will-change: transform;
+	.animate-scroll {
+		animation: scroll 60s linear infinite alternate;
 	}
 
-	.infinite-scroll-container:hover {
+	.animate-scroll:hover {
 		animation-play-state: paused;
 	}
 </style>
@@ -266,10 +192,10 @@
 
 			<!-- Languages Banner -->
 			<div
-				class="infinite-scroll-wrapper relative -mx-4 mb-8 border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
+				class="relative -mx-4 mb-8 overflow-hidden border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
 			>
-				<div class="infinite-scroll-container px-8">
-					{#each languages as skill}
+				<div class="animate-scroll flex flex-row flex-nowrap gap-12 px-8">
+					{#each [...languages, ...languages, ...languages, ...languages] as skill}
 						<a
 							href={skill.url}
 							target="_blank"
@@ -292,10 +218,10 @@
 
 			<!-- Frameworks Banner -->
 			<div
-				class="infinite-scroll-wrapper relative -mx-4 mb-8 border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
+				class="relative -mx-4 mb-8 overflow-hidden border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
 			>
-				<div class="infinite-scroll-container px-8">
-					{#each frameworks as skill}
+				<div class="animate-scroll flex flex-row flex-nowrap gap-12 px-8">
+					{#each [...frameworks, ...frameworks, ...frameworks, ...frameworks] as skill}
 						<a
 							href={skill.url}
 							target="_blank"
@@ -318,10 +244,10 @@
 
 			<!-- Tools Banner -->
 			<div
-				class="infinite-scroll-wrapper relative -mx-4 mb-8 border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
+				class="relative -mx-4 mb-8 overflow-hidden border-y border-border bg-card/30 py-8 backdrop-blur-md sm:-mx-6 lg:-mx-8"
 			>
-				<div class="infinite-scroll-container px-8">
-					{#each tools as skill}
+				<div class="animate-scroll flex flex-row flex-nowrap gap-12 px-8">
+					{#each [...tools, ...tools, ...tools, ...tools] as skill}
 						<a
 							href={skill.url}
 							target="_blank"
