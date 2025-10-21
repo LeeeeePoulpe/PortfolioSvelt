@@ -98,7 +98,7 @@
 </script>
 
 <main class="min-h-screen px-4 pt-32 pb-16 sm:px-6 lg:px-8">
-	<div class="mx-auto max-w-4xl">
+	<div class="mx-auto max-w-5xl">
 		<Motion
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
