@@ -40,16 +40,56 @@
 		}
 	];
 
-	let name = $state('');
-	let email = $state('');
-	let subject = $state('');
-	let message = $state('');
+	let status = $state('');
 
-	function handleSubmit(e: SubmitEvent) {
+	// Clé d'accès Web3Forms
+	// Pour configurer : créez un fichier .env à la racine avec PUBLIC_WEB3FORMS_ACCESS_KEY=votre_clé
+	// Obtenez votre clé gratuite sur https://web3forms.com
+	const WEB3FORMS_ACCESS_KEY =
+		import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '0950e898-368a-4c48-869a-ccf5a9801931';
+
+	const handleSubmit = async (e: SubmitEvent) => {
 		e.preventDefault();
-		// Logique de soumission du formulaire à implémenter
-		console.log({ name, email, subject, message });
-	}
+		status = 'Envoi en cours...';
+
+		// Sauvegarder la référence au formulaire avant l'appel async
+		const form = e.currentTarget as HTMLFormElement;
+		const formData = new FormData(form);
+		const object = Object.fromEntries(formData);
+		const json = JSON.stringify(object);
+
+		try {
+			const response = await fetch('https://api.web3forms.com/submit', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json'
+				},
+				body: json
+			});
+
+			const result = await response.json();
+			console.log('Réponse complète:', result);
+
+			// Web3Forms renvoie { success: true } en cas de succès
+			if (result.success === true) {
+				status = 'Message envoyé avec succès ! Je vous répondrai bientôt.';
+				// Réinitialiser le formulaire
+				form.reset();
+			} else {
+				console.error('Erreur Web3Forms:', result);
+				status = result.message || "Une erreur est survenue. Veuillez réessayer.";
+			}
+		} catch (error) {
+			console.error('Erreur lors de la requête:', error);
+			status = "Une erreur est survenue. Veuillez réessayer.";
+		}
+
+		// Réinitialiser le message après 5 secondes
+		setTimeout(() => {
+			status = '';
+		}, 5000);
+	};
 </script>
 
 <main class="min-h-screen px-4 pb-16 pt-32 sm:px-6 lg:px-8">
@@ -108,29 +148,58 @@
 						</CardHeader>
 						<CardContent>
 							<form class="space-y-4" onsubmit={handleSubmit}>
+								<input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+								
 								<div class="space-y-2">
 									<Label for="name">Nom</Label>
-									<Input id="name" placeholder="Votre nom" bind:value={name} />
+									<Input id="name" name="name" placeholder="Votre nom" required />
 								</div>
 								<div class="space-y-2">
 									<Label for="email">Email</Label>
-									<Input id="email" type="email" placeholder="votre@email.com" bind:value={email} />
+									<Input
+										id="email"
+										name="email"
+										type="email"
+										placeholder="votre@email.com"
+										required
+									/>
 								</div>
 								<div class="space-y-2">
 									<Label for="subject">Sujet</Label>
-									<Input id="subject" placeholder="Sujet de votre message" bind:value={subject} />
+									<Input
+										id="subject"
+										name="subject"
+										placeholder="Sujet de votre message"
+										required
+									/>
 								</div>
 								<div class="space-y-2">
 									<Label for="message">Message</Label>
 									<Textarea
 										id="message"
+										name="message"
 										placeholder="Votre message..."
 										rows={6}
 										class="resize-none"
-										bind:value={message}
+										required
 									/>
 								</div>
-								<Button type="submit" class="w-full">Envoyer le message</Button>
+
+								{#if status}
+									<div
+										class="rounded-lg p-3 text-sm {status.includes('succès') || status.includes('Success')
+											? 'bg-green-500/10 text-green-600 dark:text-green-400'
+											: status === 'Envoi en cours...'
+												? 'bg-blue-500/10 text-blue-600 dark:text-blue-400'
+												: 'bg-red-500/10 text-red-600 dark:text-red-400'}"
+									>
+										{status}
+									</div>
+								{/if}
+
+								<Button type="submit" class="w-full" disabled={status === 'Envoi en cours...'}>
+									{status === 'Envoi en cours...' ? 'Envoi en cours...' : 'Envoyer le message'}
+								</Button>
 							</form>
 						</CardContent>
 					</Card>
