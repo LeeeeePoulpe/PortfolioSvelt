@@ -4,26 +4,33 @@
 	import { Code2, Palette, Rocket, Users } from '@lucide/svelte';
 
 	// Langages
-	import IconJava from '~icons/devicon/java';
-	import IconPython from '~icons/devicon/python';
+	import IconVuejs from '~icons/devicon/vuejs';
+	import IconReact from '~icons/devicon/react';
+	import IconAngular from '~icons/devicon/angular';
+	import IconSvelte from '~icons/devicon/svelte';
 	import IconJavascript from '~icons/devicon/javascript';
 	import IconTypescript from '~icons/devicon/typescript';
 	import IconNodejs from '~icons/devicon/nodejs';
-	import IconPhp from '~icons/devicon/php';
-	import IconMysql from '~icons/devicon/mysql';
+	import IconPython from '~icons/devicon/python';
 
-	// Frameworks
+	// Frameworks & Outils
+	import IconJava from '~icons/devicon/java';
 	import IconSymfony from '~icons/devicon/symfony';
-	import IconReact from '~icons/devicon/react';
-	import IconNextjs from '~icons/devicon/nextjs';
+	import IconPhp from '~icons/devicon/php';
+	import IconMongodb from '~icons/devicon/mongodb';
+	import IconNeo4j from '~icons/simple-icons/neo4j';
+	import IconElasticsearch from '~icons/simple-icons/elasticsearch';
 	import IconAndroid from '~icons/devicon/android';
 
-	// Outils
+	// Outils de développement
+	import IconVscode from '~icons/devicon/vscode';
 	import IconGit from '~icons/devicon/git';
-	import IconDocker from '~icons/devicon/docker';
-	import IconPostgresql from '~icons/devicon/postgresql';
-	import IconMongodb from '~icons/devicon/mongodb';
 	import IconFigma from '~icons/devicon/figma';
+	import IconSwagger from '~icons/simple-icons/swagger';
+	import IconConfluence from '~icons/devicon/confluence';
+	import IconJira from '~icons/devicon/jira';
+	import IconDocker from '~icons/devicon/docker';
+	import IconShadcn from '~icons/simple-icons/shadcnui';
 
 	type Skill = {
 		name: string;
@@ -33,8 +40,6 @@
 	};
 
 	const languages: Skill[] = [
-		{ name: 'Java', icon: IconJava, color: '#007396', url: 'https://www.java.com' },
-		{ name: 'Python', icon: IconPython, color: '#3776AB', url: 'https://www.python.org' },
 		{
 			name: 'JavaScript',
 			icon: IconJavascript,
@@ -47,29 +52,33 @@
 			color: '#3178C6',
 			url: 'https://www.typescriptlang.org'
 		},
-		{ name: 'PHP', icon: IconPhp, color: '#777BB4', url: 'https://www.php.net' },
-		{ name: 'SQL', icon: IconMysql, color: '#4479A1', url: 'https://www.mysql.com' }
+		{ name: 'Python', icon: IconPython, color: '#3776AB', url: 'https://www.python.org' },
+		{ name: 'Java', icon: IconJava, color: '#007396', url: 'https://www.java.com' },
+		{ name: 'PHP', icon: IconPhp, color: '#777BB4', url: 'https://www.php.net' }
 	];
 
 	const frameworks: Skill[] = [
-		{ name: 'Symfony', icon: IconSymfony, color: '#000000', url: 'https://symfony.com' },
 		{ name: 'React', icon: IconReact, color: '#61DAFB', url: 'https://react.dev' },
-		{ name: 'Next.js', icon: IconNextjs, color: '#000000', url: 'https://nextjs.org' },
+		{ name: 'Vue.js', icon: IconVuejs, color: '#4FC08D', url: 'https://vuejs.org' },
+		{ name: 'Angular', icon: IconAngular, color: '#DD0031', url: 'https://angular.io' },
+		{ name: 'Svelte', icon: IconSvelte, color: '#FF3E00', url: 'https://svelte.dev' },
 		{ name: 'Node.js', icon: IconNodejs, color: '#339933', url: 'https://nodejs.org' },
+		{ name: 'Symfony', icon: IconSymfony, color: '#000000', url: 'https://symfony.com' },
 		{ name: 'Android', icon: IconAndroid, color: '#3DDC84', url: 'https://developer.android.com' }
 	];
 
 	const tools: Skill[] = [
+		{ name: 'VS Code', icon: IconVscode, color: '#007ACC', url: 'https://code.visualstudio.com' },
 		{ name: 'Git', icon: IconGit, color: '#F05032', url: 'https://git-scm.com' },
 		{ name: 'Docker', icon: IconDocker, color: '#2496ED', url: 'https://www.docker.com' },
-		{
-			name: 'PostgreSQL',
-			icon: IconPostgresql,
-			color: '#4169E1',
-			url: 'https://www.postgresql.org'
-		},
 		{ name: 'MongoDB', icon: IconMongodb, color: '#47A248', url: 'https://www.mongodb.com' },
-		{ name: 'Figma', icon: IconFigma, color: '#F24E1E', url: 'https://www.figma.com' }
+		{ name: 'Neo4j', icon: IconNeo4j, color: '#4581C3', url: 'https://neo4j.com' },
+		{ name: 'Elasticsearch', icon: IconElasticsearch, color: '#005571', url: 'https://www.elastic.co' },
+		{ name: 'Figma', icon: IconFigma, color: '#F24E1E', url: 'https://www.figma.com' },
+		{ name: 'Swagger', icon: IconSwagger, color: '#85EA2D', url: 'https://swagger.io' },
+		{ name: 'Confluence', icon: IconConfluence, color: '#172B4D', url: 'https://www.atlassian.com/software/confluence' },
+		{ name: 'Jira', icon: IconJira, color: '#0052CC', url: 'https://www.atlassian.com/software/jira' },
+		{ name: 'Shadcn/ui', icon: IconShadcn, color: '#000000', url: 'https://ui.shadcn.com' }
 	];
 
 	const values = [
