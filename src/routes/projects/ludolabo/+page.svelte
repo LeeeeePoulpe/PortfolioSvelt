@@ -3,13 +3,22 @@
 	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { ExternalLink, Calendar, Users, GraduationCap, Gamepad2, Monitor, Database, ArrowLeft } from '@lucide/svelte';
+	import {
+		ExternalLink,
+		Calendar,
+		Users,
+		GraduationCap,
+		Gamepad2,
+		Monitor,
+		Database,
+		ArrowLeft
+	} from '@lucide/svelte';
 
 	const technologies = [
 		{ name: 'Vue.js', color: '#4FC08D' },
 		{ name: 'Tailwind CSS', color: '#06B6D4' },
 		{ name: 'PrelineUI', color: '#8B5CF6' },
-		{ name: 'Unity', color: '#000000' },
+		{ name: 'Unity', color: '#000000' }
 	];
 
 	const worlds = [
@@ -59,7 +68,10 @@
 
 <svelte:head>
 	<title>LudoLabo - Hugo Föllmi</title>
-	<meta name="description" content="Développement de LudoLabo, une application ludique pour aider les élèves de terminale à réviser la physique-chimie." />
+	<meta
+		name="description"
+		content="Développement de LudoLabo, une application ludique pour aider les élèves de terminale à réviser la physique-chimie."
+	/>
 </svelte:head>
 
 <main class="min-h-screen pt-32 pb-16">
@@ -87,17 +99,18 @@
 			transition={{ duration: 0.6 }}
 		>
 			<div use:motion class="mb-12">
-				<div class="flex flex-col lg:flex-row gap-8 items-start">
+				<div class="flex flex-col items-start gap-8 lg:flex-row">
 					<div class="flex-1">
 						<h1 class="font-display mb-6 text-4xl font-bold text-foreground sm:text-5xl">
 							LudoLabo
 						</h1>
-						<p class="text-lg leading-relaxed text-muted-foreground mb-6">
-							Interface et jeu ludiques pour aider les élèves de terminale à réviser leur enseignement de spécialité 
-							en physique-chimie et permettre aux professeurs de suivre les progrès. Projet réalisé dans le cadre 
-							du BUT Informatique à l'IUT2 de Grenoble lors du troisième semestre, en équipe de 8 personnes.
+						<p class="mb-6 text-lg leading-relaxed text-muted-foreground">
+							Interface et jeu ludiques pour aider les élèves de terminale à réviser leur
+							enseignement de spécialité en physique-chimie et permettre aux professeurs de suivre
+							les progrès. Projet réalisé dans le cadre du BUT Informatique à l'IUT2 de Grenoble
+							lors du troisième semestre, en équipe de 8 personnes.
 						</p>
-						<div class="flex flex-wrap gap-2 mb-6">
+						<div class="mb-6 flex flex-wrap gap-2">
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<Calendar class="h-3 w-3" />
 								Semestre 3 BUT
@@ -112,25 +125,29 @@
 							</Badge>
 						</div>
 					</div>
-					<div class="flex flex-col gap-4 w-full lg:w-80">
+					<div class="flex w-full flex-col gap-4 lg:w-80">
 						<a
 							href="https://github.com/LudoLaboApp"
 							target="_blank"
-							class="group p-4 border rounded-lg hover:shadow-lg transition-all"
+							class="group rounded-lg border p-4 transition-all hover:shadow-lg"
 						>
 							<div class="flex items-center gap-3">
-								<div class="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
-									<span class="text-white font-bold text-lg">LL</span>
+								<div
+									class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-green-500 to-blue-600"
+								>
+									<span class="text-lg font-bold text-white">LL</span>
 								</div>
 								<div>
 									<h3 class="font-semibold">LudoLabo</h3>
 									<p class="text-sm text-muted-foreground">Repository GitHub</p>
 								</div>
-								<ExternalLink class="h-4 w-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+								<ExternalLink
+									class="ml-auto h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"
+								/>
 							</div>
 						</a>
-						<div class="p-4 border rounded-lg">
-							<div class="flex items-center gap-3 mb-3">
+						<div class="rounded-lg border p-4">
+							<div class="mb-3 flex items-center gap-3">
 								<Gamepad2 class="h-8 w-8 text-purple-500" />
 								<div>
 									<h3 class="font-semibold">Jeu éducatif</h3>
@@ -159,24 +176,24 @@
 						<CardTitle class="text-2xl">Contexte du projet</CardTitle>
 					</CardHeader>
 					<CardContent class="space-y-6">
-						<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 							<div>
-								<h3 class="text-xl font-semibold mb-4">Objectif éducatif</h3>
-								<p class="text-muted-foreground leading-relaxed mb-4">
-									Le jeu devait être basé sur des questions et des énigmes des différents chapitres de physique-chimie 
-									vus en terminale. Chaque bonne réponse permettait aux élèves de gagner des points et de réaliser un 
-									classement entre les élèves d'une même classe.
+								<h3 class="mb-4 text-xl font-semibold">Objectif éducatif</h3>
+								<p class="mb-4 leading-relaxed text-muted-foreground">
+									Le jeu devait être basé sur des questions et des énigmes des différents chapitres
+									de physique-chimie vus en terminale. Chaque bonne réponse permettait aux élèves de
+									gagner des points et de réaliser un classement entre les élèves d'une même classe.
 								</p>
-								<p class="text-muted-foreground leading-relaxed">
-									L'objectif était de rendre le processus de révision ludique et de le relier à des situations de la 
-									vie quotidienne pour rendre l'apprentissage plus attrayant.
+								<p class="leading-relaxed text-muted-foreground">
+									L'objectif était de rendre le processus de révision ludique et de le relier à des
+									situations de la vie quotidienne pour rendre l'apprentissage plus attrayant.
 								</p>
 							</div>
 							<div>
-								<h3 class="text-xl font-semibold mb-4">Public cible</h3>
+								<h3 class="mb-4 text-xl font-semibold">Public cible</h3>
 								<div class="space-y-3">
-									<div class="p-3 border rounded-lg">
-										<h4 class="font-semibold mb-1 flex items-center gap-2">
+									<div class="rounded-lg border p-3">
+										<h4 class="mb-1 flex items-center gap-2 font-semibold">
 											<GraduationCap class="h-4 w-4 text-blue-500" />
 											Élèves de terminale
 										</h4>
@@ -184,8 +201,8 @@
 											Révision de l'enseignement de spécialité en physique-chimie
 										</p>
 									</div>
-									<div class="p-3 border rounded-lg">
-										<h4 class="font-semibold mb-1 flex items-center gap-2">
+									<div class="rounded-lg border p-3">
+										<h4 class="mb-1 flex items-center gap-2 font-semibold">
 											<Users class="h-4 w-4 text-green-500" />
 											Professeurs
 										</h4>
@@ -214,23 +231,23 @@
 						<CardTitle class="text-2xl">Fonctionnalités développées</CardTitle>
 					</CardHeader>
 					<CardContent class="space-y-6">
-						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+						<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
 							{#each features as feature}
-								<div class="p-4 border rounded-lg hover:shadow-md transition-shadow">
-									<h4 class="font-semibold mb-2">{feature.title}</h4>
+								<div class="rounded-lg border p-4 transition-shadow hover:shadow-md">
+									<h4 class="mb-2 font-semibold">{feature.title}</h4>
 									<p class="text-sm text-muted-foreground">{feature.description}</p>
 								</div>
 							{/each}
 						</div>
 
-						<div class="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
-							<h4 class="font-semibold mb-3">Mondes de révision</h4>
-							<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+						<div class="mt-6 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 p-4">
+							<h4 class="mb-3 font-semibold">Mondes de révision</h4>
+							<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 								{#each worlds as world}
-									<div class="p-3 border rounded-lg">
-										<div class="flex items-center gap-2 mb-2">
-											<div 
-												class="w-4 h-4 rounded-full" 
+									<div class="rounded-lg border p-3">
+										<div class="mb-2 flex items-center gap-2">
+											<div
+												class="h-4 w-4 rounded-full"
 												style="background-color: {world.color}"
 											></div>
 											<h5 class="font-medium">{world.name}</h5>
@@ -258,17 +275,21 @@
 						<CardTitle class="text-2xl">Résultats obtenus</CardTitle>
 					</CardHeader>
 					<CardContent class="space-y-6">
-						<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 							<div>
-								<h3 class="text-xl font-semibold mb-4">Plateforme web</h3>
-								<p class="text-muted-foreground leading-relaxed mb-4">
-									<a href="https://github.com/LudoLaboApp/ludolabo-client" target="_blank" class="text-primary hover:underline">
+								<h3 class="mb-4 text-xl font-semibold">Plateforme web</h3>
+								<p class="mb-4 leading-relaxed text-muted-foreground">
+									<a
+										href="https://github.com/LudoLaboApp/ludolabo-client"
+										target="_blank"
+										class="text-primary hover:underline"
+									>
 										Plateforme web
-									</a> 
-									permettant aux professeurs de suivre les progrès de leurs élèves avec un système de classe. 
-									Les élèves peuvent rejoindre une classe et participer à des jeux de révision.
+									</a>
+									permettant aux professeurs de suivre les progrès de leurs élèves avec un système de
+									classe. Les élèves peuvent rejoindre une classe et participer à des jeux de révision.
 								</p>
-								<ul class="text-sm text-muted-foreground space-y-1">
+								<ul class="space-y-1 text-sm text-muted-foreground">
 									<li>• Système de codes de classe</li>
 									<li>• Gestion des élèves et des classes</li>
 									<li>• Diagrammes de progression</li>
@@ -276,15 +297,19 @@
 								</ul>
 							</div>
 							<div>
-								<h3 class="text-xl font-semibold mb-4">Jeu Unity</h3>
-								<p class="text-muted-foreground leading-relaxed mb-4">
-									<a href="https://github.com/LudoLaboApp/ludolabo-game" target="_blank" class="text-primary hover:underline">
+								<h3 class="mb-4 text-xl font-semibold">Jeu Unity</h3>
+								<p class="mb-4 leading-relaxed text-muted-foreground">
+									<a
+										href="https://github.com/LudoLaboApp/ludolabo-game"
+										target="_blank"
+										class="text-primary hover:underline"
+									>
 										Jeu développé en Unity
-									</a> 
-									avec des mondes représentant différents chapitres de physique-chimie. 
-									Chaque monde contient des questions sur un thème particulier.
+									</a>
+									avec des mondes représentant différents chapitres de physique-chimie. Chaque monde
+									contient des questions sur un thème particulier.
 								</p>
-								<ul class="text-sm text-muted-foreground space-y-1">
+								<ul class="space-y-1 text-sm text-muted-foreground">
 									<li>• Mondes thématiques (lacs chimiques, terres cinétiques)</li>
 									<li>• Système de points et classement</li>
 									<li>• Questions adaptées au niveau terminale</li>
@@ -293,15 +318,17 @@
 							</div>
 						</div>
 
-						<div class="p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg">
-							<h4 class="font-semibold mb-3">Fonctionnalités avancées</h4>
-							<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+						<div class="rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4">
+							<h4 class="mb-3 font-semibold">Fonctionnalités avancées</h4>
+							<div class="grid grid-cols-1 gap-4 text-sm md:grid-cols-2">
 								<div>
-									<h5 class="font-medium mb-1">Gestion des classes</h5>
-									<p class="text-muted-foreground">Ajout d'élèves, changement de l'ordre des chapitres</p>
+									<h5 class="mb-1 font-medium">Gestion des classes</h5>
+									<p class="text-muted-foreground">
+										Ajout d'élèves, changement de l'ordre des chapitres
+									</p>
 								</div>
 								<div>
-									<h5 class="font-medium mb-1">Analytics détaillés</h5>
+									<h5 class="mb-1 font-medium">Analytics détaillés</h5>
 									<p class="text-muted-foreground">Points forts et faibles de chaque élève</p>
 								</div>
 							</div>
@@ -324,21 +351,21 @@
 						<CardTitle class="text-2xl">Défis techniques</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+						<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 							{#each challenges as challenge}
-								<div class="flex items-start gap-3 p-4 border rounded-lg">
-									<div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+								<div class="flex items-start gap-3 rounded-lg border p-4">
+									<div class="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-orange-500"></div>
 									<p class="text-muted-foreground">{challenge}</p>
 								</div>
 							{/each}
 						</div>
-						
-						<div class="mt-6 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg">
-							<h4 class="font-semibold mb-3">Décision technique importante</h4>
-							<p class="text-muted-foreground text-sm">
-								Initialement prévu avec Faser.js, nous avons finalement décidé de réaliser le jeu en Unity 
-								pour des raisons de performance et de facilité de développement, malgré le changement de technologie 
-								en cours de projet.
+
+						<div class="mt-6 rounded-lg bg-gradient-to-r from-yellow-50 to-orange-50 p-4">
+							<h4 class="mb-3 font-semibold">Décision technique importante</h4>
+							<p class="text-sm text-muted-foreground">
+								Initialement prévu avec Faser.js, nous avons finalement décidé de réaliser le jeu en
+								Unity pour des raisons de performance et de facilité de développement, malgré le
+								changement de technologie en cours de projet.
 							</p>
 						</div>
 					</CardContent>
@@ -359,14 +386,13 @@
 						<CardTitle class="text-2xl">Technologies utilisées</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+						<div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
 							{#each technologies as tech}
-								<div class="flex items-center gap-3 p-3 border rounded-lg hover:shadow-md transition-shadow">
-									<div 
-										class="w-4 h-4 rounded-full" 
-										style="background-color: {tech.color}"
-									></div>
-									<span class="font-medium text-sm">{tech.name}</span>
+								<div
+									class="flex items-center gap-3 rounded-lg border p-3 transition-shadow hover:shadow-md"
+								>
+									<div class="h-4 w-4 rounded-full" style="background-color: {tech.color}"></div>
+									<span class="text-sm font-medium">{tech.name}</span>
 								</div>
 							{/each}
 						</div>
@@ -389,15 +415,17 @@
 					</CardHeader>
 					<CardContent>
 						<div class="space-y-4">
-							<p class="text-muted-foreground leading-relaxed">
-								Ce projet a été une expérience très enrichissante car j'ai eu l'occasion de m'intégrer dans une 
-								équipe plus conséquente par rapport aux projets précédents. J'ai participé à la réalisation de l'interface 
-								web en utilisant Vue.js, une technologie déjà utilisée, complétée avec Tailwind CSS et PrelineUI.
+							<p class="leading-relaxed text-muted-foreground">
+								Ce projet a été une expérience très enrichissante car j'ai eu l'occasion de
+								m'intégrer dans une équipe plus conséquente par rapport aux projets précédents. J'ai
+								participé à la réalisation de l'interface web en utilisant Vue.js, une technologie
+								déjà utilisée, complétée avec Tailwind CSS et PrelineUI.
 							</p>
-							<p class="text-muted-foreground leading-relaxed">
-								Ce projet a aussi été un énorme défi car nous avons réalisé l'application et le jeu en respectant les 
-								critères du cahier des charges en seulement trois semaines. L'adaptation au changement de technologie 
-								(Faser.js vers Unity) en cours de projet a été particulièrement formatrice.
+							<p class="leading-relaxed text-muted-foreground">
+								Ce projet a aussi été un énorme défi car nous avons réalisé l'application et le jeu
+								en respectant les critères du cahier des charges en seulement trois semaines.
+								L'adaptation au changement de technologie (Faser.js vers Unity) en cours de projet a
+								été particulièrement formatrice.
 							</p>
 						</div>
 					</CardContent>

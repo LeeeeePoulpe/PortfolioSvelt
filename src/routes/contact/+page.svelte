@@ -109,11 +109,17 @@
 			let:motion
 		>
 			<div use:motion class="mb-8">
-				<Card class="relative overflow-hidden border-2 border-green-500/20 bg-gradient-to-br from-green-500/5 via-background to-background shadow-lg shadow-green-500/5">
-					<div class="absolute right-0 top-0 h-32 w-32 -translate-y-8 translate-x-8 rounded-full bg-green-500/10 blur-3xl"></div>
+				<Card
+					class="relative overflow-hidden border-2 border-green-500/20 bg-gradient-to-br from-green-500/5 via-background to-background shadow-lg shadow-green-500/5"
+				>
+					<div
+						class="absolute top-0 right-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-green-500/10 blur-3xl"
+					></div>
 					<CardContent class="relative px-6 py-5">
 						<div class="flex items-start gap-4">
-							<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-green-500/10 ring-2 ring-green-500/20">
+							<div
+								class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-green-500/10 ring-2 ring-green-500/20"
+							>
 								<div class="h-3 w-3 animate-pulse rounded-full bg-green-500"></div>
 							</div>
 							<div class="flex-1">
@@ -121,7 +127,8 @@
 									Actuellement disponible
 								</h3>
 								<p class="leading-relaxed text-muted-foreground">
-									Je suis à la recherche d'opportunités professionnelles. N'hésitez pas à me contacter pour discuter de vos projets !
+									Je suis à la recherche d'opportunités professionnelles. N'hésitez pas à me
+									contacter pour discuter de vos projets !
 								</p>
 							</div>
 						</div>

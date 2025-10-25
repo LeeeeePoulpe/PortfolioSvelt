@@ -3,7 +3,15 @@
 	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { ExternalLink, Calendar, Users, Gamepad2, Lightbulb, Target, ArrowLeft } from '@lucide/svelte';
+	import {
+		ExternalLink,
+		Calendar,
+		Users,
+		Gamepad2,
+		Lightbulb,
+		Target,
+		ArrowLeft
+	} from '@lucide/svelte';
 
 	const technologies = [
 		{ name: 'Vue.js 3', color: '#4FC08D' },
@@ -17,12 +25,14 @@
 	const deliverables = [
 		{
 			title: 'Jeu interactif "Au pas de course !"',
-			description: 'Illustration du principe de groupement/proximité à travers un jeu de course dans des rayons de supermarché',
+			description:
+				'Illustration du principe de groupement/proximité à travers un jeu de course dans des rayons de supermarché',
 			type: 'professionnel'
 		},
 		{
 			title: 'Page explicative du principe',
-			description: 'Documentation détaillée du concept de groupement/proximité avec exemples concrets',
+			description:
+				'Documentation détaillée du concept de groupement/proximité avec exemples concrets',
 			type: 'professionnel'
 		},
 		{
@@ -62,7 +72,10 @@
 
 <svelte:head>
 	<title>ErgoGames - Hugo Föllmi</title>
-	<meta name="description" content="Développement du sixième jeu des ErgoGames 'Au pas de course !' chez Sogilis pour enseigner le principe ergonomique du groupement/proximité." />
+	<meta
+		name="description"
+		content="Développement du sixième jeu des ErgoGames 'Au pas de course !' chez Sogilis pour enseigner le principe ergonomique du groupement/proximité."
+	/>
 </svelte:head>
 
 <main class="min-h-screen pt-32 pb-16">
@@ -90,24 +103,28 @@
 			transition={{ duration: 0.6 }}
 		>
 			<div use:motion class="mb-12">
-				<div class="flex flex-col lg:flex-row gap-8 items-start">
+				<div class="flex flex-col items-start gap-8 lg:flex-row">
 					<div class="flex-1">
 						<h1 class="font-display mb-6 text-4xl font-bold text-foreground sm:text-5xl">
 							ErgoGames - Au pas de course !
 						</h1>
-						<p class="text-lg leading-relaxed text-muted-foreground mb-6">
-							Développement du sixième jeu des 
-							<a href="https://www.ergogames.fr/" target="_blank" class="text-primary hover:underline">
+						<p class="mb-6 text-lg leading-relaxed text-muted-foreground">
+							Développement du sixième jeu des
+							<a
+								href="https://www.ergogames.fr/"
+								target="_blank"
+								class="text-primary hover:underline"
+							>
 								ErgoGames
-							</a> 
-							chez 
+							</a>
+							chez
 							<a href="https://sogilis.com/" target="_blank" class="text-primary hover:underline">
 								Sogilis
-							</a>. 
-							Ce jeu a pour objectif de présenter le principe ergonomique du groupement/proximité de manière 
-							simple et ludique, avec une représentation visuelle interactive.
+							</a>. Ce jeu a pour objectif de présenter le principe ergonomique du
+							groupement/proximité de manière simple et ludique, avec une représentation visuelle
+							interactive.
 						</p>
-						<div class="flex flex-wrap gap-2 mb-6">
+						<div class="mb-6 flex flex-wrap gap-2">
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<Calendar class="h-3 w-3" />
 								Stage Sogilis
@@ -122,37 +139,45 @@
 							</Badge>
 						</div>
 					</div>
-					<div class="flex flex-col gap-4 w-full lg:w-80">
+					<div class="flex w-full flex-col gap-4 lg:w-80">
 						<a
 							href="https://www.ergogames.fr/"
 							target="_blank"
-							class="group p-4 border rounded-lg hover:shadow-lg transition-all"
+							class="group rounded-lg border p-4 transition-all hover:shadow-lg"
 						>
 							<div class="flex items-center gap-3">
-								<div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center">
-									<span class="text-white font-bold text-lg">EG</span>
+								<div
+									class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-yellow-500 to-orange-600"
+								>
+									<span class="text-lg font-bold text-white">EG</span>
 								</div>
 								<div>
 									<h3 class="font-semibold">ErgoGames</h3>
 									<p class="text-sm text-muted-foreground">Site des ErgoGames</p>
 								</div>
-								<ExternalLink class="h-4 w-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+								<ExternalLink
+									class="ml-auto h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"
+								/>
 							</div>
 						</a>
 						<a
 							href="https://sogilis.com/"
 							target="_blank"
-							class="group p-4 border rounded-lg hover:shadow-lg transition-all"
+							class="group rounded-lg border p-4 transition-all hover:shadow-lg"
 						>
 							<div class="flex items-center gap-3">
-								<div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-									<span class="text-white font-bold text-lg">S</span>
+								<div
+									class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-600"
+								>
+									<span class="text-lg font-bold text-white">S</span>
 								</div>
 								<div>
 									<h3 class="font-semibold">Sogilis</h3>
 									<p class="text-sm text-muted-foreground">Entreprise de génie logiciel</p>
 								</div>
-								<ExternalLink class="h-4 w-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+								<ExternalLink
+									class="ml-auto h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"
+								/>
 							</div>
 						</a>
 					</div>
@@ -173,25 +198,27 @@
 						<CardTitle class="text-2xl">Contexte du projet</CardTitle>
 					</CardHeader>
 					<CardContent class="space-y-6">
-						<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 							<div>
-								<h3 class="text-xl font-semibold mb-4">Les ErgoGames</h3>
-								<p class="text-muted-foreground leading-relaxed mb-4">
-									Le site des ErgoGames est conçu pour présenter de manière ludique les principes ergonomiques du numérique, 
-									tels que les actions minimales ou la gestion des erreurs. Il propose des jeux et un quiz pour faciliter 
-									l'apprentissage de ces principes.
+								<h3 class="mb-4 text-xl font-semibold">Les ErgoGames</h3>
+								<p class="mb-4 leading-relaxed text-muted-foreground">
+									Le site des ErgoGames est conçu pour présenter de manière ludique les principes
+									ergonomiques du numérique, tels que les actions minimales ou la gestion des
+									erreurs. Il propose des jeux et un quiz pour faciliter l'apprentissage de ces
+									principes.
 								</p>
-								<p class="text-muted-foreground leading-relaxed">
-									Mon sujet de stage portait sur le développement du sixième jeu "Au pas de course !" qui illustre le 
-									principe ergonomique du groupement/proximité.
+								<p class="leading-relaxed text-muted-foreground">
+									Mon sujet de stage portait sur le développement du sixième jeu "Au pas de course
+									!" qui illustre le principe ergonomique du groupement/proximité.
 								</p>
 							</div>
 							<div>
-								<h3 class="text-xl font-semibold mb-4">Sogilis</h3>
-								<p class="text-muted-foreground leading-relaxed">
-									Entreprise de génie logiciel basée à Grenoble, spécialisée dans la création de solutions sur mesure 
-									de haute qualité pour divers secteurs industriels. Elle se distingue par ses valeurs fortes et son 
-									engagement envers la qualité, l'innovation et l'expérience utilisateur.
+								<h3 class="mb-4 text-xl font-semibold">Sogilis</h3>
+								<p class="leading-relaxed text-muted-foreground">
+									Entreprise de génie logiciel basée à Grenoble, spécialisée dans la création de
+									solutions sur mesure de haute qualité pour divers secteurs industriels. Elle se
+									distingue par ses valeurs fortes et son engagement envers la qualité, l'innovation
+									et l'expérience utilisateur.
 								</p>
 							</div>
 						</div>
@@ -213,30 +240,38 @@
 						<CardTitle class="text-2xl">Objectifs du projet</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-							<div class="text-center p-4 border rounded-lg">
-								<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+						<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+							<div class="rounded-lg border p-4 text-center">
+								<div
+									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100"
+								>
 									<Target class="h-6 w-6 text-blue-600" />
 								</div>
-								<h3 class="font-semibold mb-2">Enseigner le principe</h3>
+								<h3 class="mb-2 font-semibold">Enseigner le principe</h3>
 								<p class="text-sm text-muted-foreground">
-									Développer un jeu interactif pour enseigner le principe ergonomique du groupement/proximité.
+									Développer un jeu interactif pour enseigner le principe ergonomique du
+									groupement/proximité.
 								</p>
 							</div>
-							<div class="text-center p-4 border rounded-lg">
-								<div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+							<div class="rounded-lg border p-4 text-center">
+								<div
+									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-green-100"
+								>
 									<Gamepad2 class="h-6 w-6 text-green-600" />
 								</div>
-								<h3 class="font-semibold mb-2">Interface intuitive</h3>
+								<h3 class="mb-2 font-semibold">Interface intuitive</h3>
 								<p class="text-sm text-muted-foreground">
-									Créer une interface utilisateur intuitive et accessible pour tous les niveaux de joueurs.
+									Créer une interface utilisateur intuitive et accessible pour tous les niveaux de
+									joueurs.
 								</p>
 							</div>
-							<div class="text-center p-4 border rounded-lg">
-								<div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+							<div class="rounded-lg border p-4 text-center">
+								<div
+									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-purple-100"
+								>
 									<Lightbulb class="h-6 w-6 text-purple-600" />
 								</div>
-								<h3 class="font-semibold mb-2">Page explicative</h3>
+								<h3 class="mb-2 font-semibold">Page explicative</h3>
 								<p class="text-sm text-muted-foreground">
 									Développer une page dédiée à l'explication détaillée du principe ergonomique.
 								</p>
@@ -261,30 +296,44 @@
 					</CardHeader>
 					<CardContent class="space-y-6">
 						<div>
-							<h3 class="text-xl font-semibold mb-4">Le jeu "Au pas de course !"</h3>
-							<p class="text-muted-foreground leading-relaxed mb-6">
-								Le jeu consiste à réaliser des courses dans des rayons de supermarchés, divisé en deux parties :
+							<h3 class="mb-4 text-xl font-semibold">Le jeu "Au pas de course !"</h3>
+							<p class="mb-6 leading-relaxed text-muted-foreground">
+								Le jeu consiste à réaliser des courses dans des rayons de supermarchés, divisé en
+								deux parties :
 							</p>
-							<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-								<div class="p-4 border rounded-lg">
-									<h4 class="font-semibold mb-2 text-blue-600">Première partie</h4>
-									<p class="text-sm text-muted-foreground">Affichage aléatoire des produits dans les rayons</p>
+							<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+								<div class="rounded-lg border p-4">
+									<h4 class="mb-2 font-semibold text-blue-600">Première partie</h4>
+									<p class="text-sm text-muted-foreground">
+										Affichage aléatoire des produits dans les rayons
+									</p>
 								</div>
-								<div class="p-4 border rounded-lg">
-									<h4 class="font-semibold mb-2 text-green-600">Deuxième partie</h4>
-									<p class="text-sm text-muted-foreground">Affichage organisé selon le principe de groupement</p>
+								<div class="rounded-lg border p-4">
+									<h4 class="mb-2 font-semibold text-green-600">Deuxième partie</h4>
+									<p class="text-sm text-muted-foreground">
+										Affichage organisé selon le principe de groupement
+									</p>
 								</div>
 							</div>
 						</div>
 
 						<div>
-							<h3 class="text-xl font-semibold mb-4">Livrables</h3>
+							<h3 class="mb-4 text-xl font-semibold">Livrables</h3>
 							<div class="space-y-4">
 								{#each deliverables as deliverable}
-									<div class="p-4 border rounded-lg">
+									<div class="rounded-lg border p-4">
 										<div class="flex items-start gap-3">
-											<div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 {deliverable.type === 'professionnel' ? 'bg-blue-100' : 'bg-green-100'}">
-												<span class="text-xs font-semibold {deliverable.type === 'professionnel' ? 'text-blue-600' : 'text-green-600'}">
+											<div
+												class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full {deliverable.type ===
+												'professionnel'
+													? 'bg-blue-100'
+													: 'bg-green-100'}"
+											>
+												<span
+													class="text-xs font-semibold {deliverable.type === 'professionnel'
+														? 'text-blue-600'
+														: 'text-green-600'}"
+												>
 													{deliverable.type === 'professionnel' ? 'P' : 'L'}
 												</span>
 											</div>
@@ -315,14 +364,13 @@
 						<CardTitle class="text-2xl">Technologies utilisées</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+						<div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
 							{#each technologies as tech}
-								<div class="flex items-center gap-3 p-3 border rounded-lg hover:shadow-md transition-shadow">
-									<div 
-										class="w-4 h-4 rounded-full" 
-										style="background-color: {tech.color}"
-									></div>
-									<span class="font-medium text-sm">{tech.name}</span>
+								<div
+									class="flex items-center gap-3 rounded-lg border p-3 transition-shadow hover:shadow-md"
+								>
+									<div class="h-4 w-4 rounded-full" style="background-color: {tech.color}"></div>
+									<span class="text-sm font-medium">{tech.name}</span>
 								</div>
 							{/each}
 						</div>
@@ -345,23 +393,29 @@
 					</CardHeader>
 					<CardContent class="space-y-6">
 						<div>
-							<h3 class="text-xl font-semibold mb-4">Méthode SCRUM</h3>
-							<p class="text-muted-foreground leading-relaxed mb-4">
-								Le projet a été organisé en utilisant la méthode SCRUM, fonctionnant par cycles de deux semaines (sprints). 
-								Chaque sprint comprenait une réunion quotidienne (Daily) pour le suivi des tâches, ainsi qu'une réunion de fin 
-								de sprint combinant Sprint Review, Sprint Retrospective et Sprint Planning.
+							<h3 class="mb-4 text-xl font-semibold">Méthode SCRUM</h3>
+							<p class="mb-4 leading-relaxed text-muted-foreground">
+								Le projet a été organisé en utilisant la méthode SCRUM, fonctionnant par cycles de
+								deux semaines (sprints). Chaque sprint comprenait une réunion quotidienne (Daily)
+								pour le suivi des tâches, ainsi qu'une réunion de fin de sprint combinant Sprint
+								Review, Sprint Retrospective et Sprint Planning.
 							</p>
 						</div>
 
 						<div>
-							<h3 class="text-xl font-semibold mb-4">Équipe de développement</h3>
-							<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+							<h3 class="mb-4 text-xl font-semibold">Équipe de développement</h3>
+							<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 								{#each team as member}
-									<div class="p-4 border rounded-lg">
+									<div class="rounded-lg border p-4">
 										<div class="flex items-start gap-3">
-											<div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
-												<span class="text-white font-semibold text-sm">
-													{member.name.split(' ').map(n => n[0]).join('')}
+											<div
+												class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600"
+											>
+												<span class="text-sm font-semibold text-white">
+													{member.name
+														.split(' ')
+														.map((n) => n[0])
+														.join('')}
 												</span>
 											</div>
 											<div class="flex-1">
@@ -370,7 +424,7 @@
 														{member.name}
 													</a>
 												</h4>
-												<p class="text-sm font-medium text-blue-600 mb-1">{member.role}</p>
+												<p class="mb-1 text-sm font-medium text-blue-600">{member.role}</p>
 												<p class="text-sm text-muted-foreground">{member.description}</p>
 											</div>
 										</div>
@@ -397,14 +451,16 @@
 					</CardHeader>
 					<CardContent>
 						<div class="space-y-4">
-							<p class="text-muted-foreground leading-relaxed">
-								Ce projet m'a permis de développer un jeu illustrant un principe ergonomique numérique, en utilisant des 
-								méthodes agiles et en collaborant avec une équipe de professionnels expérimentés. Cette expérience m'a aidé 
-								à renforcer mes compétences en développement logiciel et en gestion de projet.
+							<p class="leading-relaxed text-muted-foreground">
+								Ce projet m'a permis de développer un jeu illustrant un principe ergonomique
+								numérique, en utilisant des méthodes agiles et en collaborant avec une équipe de
+								professionnels expérimentés. Cette expérience m'a aidé à renforcer mes compétences
+								en développement logiciel et en gestion de projet.
 							</p>
-							<p class="text-muted-foreground leading-relaxed">
-								Le travail en autonomie dans un cadre structuré et la collaboration avec des experts du domaine ont été 
-								des aspects particulièrement enrichissants de cette expérience professionnelle.
+							<p class="leading-relaxed text-muted-foreground">
+								Le travail en autonomie dans un cadre structuré et la collaboration avec des experts
+								du domaine ont été des aspects particulièrement enrichissants de cette expérience
+								professionnelle.
 							</p>
 						</div>
 					</CardContent>

@@ -33,7 +33,6 @@
 	import IconAndroid from '~icons/devicon/android';
 	import IconTailwindcss from '~icons/devicon/tailwindcss';
 
-
 	// Outils de développement
 	import IconVscode from '~icons/devicon/vscode';
 	import IconGit from '~icons/devicon/git';
