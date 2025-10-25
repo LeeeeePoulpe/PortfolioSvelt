@@ -60,7 +60,7 @@
 			title: 'Carnet de Stage',
 			description:
 				"Réparation et amélioration de l'application Android et du site web du carnet de stage IUT2",
-			tags: ['Android', 'Java', 'MySQL', 'Docker'],
+			tags: ['Android', 'Java', 'MySQL', 'Docker', 'Material Design 3'],
 			year: '2024',
 			page: '/projects/carnet-de-stage',
 			links: {}
