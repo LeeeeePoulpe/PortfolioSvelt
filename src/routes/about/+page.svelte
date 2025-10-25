@@ -2,6 +2,8 @@
 	import { Motion } from 'svelte-motion';
 	import { Card, CardContent } from '$lib/components/ui/card/index.js';
 	import { Code2, Palette, Rocket, Users } from '@lucide/svelte';
+	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
 
 	// Langages
 	import IconVuejs from '~icons/devicon/vuejs';
@@ -18,15 +20,19 @@
 	import IconHtml5 from '~icons/devicon/html5';
 	import IconCss3 from '~icons/devicon/css3';
 	import IconBash from '~icons/devicon/bash';
+	import IconBashWhite from '~icons/simple-icons/gnubash';
 
 	// Frameworks & Outils
 	import IconJava from '~icons/devicon/java';
 	import IconSymfony from '~icons/devicon/symfony';
+	import IconSymfonyWhite from '~icons/simple-icons/symfony';
 	import IconPhp from '~icons/devicon/php';
 	import IconMongodb from '~icons/devicon/mongodb';
 	import IconNeo4j from '~icons/simple-icons/neo4j';
 	import IconElasticsearch from '~icons/simple-icons/elasticsearch';
 	import IconAndroid from '~icons/devicon/android';
+	import IconTailwindcss from '~icons/devicon/tailwindcss';
+
 
 	// Outils de développement
 	import IconVscode from '~icons/devicon/vscode';
@@ -42,9 +48,38 @@
 	type Skill = {
 		name: string;
 		icon: any;
+		iconDark?: any;
 		color: string;
+		colorDark?: string;
 		url: string;
 	};
+
+	let isDark = $state(false);
+
+	onMount(() => {
+		if (browser) {
+			isDark = document.documentElement.classList.contains('dark');
+
+			const observer = new MutationObserver(() => {
+				isDark = document.documentElement.classList.contains('dark');
+			});
+
+			observer.observe(document.documentElement, {
+				attributes: true,
+				attributeFilter: ['class']
+			});
+
+			return () => observer.disconnect();
+		}
+	});
+
+	function getSkillIcon(skill: Skill) {
+		return isDark && skill.iconDark ? skill.iconDark : skill.icon;
+	}
+
+	function getSkillColor(skill: Skill) {
+		return isDark && skill.colorDark ? skill.colorDark : skill.color;
+	}
 
 	const languages: Skill[] = [
 		{
@@ -62,12 +97,34 @@
 		{ name: 'Python', icon: IconPython, color: '#3776AB', url: 'https://www.python.org' },
 		{ name: 'Java', icon: IconJava, color: '#007396', url: 'https://www.java.com' },
 		{ name: 'PHP', icon: IconPhp, color: '#777BB4', url: 'https://www.php.net' },
-		{ name: 'C', icon: IconC, color: '#A8B9CC', url: 'https://en.wikipedia.org/wiki/C_(programming_language)' },
+		{
+			name: 'C',
+			icon: IconC,
+			color: '#A8B9CC',
+			url: 'https://en.wikipedia.org/wiki/C_(programming_language)'
+		},
 		{ name: 'C++', icon: IconCplusplus, color: '#00599C', url: 'https://isocpp.org' },
 		{ name: 'SQL', icon: IconSql, color: '#4479A1', url: 'https://www.w3schools.com/sql' },
-		{ name: 'HTML5', icon: IconHtml5, color: '#E34F26', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
-		{ name: 'CSS3', icon: IconCss3, color: '#1572B6', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
-		{ name: 'Bash', icon: IconBash, color: '#4EAA25', url: 'https://www.gnu.org/software/bash' }
+		{
+			name: 'HTML5',
+			icon: IconHtml5,
+			color: '#E34F26',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/HTML'
+		},
+		{
+			name: 'CSS3',
+			icon: IconCss3,
+			color: '#1572B6',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/CSS'
+		},
+		{
+			name: 'Bash',
+			icon: IconBash,
+			iconDark: IconBashWhite,
+			color: '#4EAA25',
+			colorDark: '#89E051',
+			url: 'https://www.gnu.org/software/bash'
+		}
 	];
 
 	const frameworks: Skill[] = [
@@ -76,10 +133,32 @@
 		{ name: 'Angular', icon: IconAngular, color: '#DD0031', url: 'https://angular.io' },
 		{ name: 'Svelte', icon: IconSvelte, color: '#FF3E00', url: 'https://svelte.dev' },
 		{ name: 'Node.js', icon: IconNodejs, color: '#339933', url: 'https://nodejs.org' },
-		{ name: 'Symfony', icon: IconSymfony, color: '#000000', url: 'https://symfony.com' },
+		{
+			name: 'Symfony',
+			icon: IconSymfony,
+			iconDark: IconSymfonyWhite,
+			color: '#000000',
+			colorDark: '#FFFFFF',
+			url: 'https://symfony.com'
+		},
 		{ name: 'Android', icon: IconAndroid, color: '#3DDC84', url: 'https://developer.android.com' },
-		{ name: 'Shadcn/ui', icon: IconShadcn, color: '#000000', url: 'https://ui.shadcn.com' },
+		{
+			name: 'Shadcn/ui',
+			icon: IconShadcn,
+			iconDark: IconShadcn,
+			color: '#000000',
+			colorDark: '#FFFFFF',
+			url: 'https://ui.shadcn.com'
+		},
 		{ name: 'DaisyUI', icon: IconDaisyui, color: '#5A0EF8', url: 'https://daisyui.com' },
+		{
+			name: 'TailwindCSS',
+			icon: IconTailwindcss,
+			iconDark: IconTailwindcss,
+			color: '#06B6D4',
+			colorDark: '#06B6D4',
+			url: 'https://tailwindcss.com'
+		}
 	];
 
 	const tools: Skill[] = [
@@ -88,11 +167,26 @@
 		{ name: 'Docker', icon: IconDocker, color: '#2496ED', url: 'https://www.docker.com' },
 		{ name: 'MongoDB', icon: IconMongodb, color: '#47A248', url: 'https://www.mongodb.com' },
 		{ name: 'Neo4j', icon: IconNeo4j, color: '#4581C3', url: 'https://neo4j.com' },
-		{ name: 'Elasticsearch', icon: IconElasticsearch, color: '#005571', url: 'https://www.elastic.co' },
+		{
+			name: 'Elasticsearch',
+			icon: IconElasticsearch,
+			color: '#005571',
+			url: 'https://www.elastic.co'
+		},
 		{ name: 'Figma', icon: IconFigma, color: '#F24E1E', url: 'https://www.figma.com' },
 		{ name: 'Swagger', icon: IconSwagger, color: '#85EA2D', url: 'https://swagger.io' },
-		{ name: 'Confluence', icon: IconConfluence, color: '#172B4D', url: 'https://www.atlassian.com/software/confluence' },
-		{ name: 'Jira', icon: IconJira, color: '#0052CC', url: 'https://www.atlassian.com/software/jira' }
+		{
+			name: 'Confluence',
+			icon: IconConfluence,
+			color: '#172B4D',
+			url: 'https://www.atlassian.com/software/confluence'
+		},
+		{
+			name: 'Jira',
+			icon: IconJira,
+			color: '#0052CC',
+			url: 'https://www.atlassian.com/software/jira'
+		}
 	];
 
 	const values = [
@@ -167,7 +261,11 @@
 							rel="noopener noreferrer"
 							class="flex-shrink-0 cursor-pointer transition-transform hover:scale-125"
 						>
-							<svelte:component this={skill.icon} class="h-16 w-16" style="color: {skill.color}" />
+							<svelte:component
+								this={getSkillIcon(skill)}
+								class="h-16 w-16"
+								style="color: {getSkillColor(skill)}"
+							/>
 						</a>
 					{/each}
 				</div>
@@ -238,7 +336,11 @@
 							rel="noopener noreferrer"
 							class="flex-shrink-0 cursor-pointer transition-transform hover:scale-125"
 						>
-							<svelte:component this={skill.icon} class="h-16 w-16" style="color: {skill.color}" />
+							<svelte:component
+								this={getSkillIcon(skill)}
+								class="h-16 w-16"
+								style="color: {getSkillColor(skill)}"
+							/>
 						</a>
 					{/each}
 				</div>
@@ -294,7 +396,11 @@
 							rel="noopener noreferrer"
 							class="flex-shrink-0 cursor-pointer transition-transform hover:scale-125"
 						>
-							<svelte:component this={skill.icon} class="h-16 w-16" style="color: {skill.color}" />
+							<svelte:component
+								this={getSkillIcon(skill)}
+								class="h-16 w-16"
+								style="color: {getSkillColor(skill)}"
+							/>
 						</a>
 					{/each}
 				</div>
