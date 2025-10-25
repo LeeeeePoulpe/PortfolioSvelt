@@ -254,17 +254,14 @@
 			>
 				<div class="animate-scroll flex flex-row flex-nowrap gap-12 px-8">
 					{#each [...languages, ...languages, ...languages, ...languages] as skill}
+						{@const SkillIcon = getSkillIcon(skill)}
 						<a
 							href={skill.url}
 							target="_blank"
 							rel="noopener noreferrer"
 							class="flex-shrink-0 cursor-pointer transition-transform hover:scale-125"
 						>
-							<svelte:component
-								this={getSkillIcon(skill)}
-								class="h-16 w-16"
-								style="color: {getSkillColor(skill)}"
-							/>
+							<SkillIcon class="h-16 w-16" style="color: {getSkillColor(skill)}" />
 						</a>
 					{/each}
 				</div>
@@ -292,6 +289,7 @@
 				<h2 class="font-display mb-8 text-3xl font-bold text-foreground">Mes valeurs</h2>
 				<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
 					{#each values as value, index}
+						{@const ValueIcon = value.icon}
 						<Motion
 							let:motion
 							initial={{ opacity: 0, y: 20 }}
@@ -301,7 +299,7 @@
 							<div use:motion>
 								<Card class="h-full transition-shadow hover:shadow-lg">
 									<CardContent class="p-6">
-										<svelte:component this={value.icon} class="mb-4 h-10 w-10 text-secondary" />
+										<ValueIcon class="mb-4 h-10 w-10 text-secondary" />
 										<h3 class="font-display mb-2 text-xl font-semibold text-foreground">
 											{value.title}
 										</h3>
@@ -329,17 +327,14 @@
 			>
 				<div class="animate-scroll flex flex-row flex-nowrap gap-12 px-8">
 					{#each [...frameworks, ...frameworks, ...frameworks, ...frameworks] as skill}
+						{@const SkillIcon = getSkillIcon(skill)}
 						<a
 							href={skill.url}
 							target="_blank"
 							rel="noopener noreferrer"
 							class="flex-shrink-0 cursor-pointer transition-transform hover:scale-125"
 						>
-							<svelte:component
-								this={getSkillIcon(skill)}
-								class="h-16 w-16"
-								style="color: {getSkillColor(skill)}"
-							/>
+							<SkillIcon class="h-16 w-16" style="color: {getSkillColor(skill)}" />
 						</a>
 					{/each}
 				</div>
@@ -389,17 +384,14 @@
 			>
 				<div class="animate-scroll flex flex-row flex-nowrap gap-12 px-8">
 					{#each [...tools, ...tools, ...tools, ...tools] as skill}
+						{@const SkillIcon = getSkillIcon(skill)}
 						<a
 							href={skill.url}
 							target="_blank"
 							rel="noopener noreferrer"
 							class="flex-shrink-0 cursor-pointer transition-transform hover:scale-125"
 						>
-							<svelte:component
-								this={getSkillIcon(skill)}
-								class="h-16 w-16"
-								style="color: {getSkillColor(skill)}"
-							/>
+							<SkillIcon class="h-16 w-16" style="color: {getSkillColor(skill)}" />
 						</a>
 					{/each}
 				</div>
