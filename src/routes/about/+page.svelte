@@ -12,6 +12,12 @@
 	import IconTypescript from '~icons/devicon/typescript';
 	import IconNodejs from '~icons/devicon/nodejs';
 	import IconPython from '~icons/devicon/python';
+	import IconC from '~icons/devicon/c';
+	import IconCplusplus from '~icons/devicon/cplusplus';
+	import IconSql from '~icons/devicon/mysql';
+	import IconHtml5 from '~icons/devicon/html5';
+	import IconCss3 from '~icons/devicon/css3';
+	import IconBash from '~icons/devicon/bash';
 
 	// Frameworks & Outils
 	import IconJava from '~icons/devicon/java';
@@ -31,6 +37,7 @@
 	import IconJira from '~icons/devicon/jira';
 	import IconDocker from '~icons/devicon/docker';
 	import IconShadcn from '~icons/simple-icons/shadcnui';
+	import IconDaisyui from '~icons/simple-icons/daisyui';
 
 	type Skill = {
 		name: string;
@@ -54,7 +61,13 @@
 		},
 		{ name: 'Python', icon: IconPython, color: '#3776AB', url: 'https://www.python.org' },
 		{ name: 'Java', icon: IconJava, color: '#007396', url: 'https://www.java.com' },
-		{ name: 'PHP', icon: IconPhp, color: '#777BB4', url: 'https://www.php.net' }
+		{ name: 'PHP', icon: IconPhp, color: '#777BB4', url: 'https://www.php.net' },
+		{ name: 'C', icon: IconC, color: '#A8B9CC', url: 'https://en.wikipedia.org/wiki/C_(programming_language)' },
+		{ name: 'C++', icon: IconCplusplus, color: '#00599C', url: 'https://isocpp.org' },
+		{ name: 'SQL', icon: IconSql, color: '#4479A1', url: 'https://www.w3schools.com/sql' },
+		{ name: 'HTML5', icon: IconHtml5, color: '#E34F26', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+		{ name: 'CSS3', icon: IconCss3, color: '#1572B6', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+		{ name: 'Bash', icon: IconBash, color: '#4EAA25', url: 'https://www.gnu.org/software/bash' }
 	];
 
 	const frameworks: Skill[] = [
@@ -64,7 +77,9 @@
 		{ name: 'Svelte', icon: IconSvelte, color: '#FF3E00', url: 'https://svelte.dev' },
 		{ name: 'Node.js', icon: IconNodejs, color: '#339933', url: 'https://nodejs.org' },
 		{ name: 'Symfony', icon: IconSymfony, color: '#000000', url: 'https://symfony.com' },
-		{ name: 'Android', icon: IconAndroid, color: '#3DDC84', url: 'https://developer.android.com' }
+		{ name: 'Android', icon: IconAndroid, color: '#3DDC84', url: 'https://developer.android.com' },
+		{ name: 'Shadcn/ui', icon: IconShadcn, color: '#000000', url: 'https://ui.shadcn.com' },
+		{ name: 'DaisyUI', icon: IconDaisyui, color: '#5A0EF8', url: 'https://daisyui.com' },
 	];
 
 	const tools: Skill[] = [
@@ -77,8 +92,7 @@
 		{ name: 'Figma', icon: IconFigma, color: '#F24E1E', url: 'https://www.figma.com' },
 		{ name: 'Swagger', icon: IconSwagger, color: '#85EA2D', url: 'https://swagger.io' },
 		{ name: 'Confluence', icon: IconConfluence, color: '#172B4D', url: 'https://www.atlassian.com/software/confluence' },
-		{ name: 'Jira', icon: IconJira, color: '#0052CC', url: 'https://www.atlassian.com/software/jira' },
-		{ name: 'Shadcn/ui', icon: IconShadcn, color: '#000000', url: 'https://ui.shadcn.com' }
+		{ name: 'Jira', icon: IconJira, color: '#0052CC', url: 'https://www.atlassian.com/software/jira' }
 	];
 
 	const values = [
