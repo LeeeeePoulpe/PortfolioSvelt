@@ -14,12 +14,12 @@
 	} from '@lucide/svelte';
 
 	const technologies = [
-		{ name: 'Vue.js 3', color: '#4FC08D' },
-		{ name: 'JavaScript', color: '#F7DF1E' },
-		{ name: 'Vuetify', color: '#1867C0' },
-		{ name: 'GitLab', color: '#FCA326' },
-		{ name: 'Figma', color: '#F24E1E' },
-		{ name: 'IntelliJ IDEA', color: '#000000' }
+		{ name: 'Vue.js 3', color: '#4FC08D', url: 'https://vuejs.org/' },
+		{ name: 'JavaScript', color: '#F7DF1E', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+		{ name: 'Vuetify', color: '#1867C0', url: 'https://vuetifyjs.com/' },
+		{ name: 'GitLab', color: '#FCA326', url: 'https://about.gitlab.com/' },
+		{ name: 'Figma', color: '#F24E1E', url: 'https://www.figma.com/' },
+		{ name: 'IntelliJ IDEA', color: '#000000', url: 'https://www.jetbrains.com/idea/' }
 	];
 
 	const deliverables = [
@@ -135,7 +135,7 @@
 							</Badge>
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<Lightbulb class="h-3 w-3" />
-								Principe ergonomique
+								Principe ergonomique du web
 							</Badge>
 						</div>
 					</div>
@@ -366,12 +366,14 @@
 					<CardContent>
 						<div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
 							{#each technologies as tech}
-								<div
+								<a
+									href={tech.url}
+									target="_blank"
 									class="flex items-center gap-3 rounded-lg border p-3 transition-shadow hover:shadow-md"
 								>
 									<div class="h-4 w-4 rounded-full" style="background-color: {tech.color}"></div>
 									<span class="text-sm font-medium">{tech.name}</span>
-								</div>
+								</a>
 							{/each}
 						</div>
 					</CardContent>

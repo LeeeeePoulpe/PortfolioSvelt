@@ -8,20 +8,20 @@
 		Calendar,
 		Users,
 		Code,
-		Database,
 		GitBranch,
-		ArrowLeft
+		ArrowLeft,
+		Zap
 	} from '@lucide/svelte';
 
 	const technologies = [
-		{ name: 'React', color: '#61DAFB' },
-		{ name: 'TypeScript', color: '#3178C6' },
-		{ name: 'Excalidraw', color: '#000000' },
-		{ name: 'GitLab', color: '#FCA326' },
-		{ name: 'Docker', color: '#2496ED' },
-		{ name: 'Shadcn/ui', color: '#000000' },
-		{ name: 'Slack', color: '#4A154B' },
-		{ name: 'Jira', color: '#0052CC' }
+		{ name: 'React', color: '#61DAFB', url: 'https://react.dev/' },
+		{ name: 'TypeScript', color: '#3178C6', url: 'https://www.typescriptlang.org/' },
+		{ name: 'Excalidraw', color: '#000000', url: 'https://excalidraw.com/' },
+		{ name: 'GitLab', color: '#FCA326', url: 'https://about.gitlab.com/' },
+		{ name: 'Docker', color: '#2496ED', url: 'https://www.docker.com/' },
+		{ name: 'Shadcn/ui', color: '#000000', url: 'https://ui.shadcn.com/' },
+		{ name: 'Slack', color: '#4A154B', url: 'https://slack.com/' },
+		{ name: 'Jira', color: '#0052CC', url: 'https://www.atlassian.com/software/jira' }
 	];
 
 	const achievements = [
@@ -106,10 +106,6 @@
 						</p>
 						<div class="mb-6 flex flex-wrap gap-2">
 							<Badge variant="secondary" class="flex items-center gap-1">
-								<Calendar class="h-3 w-3" />
-								Septembre 2024 - En cours
-							</Badge>
-							<Badge variant="secondary" class="flex items-center gap-1">
 								<Users class="h-3 w-3" />
 								Équipe technique
 							</Badge>
@@ -120,6 +116,22 @@
 						</div>
 					</div>
 					<div class="flex w-full flex-col gap-4 lg:w-80">
+						<a
+							href="https://www.enogrid.com/"
+							target="_blank"
+							class="group rounded-lg border p-4 transition-all hover:shadow-lg"
+						>
+							<div class="flex items-center gap-3">
+								<Zap class="h-8 w-8 text-emerald-500" />
+								<div>
+									<h3 class="font-semibold">Enogrid</h3>
+									<p class="text-sm text-muted-foreground">Transition énergétique</p>
+								</div>
+								<ExternalLink
+									class="ml-auto h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"
+								/>
+							</div>
+						</a>
 						<a
 							href="https://monenergiecollective.fr/"
 							target="_blank"
@@ -140,11 +152,7 @@
 								/>
 							</div>
 						</a>
-						<a
-							href="https://enoconso.fr/"
-							target="_blank"
-							class="group rounded-lg border p-4 transition-all hover:shadow-lg"
-						>
+						<div class="rounded-lg border p-4">
 							<div class="flex items-center gap-3">
 								<div
 									class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600"
@@ -155,11 +163,8 @@
 									<h3 class="font-semibold">EnoConso</h3>
 									<p class="text-sm text-muted-foreground">Suivi de consommation</p>
 								</div>
-								<ExternalLink
-									class="ml-auto h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"
-								/>
 							</div>
-						</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -175,7 +180,7 @@
 			<div use:motion class="mb-16">
 				<Card>
 					<CardHeader>
-						<CardTitle class="text-2xl">Semestre 1: Mon Energie Collective</CardTitle>
+						<CardTitle class="text-2xl">Semestre 1 : Mon Energie Collective</CardTitle>
 					</CardHeader>
 					<CardContent class="space-y-6">
 						<div>
@@ -283,12 +288,14 @@
 					<CardContent>
 						<div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
 							{#each technologies as tech}
-								<div
+								<a
+									href={tech.url}
+									target="_blank"
 									class="flex items-center gap-3 rounded-lg border p-3 transition-shadow hover:shadow-md"
 								>
 									<div class="h-4 w-4 rounded-full" style="background-color: {tech.color}"></div>
 									<span class="font-medium">{tech.name}</span>
-								</div>
+								</a>
 							{/each}
 						</div>
 					</CardContent>
@@ -323,7 +330,17 @@
 										Équipe technique
 									</h4>
 									<ul class="space-y-1 text-sm text-muted-foreground">
-										<li>• Thomas Gaillot - Tuteur & Développeur front-end</li>
+										<li>
+											•
+											<a
+												href="https://www.linkedin.com/in/thomas-gaillot/"
+												target="_blank"
+												class="text-primary hover:underline"
+											>
+												Thomas Gaillot
+											</a>
+											- Tuteur & Développeur front-end
+										</li>
 										<li>• Product Owner - Définition des sprints</li>
 										<li>• Testeurs - Validation des fonctionnalités</li>
 										<li>• Développeurs Back-end - Intégration</li>
@@ -335,7 +352,16 @@
 										Processus de développement
 									</h4>
 									<ul class="space-y-1 text-sm text-muted-foreground">
-										<li>• Maquettes sur Excalidraw</li>
+										<li>
+											• Maquettes sur
+											<a
+												href="https://excalidraw.com/"
+												target="_blank"
+												class="text-primary hover:underline"
+											>
+												Excalidraw
+											</a>
+										</li>
 										<li>• POC en local</li>
 										<li>• Intégration back-end</li>
 										<li>• Tests sur Kraken</li>

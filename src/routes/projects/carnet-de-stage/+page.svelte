@@ -14,11 +14,11 @@
 	} from '@lucide/svelte';
 
 	const technologies = [
-		{ name: 'Android', color: '#3DDC84' },
-		{ name: 'Java', color: '#007396' },
-		{ name: 'MySQL', color: '#4479A1' },
-		{ name: 'Docker', color: '#2496ED' },
-		{ name: 'Git', color: '#F05032' }
+		{ name: 'Android', color: '#3DDC84', url: 'https://developer.android.com/' },
+		{ name: 'Java', color: '#007396', url: 'https://www.java.com/' },
+		{ name: 'MySQL', color: '#4479A1', url: 'https://www.mysql.com/' },
+		{ name: 'Docker', color: '#2496ED', url: 'https://www.docker.com/' },
+		{ name: 'Git', color: '#F05032', url: 'https://git-scm.com/' }
 	];
 
 	const improvements = [
@@ -251,12 +251,59 @@
 			</div>
 		</Motion>
 
+		<!-- Organisation de l'équipe -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.5 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Organisation de l'équipe</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+							<div class="rounded-lg border p-4">
+								<div class="mb-3 flex items-center gap-3">
+									<Smartphone class="h-6 w-6 text-green-500" />
+									<h4 class="font-semibold">Application Android</h4>
+								</div>
+								<p class="text-sm text-muted-foreground">
+									2 développeurs concentrés sur l'amélioration de l'application mobile
+								</p>
+							</div>
+							<div class="rounded-lg border p-4">
+								<div class="mb-3 flex items-center gap-3">
+									<Monitor class="h-6 w-6 text-blue-500" />
+									<h4 class="font-semibold">Application Web (Symfony)</h4>
+								</div>
+								<p class="text-sm text-muted-foreground">
+									4 développeurs dédiés au développement et à l'amélioration de la plateforme web
+								</p>
+							</div>
+						</div>
+
+						<div class="mt-6 rounded-lg border border-green-200 bg-green-50 p-4">
+							<p class="text-sm text-muted-foreground">
+								<span class="font-medium">Mon rôle :</span> Développeur Android - J'ai travaillé sur
+								l'amélioration de l'application mobile, en optimisant le cycle de vie, en corrigeant
+								des bugs tout en ajoutant de nouvelles fonctionnalités pour améliorer l'expérience
+								utilisateur.
+							</p>
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
 		<!-- Réalisations -->
 		<Motion
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.6 }}
+			transition={{ duration: 0.6, delay: 0.7 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -295,7 +342,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.8 }}
+			transition={{ duration: 0.6, delay: 0.9 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -305,12 +352,14 @@
 					<CardContent>
 						<div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
 							{#each technologies as tech}
-								<div
+								<a
+									href={tech.url}
+									target="_blank"
 									class="flex items-center gap-3 rounded-lg border p-3 transition-shadow hover:shadow-md"
 								>
 									<div class="h-4 w-4 rounded-full" style="background-color: {tech.color}"></div>
 									<span class="font-medium">{tech.name}</span>
-								</div>
+								</a>
 							{/each}
 						</div>
 					</CardContent>
@@ -323,7 +372,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 1.0 }}
+			transition={{ duration: 0.6, delay: 1.1 }}
 		>
 			<div use:motion>
 				<Card>

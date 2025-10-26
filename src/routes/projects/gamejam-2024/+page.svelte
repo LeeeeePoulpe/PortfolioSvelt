@@ -6,8 +6,8 @@
 	import { ExternalLink, Calendar, Users, Gamepad2, Network, Zap, ArrowLeft } from '@lucide/svelte';
 
 	const technologies = [
-		{ name: 'Python', color: '#3776AB' },
-		{ name: 'PyGame', color: '#FF6B6B' }
+		{ name: 'Python', color: '#3776AB', url: 'https://www.python.org/' },
+		{ name: 'PyGame', color: '#FF6B6B', url: 'https://www.pygame.org/' }
 	];
 
 	const nations = [
@@ -305,6 +305,12 @@
 									</p>
 								</div>
 							</div>
+							<div class="mt-4 rounded-lg border border-blue-200 bg-blue-50 p-3">
+								<p class="text-sm text-muted-foreground">
+									<span class="font-medium">Mon rôle :</span> Développeur gameplay - J'ai contribué au développement
+									des cartes, de la physique, des menus et du système de chronométrage.
+								</p>
+							</div>
 						</div>
 					</CardContent>
 				</Card>
@@ -414,12 +420,14 @@
 					<CardContent>
 						<div class="grid grid-cols-2 gap-4 md:grid-cols-4">
 							{#each technologies as tech}
-								<div
+								<a
+									href={tech.url}
+									target="_blank"
 									class="flex items-center gap-3 rounded-lg border p-4 transition-shadow hover:shadow-md"
 								>
 									<div class="h-6 w-6 rounded-full" style="background-color: {tech.color}"></div>
 									<span class="font-medium">{tech.name}</span>
-								</div>
+								</a>
 							{/each}
 						</div>
 					</CardContent>

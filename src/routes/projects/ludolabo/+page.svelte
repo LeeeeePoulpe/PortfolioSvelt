@@ -9,16 +9,14 @@
 		Users,
 		GraduationCap,
 		Gamepad2,
-		Monitor,
-		Database,
 		ArrowLeft
 	} from '@lucide/svelte';
 
 	const technologies = [
-		{ name: 'Vue.js', color: '#4FC08D' },
-		{ name: 'Tailwind CSS', color: '#06B6D4' },
-		{ name: 'PrelineUI', color: '#8B5CF6' },
-		{ name: 'Unity', color: '#000000' }
+		{ name: 'Vue.js', color: '#4FC08D', url: 'https://vuejs.org/' },
+		{ name: 'Tailwind CSS', color: '#06B6D4', url: 'https://tailwindcss.com/' },
+		{ name: 'PrelineUI', color: '#8B5CF6', url: 'https://preline.co/' },
+		{ name: 'Unity', color: '#000000', url: 'https://unity.com/' }
 	];
 
 	const worlds = [
@@ -113,11 +111,11 @@
 						<div class="mb-6 flex flex-wrap gap-2">
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<Calendar class="h-3 w-3" />
-								Semestre 3 BUT
+								2e année de BUT
 							</Badge>
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<Users class="h-3 w-3" />
-								Équipe de 8
+								Équipe de 8 personnes
 							</Badge>
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<GraduationCap class="h-3 w-3" />
@@ -388,12 +386,14 @@
 					<CardContent>
 						<div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
 							{#each technologies as tech}
-								<div
+								<a
+									href={tech.url}
+									target="_blank"
 									class="flex items-center gap-3 rounded-lg border p-3 transition-shadow hover:shadow-md"
 								>
 									<div class="h-4 w-4 rounded-full" style="background-color: {tech.color}"></div>
 									<span class="text-sm font-medium">{tech.name}</span>
-								</div>
+								</a>
 							{/each}
 						</div>
 					</CardContent>

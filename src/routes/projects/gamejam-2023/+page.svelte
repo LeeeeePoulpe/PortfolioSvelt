@@ -6,8 +6,8 @@
 	import { ExternalLink, Calendar, Users, Gamepad2, Code, Zap, ArrowLeft } from '@lucide/svelte';
 
 	const technologies = [
-		{ name: 'Python', color: '#3776AB' },
-		{ name: 'PyGame', color: '#FF6B6B' }
+		{ name: 'Python', color: '#3776AB', url: 'https://www.python.org/' },
+		{ name: 'PyGame', color: '#FF6B6B', url: 'https://www.pygame.org/' }
 	];
 
 	const gameFeatures = [
@@ -346,12 +346,14 @@
 					<CardContent>
 						<div class="grid grid-cols-2 gap-4 md:grid-cols-4">
 							{#each technologies as tech}
-								<div
+								<a
+									href={tech.url}
+									target="_blank"
 									class="flex items-center gap-3 rounded-lg border p-4 transition-shadow hover:shadow-md"
 								>
 									<div class="h-6 w-6 rounded-full" style="background-color: {tech.color}"></div>
 									<span class="font-medium">{tech.name}</span>
-								</div>
+								</a>
 							{/each}
 						</div>
 					</CardContent>
