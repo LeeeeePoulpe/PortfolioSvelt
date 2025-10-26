@@ -229,9 +229,9 @@
 						<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
 							<div class="rounded-lg border p-4 text-center">
 								<div
-									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100"
+									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/10 dark:bg-blue-500/20"
 								>
-									<Target class="h-6 w-6 text-blue-600" />
+									<Target class="h-6 w-6 text-blue-600 dark:text-blue-400" />
 								</div>
 								<h3 class="mb-2 font-semibold">Créer un jeu complet</h3>
 								<p class="text-sm text-muted-foreground">
@@ -241,9 +241,9 @@
 							</div>
 							<div class="rounded-lg border p-4 text-center">
 								<div
-									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-green-100"
+									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-green-500/10 dark:bg-green-500/20"
 								>
-									<Code class="h-6 w-6 text-green-600" />
+									<Code class="h-6 w-6 text-green-600 dark:text-green-400" />
 								</div>
 								<h3 class="mb-2 font-semibold">Apprendre Python</h3>
 								<p class="text-sm text-muted-foreground">
@@ -252,9 +252,9 @@
 							</div>
 							<div class="rounded-lg border p-4 text-center">
 								<div
-									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-purple-100"
+									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-purple-500/10 dark:bg-purple-500/20"
 								>
-									<Clock class="h-6 w-6 text-purple-600" />
+									<Clock class="h-6 w-6 text-purple-600 dark:text-purple-400" />
 								</div>
 								<h3 class="mb-2 font-semibold">Respecter les contraintes</h3>
 								<p class="text-sm text-muted-foreground">
@@ -302,7 +302,7 @@
 							</div>
 						</div>
 
-						<div class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
+						<div class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/10">
 							<p class="text-sm text-muted-foreground">
 								<span class="font-medium">Mon rôle :</span> Développeur du niveau - J'ai réalisé
 								l'intégralité du niveau représentant l'étage de l'IUT avec toutes les salles de boss,
@@ -310,7 +310,7 @@
 							</p>
 						</div>
 
-						<div class="mt-6 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4">
+						<div class="mt-6 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4 dark:from-green-500/10 dark:to-blue-500/10">
 							<h4 class="mb-3 font-semibold">Défi technique</h4>
 							<p class="text-sm text-muted-foreground">
 								Travailler quatre jours consécutifs sur Python et PyGame, des technologies que nous ne
@@ -346,7 +346,7 @@
 							{/each}
 						</div>
 
-						<div class="mt-6 rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 p-4">
+						<div class="mt-6 rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 p-4 dark:from-purple-500/10 dark:to-pink-500/10">
 							<h4 class="mb-3 font-semibold">Mécaniques de gameplay</h4>
 							<div class="grid grid-cols-1 gap-4 text-sm md:grid-cols-3">
 								<div>

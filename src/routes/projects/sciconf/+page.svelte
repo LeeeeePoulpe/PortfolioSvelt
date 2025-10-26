@@ -309,7 +309,7 @@
 							</div>
 						</div>
 
-						<div class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
+						<div class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/10">
 							<p class="text-sm text-muted-foreground">
 								<span class="font-medium">Mon rôle :</span> Développeur Front-end - J'ai participé au
 								développement des interfaces utilisateur avec JavaFX, en travaillant sur l'ergonomie et
@@ -317,7 +317,7 @@
 							</p>
 						</div>
 
-						<div class="mt-4 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4">
+						<div class="mt-4 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4 dark:from-green-500/10 dark:to-blue-500/10">
 							<p class="text-sm text-muted-foreground">
 								Le travail d'équipe et la communication ont été des éléments clés pour le respect des
 								délais imposés par l'IUT et la conformité aux contraintes techniques. La répartition
@@ -377,7 +377,7 @@
 							{/each}
 						</div>
 
-						<div class="rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4">
+						<div class="rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4 dark:from-green-500/10 dark:to-blue-500/10">
 							<h4 class="mb-3 font-semibold">Succès du projet</h4>
 							<p class="text-sm text-muted-foreground">
 								Nous avons réussi à développer cette application grâce à notre travail d'équipe et à

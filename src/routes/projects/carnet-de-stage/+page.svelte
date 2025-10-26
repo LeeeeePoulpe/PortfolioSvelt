@@ -285,7 +285,7 @@
 							</div>
 						</div>
 
-						<div class="mt-6 rounded-lg border border-green-200 bg-green-50 p-4">
+						<div class="mt-6 rounded-lg border border-green-200 bg-green-50 p-4 dark:border-green-500/30 dark:bg-green-500/10">
 							<p class="text-sm text-muted-foreground">
 								<span class="font-medium">Mon rôle :</span> Développeur Android - J'ai travaillé sur
 								l'amélioration de l'application mobile, en optimisant le cycle de vie, en corrigeant
@@ -323,7 +323,7 @@
 							{/each}
 						</div>
 
-						<div class="mt-8 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 p-6">
+						<div class="mt-8 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 p-6 dark:from-blue-500/10 dark:to-indigo-500/10">
 							<h4 class="mb-3 font-semibold">Résultat final</h4>
 							<p class="text-muted-foreground">
 								Nous avons livré une application plus performante et plus conviviale, prête à

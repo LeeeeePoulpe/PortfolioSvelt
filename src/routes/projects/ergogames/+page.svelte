@@ -323,7 +323,7 @@
 							{/each}
 						</div>
 
-						<div class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
+						<div class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/10">
 							<p class="text-sm text-muted-foreground">
 								<span class="font-medium">Mon rôle :</span> Stagiaire développeur - J'ai développé le
 								sixième jeu "Au pas de course !" illustrant le principe ergonomique du

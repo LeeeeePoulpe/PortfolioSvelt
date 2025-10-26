@@ -242,7 +242,7 @@
 							{/each}
 						</div>
 
-						<div class="mt-6 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 p-4">
+						<div class="mt-6 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 p-4 dark:from-blue-500/10 dark:to-purple-500/10">
 							<h4 class="mb-3 font-semibold">Nations et capacités</h4>
 							<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 								{#each nations as nation}
@@ -289,7 +289,7 @@
 							{/each}
 						</div>
 
-						<div class="mt-6 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4">
+						<div class="mt-6 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4 dark:from-green-500/10 dark:to-blue-500/10">
 							<h4 class="mb-3 font-semibold">Répartition des tâches</h4>
 							<div class="grid grid-cols-1 gap-4 text-sm md:grid-cols-2">
 								<div>
@@ -305,7 +305,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="mt-4 rounded-lg border border-blue-200 bg-blue-50 p-3">
+							<div class="mt-4 rounded-lg border border-blue-200 bg-blue-50 p-3 dark:border-blue-500/30 dark:bg-blue-500/10">
 								<p class="text-sm text-muted-foreground">
 									<span class="font-medium">Mon rôle :</span> Développeur gameplay - J'ai contribué au développement
 									des cartes, de la physique, des menus et du système de chronométrage.
@@ -385,7 +385,7 @@
 							</p>
 						</div>
 
-						<div class="rounded-lg bg-gradient-to-r from-yellow-50 to-orange-50 p-4">
+						<div class="rounded-lg bg-gradient-to-r from-yellow-50 to-orange-50 p-4 dark:from-yellow-500/10 dark:to-orange-500/10">
 							<h4 class="mb-3 font-semibold">Défis relevés</h4>
 							<div class="grid grid-cols-1 gap-4 text-sm md:grid-cols-2">
 								<div>

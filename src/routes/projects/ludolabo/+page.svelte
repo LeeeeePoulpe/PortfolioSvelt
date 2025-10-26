@@ -252,7 +252,7 @@
 							</div>
 						</div>
 
-						<div class="mt-6 rounded-lg border border-green-200 bg-green-50 p-4">
+						<div class="mt-6 rounded-lg border border-green-200 bg-green-50 p-4 dark:border-green-500/30 dark:bg-green-500/10">
 							<p class="text-sm text-muted-foreground">
 								<span class="font-medium">Équipe :</span> Projet réalisé en équipe de 8 personnes avec
 								une répartition claire entre le développement web (Vue.js) et le développement des jeux
@@ -287,7 +287,7 @@
 							{/each}
 						</div>
 
-						<div class="mt-6 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 p-4">
+						<div class="mt-6 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 p-4 dark:from-blue-500/10 dark:to-purple-500/10">
 							<h4 class="mb-3 font-semibold">Mondes de révision</h4>
 							<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 								{#each worlds as world}
@@ -365,7 +365,7 @@
 							</div>
 						</div>
 
-						<div class="rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4">
+						<div class="rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4 dark:from-green-500/10 dark:to-blue-500/10">
 							<h4 class="mb-3 font-semibold">Fonctionnalités avancées</h4>
 							<div class="grid grid-cols-1 gap-4 text-sm md:grid-cols-2">
 								<div>
@@ -407,7 +407,7 @@
 							{/each}
 						</div>
 
-						<div class="mt-6 rounded-lg bg-gradient-to-r from-yellow-50 to-orange-50 p-4">
+						<div class="mt-6 rounded-lg bg-gradient-to-r from-yellow-50 to-orange-50 p-4 dark:from-yellow-500/10 dark:to-orange-500/10">
 							<h4 class="mb-3 font-semibold">Décision technique importante</h4>
 							<p class="text-sm text-muted-foreground">
 								Initialement prévu avec Faser.js, nous avons finalement décidé de réaliser le jeu en
