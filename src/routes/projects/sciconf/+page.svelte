@@ -119,7 +119,7 @@
 						<div class="mb-6 flex flex-wrap gap-2">
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<Calendar class="h-3 w-3" />
-								Semestre 2 BUT
+								1ère année de BUT
 							</Badge>
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<Users class="h-3 w-3" />
@@ -287,12 +287,41 @@
 						<CardTitle class="text-2xl">Organisation de l'équipe</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<div class="rounded-lg border border-blue-200 bg-blue-50 p-4">
+						<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+							<div class="rounded-lg border p-4">
+								<div class="mb-3 flex items-center gap-3">
+									<Database class="h-6 w-6 text-blue-500" />
+									<h4 class="font-semibold">Développeurs Front-end (JavaFX)</h4>
+								</div>
+								<p class="text-sm text-muted-foreground">
+									2 développeurs concentrés sur le développement des interfaces utilisateur avec JavaFX
+								</p>
+							</div>
+							<div class="rounded-lg border p-4">
+								<div class="mb-3 flex items-center gap-3">
+									<Code class="h-6 w-6 text-green-500" />
+									<h4 class="font-semibold">Développeurs Back-end & BDD</h4>
+								</div>
+								<p class="text-sm text-muted-foreground">
+									3 développeurs dédiés au développement du back-end en Java et de la base de données
+									MySQL
+								</p>
+							</div>
+						</div>
+
+						<div class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
 							<p class="text-sm text-muted-foreground">
-								<span class="font-medium">Équipe :</span> Projet réalisé en équipe de 5 étudiants avec
-								une répartition équitable des tâches en fonction des compétences de chacun. Le travail
-								d'équipe et la communication ont été des éléments clés pour le respect des délais
-								imposés par l'IUT et la conformité aux contraintes techniques.
+								<span class="font-medium">Mon rôle :</span> Développeur Front-end - J'ai participé au
+								développement des interfaces utilisateur avec JavaFX, en travaillant sur l'ergonomie et
+								l'expérience utilisateur de l'application de gestion de conférences scientifiques.
+							</p>
+						</div>
+
+						<div class="mt-4 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4">
+							<p class="text-sm text-muted-foreground">
+								Le travail d'équipe et la communication ont été des éléments clés pour le respect des
+								délais imposés par l'IUT et la conformité aux contraintes techniques. La répartition
+								équitable des tâches en fonction des compétences de chacun a permis le succès du projet.
 							</p>
 						</div>
 					</CardContent>
