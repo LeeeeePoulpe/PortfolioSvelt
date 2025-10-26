@@ -14,9 +14,9 @@
 	} from '@lucide/svelte';
 
 	const technologies = [
-		{ name: 'Java', color: '#007396' },
-		{ name: 'JavaFX', color: '#FF6B6B' },
-		{ name: 'MySQL', color: '#4479A1' }
+		{ name: 'Java', color: '#007396', url: 'https://www.java.com/' },
+		{ name: 'JavaFX', color: '#FF6B6B', url: 'https://openjfx.io/' },
+		{ name: 'MySQL', color: '#4479A1', url: 'https://www.mysql.com/' }
 	];
 
 	const projectSteps = [
@@ -274,12 +274,38 @@
 			</div>
 		</Motion>
 
+		<!-- Organisation de l'équipe -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.5 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Organisation de l'équipe</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div class="rounded-lg border border-blue-200 bg-blue-50 p-4">
+							<p class="text-sm text-muted-foreground">
+								<span class="font-medium">Équipe :</span> Projet réalisé en équipe de 5 étudiants avec
+								une répartition équitable des tâches en fonction des compétences de chacun. Le travail
+								d'équipe et la communication ont été des éléments clés pour le respect des délais
+								imposés par l'IUT et la conformité aux contraintes techniques.
+							</p>
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
 		<!-- Fonctionnalités -->
 		<Motion
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.6 }}
+			transition={{ duration: 0.6, delay: 0.7 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -305,7 +331,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.8 }}
+			transition={{ duration: 0.6, delay: 0.9 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -341,7 +367,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 1.0 }}
+			transition={{ duration: 0.6, delay: 1.1 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -351,12 +377,14 @@
 					<CardContent>
 						<div class="grid grid-cols-2 gap-4 md:grid-cols-3">
 							{#each technologies as tech}
-								<div
+								<a
+									href={tech.url}
+									target="_blank"
 									class="flex items-center gap-3 rounded-lg border p-3 transition-shadow hover:shadow-md"
 								>
 									<div class="h-4 w-4 rounded-full" style="background-color: {tech.color}"></div>
 									<span class="font-medium">{tech.name}</span>
-								</div>
+								</a>
 							{/each}
 						</div>
 					</CardContent>
@@ -369,7 +397,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 1.2 }}
+			transition={{ duration: 0.6, delay: 1.3 }}
 		>
 			<div use:motion>
 				<Card>

@@ -3,7 +3,18 @@
 	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { ExternalLink, Calendar, Users, Gamepad2, Code, Zap, ArrowLeft } from '@lucide/svelte';
+	import {
+		ExternalLink,
+		Calendar,
+		Users,
+		Gamepad2,
+		Code,
+		Zap,
+		ArrowLeft,
+		Target,
+		Clock,
+		Trophy
+	} from '@lucide/svelte';
 
 	const technologies = [
 		{ name: 'Python', color: '#3776AB', url: 'https://www.python.org/' },
@@ -202,7 +213,7 @@
 			</div>
 		</Motion>
 
-		<!-- Déroulé -->
+		<!-- Objectifs -->
 		<Motion
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
@@ -212,49 +223,101 @@
 			<div use:motion class="mb-16">
 				<Card>
 					<CardHeader>
-						<CardTitle class="text-2xl">Déroulé du projet</CardTitle>
+						<CardTitle class="text-2xl">Objectifs du projet</CardTitle>
 					</CardHeader>
-					<CardContent class="space-y-6">
+					<CardContent>
+						<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+							<div class="rounded-lg border p-4 text-center">
+								<div
+									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100"
+								>
+									<Target class="h-6 w-6 text-blue-600" />
+								</div>
+								<h3 class="mb-2 font-semibold">Créer un jeu complet</h3>
+								<p class="text-sm text-muted-foreground">
+									Développer un jeu vidéo fonctionnel avec niveau, boss et mécaniques de jeu en une
+									semaine.
+								</p>
+							</div>
+							<div class="rounded-lg border p-4 text-center">
+								<div
+									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-green-100"
+								>
+									<Code class="h-6 w-6 text-green-600" />
+								</div>
+								<h3 class="mb-2 font-semibold">Apprendre Python</h3>
+								<p class="text-sm text-muted-foreground">
+									Découvrir et maîtriser Python et PyGame, technologies non enseignées dans le cursus.
+								</p>
+							</div>
+							<div class="rounded-lg border p-4 text-center">
+								<div
+									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-purple-100"
+								>
+									<Clock class="h-6 w-6 text-purple-600" />
+								</div>
+								<h3 class="mb-2 font-semibold">Respecter les contraintes</h3>
+								<p class="text-sm text-muted-foreground">
+									Livrer un jeu respectant le thème imposé et les délais de la GameJam en 4 jours.
+								</p>
+							</div>
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
+		<!-- Organisation de l'équipe -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.6 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Organisation de l'équipe</CardTitle>
+					</CardHeader>
+					<CardContent>
 						<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
 							<div class="rounded-lg border p-4">
-								<h3 class="mb-3 flex items-center gap-2 text-lg font-semibold">
-									<Code class="h-5 w-5 text-blue-500" />
-									Apprentissage Python
-								</h3>
+								<div class="mb-3 flex items-center gap-3">
+									<Code class="h-6 w-6 text-blue-500" />
+									<h4 class="font-semibold">Développeurs du niveau</h4>
+								</div>
 								<p class="text-sm text-muted-foreground">
-									Travailler quatre jours consécutifs sur une nouvelle technologie que nous ne
-									connaissions pas était un réel défi, mais aussi une expérience enrichissante.
+									Création de l'intégralité du niveau, des salles de boss, et du système
+									d'animation du joueur
 								</p>
 							</div>
 							<div class="rounded-lg border p-4">
-								<h3 class="mb-3 flex items-center gap-2 text-lg font-semibold">
-									<Users class="h-5 w-5 text-green-500" />
-									Travail d'équipe
-								</h3>
+								<div class="mb-3 flex items-center gap-3">
+									<Gamepad2 class="h-6 w-6 text-green-500" />
+									<h4 class="font-semibold">Développeurs gameplay</h4>
+								</div>
 								<p class="text-sm text-muted-foreground">
-									L'objectif était aussi de nous faire apprendre le Python au sein de l'IUT, car
-									c'est une matière qui n'est pas enseignée dans le cursus.
+									Système de combat avec barre de rythme, mécaniques de jeu et boss final
 								</p>
 							</div>
 						</div>
 
-						<div>
-							<h3 class="mb-4 text-xl font-semibold">Mon rôle dans le projet</h3>
-							<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-								<div class="rounded-lg border p-4">
-									<h4 class="mb-2 font-semibold">Développement du niveau</h4>
-									<p class="text-sm text-muted-foreground">
-										Réalisation de l'intégralité du niveau avec l'étage de l'IUT et toutes les
-										salles de boss.
-									</p>
-								</div>
-								<div class="rounded-lg border p-4">
-									<h4 class="mb-2 font-semibold">Système d'animation</h4>
-									<p class="text-sm text-muted-foreground">
-										Développement des fonctions d'animation et de déplacement du joueur.
-									</p>
-								</div>
-							</div>
+						<div class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
+							<p class="text-sm text-muted-foreground">
+								<span class="font-medium">Mon rôle :</span> Développeur du niveau - J'ai réalisé
+								l'intégralité du niveau représentant l'étage de l'IUT avec toutes les salles de boss,
+								ainsi que le développement des fonctions d'animation et de déplacement du joueur.
+							</p>
+						</div>
+
+						<div class="mt-6 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4">
+							<h4 class="mb-3 font-semibold">Défi technique</h4>
+							<p class="text-sm text-muted-foreground">
+								Travailler quatre jours consécutifs sur Python et PyGame, des technologies que nous ne
+								connaissions pas, était un réel défi mais aussi une expérience enrichissante.
+								L'objectif pédagogique était de nous faire découvrir Python, une matière qui n'est pas
+								enseignée dans le cursus du BUT Informatique.
+							</p>
 						</div>
 					</CardContent>
 				</Card>
@@ -266,7 +329,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.6 }}
+			transition={{ duration: 0.6, delay: 0.8 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -310,7 +373,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.8 }}
+			transition={{ duration: 0.6, delay: 1.0 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -336,7 +399,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 1.0 }}
+			transition={{ duration: 0.6, delay: 1.2 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -366,7 +429,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 1.2 }}
+			transition={{ duration: 0.6, delay: 1.4 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -396,7 +459,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 1.4 }}
+			transition={{ duration: 0.6, delay: 1.6 }}
 		>
 			<div use:motion>
 				<Card>

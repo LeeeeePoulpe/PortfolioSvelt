@@ -9,6 +9,7 @@
 		Users,
 		GraduationCap,
 		Gamepad2,
+		Monitor,
 		ArrowLeft
 	} from '@lucide/svelte';
 
@@ -216,12 +217,60 @@
 			</div>
 		</Motion>
 
-		<!-- Fonctionnalités -->
+		<!-- Organisation de l'équipe -->
 		<Motion
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.6, delay: 0.4 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Organisation de l'équipe</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+							<div class="rounded-lg border p-4">
+								<div class="mb-3 flex items-center gap-3">
+									<Monitor class="h-6 w-6 text-green-500" />
+									<h4 class="font-semibold">Développeurs Front-end (Vue.js)</h4>
+								</div>
+								<p class="text-sm text-muted-foreground">
+									Développement de l'interface utilisateur web avec Vue.js, Tailwind CSS et PrelineUI
+								</p>
+							</div>
+							<div class="rounded-lg border p-4">
+								<div class="mb-3 flex items-center gap-3">
+									<Gamepad2 class="h-6 w-6 text-blue-500" />
+									<h4 class="font-semibold">Développeurs Jeu (Unity)</h4>
+								</div>
+								<p class="text-sm text-muted-foreground">
+									Création des jeux de révision intégrés dans Unity avec les questions de
+									physique-chimie
+								</p>
+							</div>
+						</div>
+
+						<div class="mt-6 rounded-lg border border-green-200 bg-green-50 p-4">
+							<p class="text-sm text-muted-foreground">
+								<span class="font-medium">Équipe :</span> Projet réalisé en équipe de 8 personnes avec
+								une répartition claire entre le développement web (Vue.js) et le développement des jeux
+								(Unity). Collaboration étroite pour intégrer les jeux dans l'application web et assurer
+								une expérience utilisateur cohérente.
+							</p>
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
+		<!-- Fonctionnalités -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.6 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -265,7 +314,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.6 }}
+			transition={{ duration: 0.6, delay: 0.8 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -341,7 +390,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.8 }}
+			transition={{ duration: 0.6, delay: 1.0 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -376,7 +425,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 1.0 }}
+			transition={{ duration: 0.6, delay: 1.2 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -406,7 +455,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 1.2 }}
+			transition={{ duration: 0.6, delay: 1.4 }}
 		>
 			<div use:motion>
 				<Card>

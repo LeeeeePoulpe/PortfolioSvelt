@@ -282,12 +282,66 @@
 			</div>
 		</Motion>
 
-		<!-- Réalisations -->
+		<!-- Organisation de l'équipe -->
 		<Motion
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.6, delay: 0.6 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Organisation de l'équipe</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+							{#each team as member}
+								<div class="rounded-lg border p-4">
+									<div class="flex items-start gap-3">
+										<div
+											class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600"
+										>
+											<span class="text-sm font-semibold text-white">
+												{member.name
+													.split(' ')
+													.map((n) => n[0])
+													.join('')}
+											</span>
+										</div>
+										<div class="flex-1">
+											<h4 class="font-semibold">
+												<a href={member.linkedin} target="_blank" class="hover:underline">
+													{member.name}
+												</a>
+											</h4>
+											<p class="mb-1 text-sm font-medium text-blue-600">{member.role}</p>
+											<p class="text-sm text-muted-foreground">{member.description}</p>
+										</div>
+									</div>
+								</div>
+							{/each}
+						</div>
+
+						<div class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
+							<p class="text-sm text-muted-foreground">
+								<span class="font-medium">Mon rôle :</span> Stagiaire développeur - J'ai développé le
+								sixième jeu "Au pas de course !" illustrant le principe ergonomique du
+								groupement/proximité, en travaillant avec Vue.js 3 et Vuetify sous la supervision de
+								l'équipe Sogilis.
+							</p>
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
+		<!-- Réalisations -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.8 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -356,7 +410,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.8 }}
+			transition={{ duration: 0.6, delay: 1.0 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -381,58 +435,27 @@
 			</div>
 		</Motion>
 
-		<!-- Équipe -->
+		<!-- Méthodologie -->
 		<Motion
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 1.0 }}
+			transition={{ duration: 0.6, delay: 1.2 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
 					<CardHeader>
-						<CardTitle class="text-2xl">Méthodologie et équipe</CardTitle>
+						<CardTitle class="text-2xl">Méthodologie</CardTitle>
 					</CardHeader>
-					<CardContent class="space-y-6">
+					<CardContent>
 						<div>
 							<h3 class="mb-4 text-xl font-semibold">Méthode SCRUM</h3>
-							<p class="mb-4 leading-relaxed text-muted-foreground">
+							<p class="leading-relaxed text-muted-foreground">
 								Le projet a été organisé en utilisant la méthode SCRUM, fonctionnant par cycles de
 								deux semaines (sprints). Chaque sprint comprenait une réunion quotidienne (Daily)
 								pour le suivi des tâches, ainsi qu'une réunion de fin de sprint combinant Sprint
 								Review, Sprint Retrospective et Sprint Planning.
 							</p>
-						</div>
-
-						<div>
-							<h3 class="mb-4 text-xl font-semibold">Équipe de développement</h3>
-							<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-								{#each team as member}
-									<div class="rounded-lg border p-4">
-										<div class="flex items-start gap-3">
-											<div
-												class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600"
-											>
-												<span class="text-sm font-semibold text-white">
-													{member.name
-														.split(' ')
-														.map((n) => n[0])
-														.join('')}
-												</span>
-											</div>
-											<div class="flex-1">
-												<h4 class="font-semibold">
-													<a href={member.linkedin} target="_blank" class="hover:underline">
-														{member.name}
-													</a>
-												</h4>
-												<p class="mb-1 text-sm font-medium text-blue-600">{member.role}</p>
-												<p class="text-sm text-muted-foreground">{member.description}</p>
-											</div>
-										</div>
-									</div>
-								{/each}
-							</div>
 						</div>
 					</CardContent>
 				</Card>
@@ -444,7 +467,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 1.2 }}
+			transition={{ duration: 0.6, delay: 1.4 }}
 		>
 			<div use:motion>
 				<Card>
