@@ -103,7 +103,7 @@
 						<h1 class="font-display mb-6 text-4xl font-bold text-foreground sm:text-5xl">
 							LudoLabo
 						</h1>
-						<p class="mb-6 text-lg leading-relaxed text-muted-foreground">
+						<p class="mb-6 text-lg leading-relaxed text-muted-foreground text-justify">
 							Interface et jeu ludiques pour aider les élèves de terminale à réviser leur
 							enseignement de spécialité en physique-chimie et permettre aux professeurs de suivre
 							les progrès. Projet réalisé dans le cadre du BUT Informatique à l'IUT2 de Grenoble
@@ -178,12 +178,12 @@
 						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 							<div>
 								<h3 class="mb-4 text-xl font-semibold">Objectif éducatif</h3>
-								<p class="mb-4 leading-relaxed text-muted-foreground">
+								<p class="mb-4 leading-relaxed text-muted-foreground text-justify">
 									Le jeu devait être basé sur des questions et des énigmes des différents chapitres
 									de physique-chimie vus en terminale. Chaque bonne réponse permettait aux élèves de
 									gagner des points et de réaliser un classement entre les élèves d'une même classe.
 								</p>
-								<p class="leading-relaxed text-muted-foreground">
+								<p class="leading-relaxed text-muted-foreground text-justify">
 									L'objectif était de rendre le processus de révision ludique et de le relier à des
 									situations de la vie quotidienne pour rendre l'apprentissage plus attrayant.
 								</p>
@@ -253,7 +253,7 @@
 						</div>
 
 						<div class="mt-6 rounded-lg border border-green-200 bg-green-50 p-4 dark:border-green-500/30 dark:bg-green-500/10">
-							<p class="text-sm text-muted-foreground">
+							<p class="text-sm text-muted-foreground text-justify">
 								<span class="font-medium">Équipe :</span> Projet réalisé en équipe de 8 personnes avec
 								une répartition claire entre le développement web (Vue.js) et le développement des jeux
 								(Unity). Collaboration étroite pour intégrer les jeux dans l'application web et assurer
@@ -325,7 +325,7 @@
 						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 							<div>
 								<h3 class="mb-4 text-xl font-semibold">Plateforme web</h3>
-								<p class="mb-4 leading-relaxed text-muted-foreground">
+								<p class="mb-4 leading-relaxed text-muted-foreground text-justify">
 									<a
 										href="https://github.com/LudoLaboApp/ludolabo-client"
 										target="_blank"
@@ -336,16 +336,10 @@
 									permettant aux professeurs de suivre les progrès de leurs élèves avec un système de
 									classe. Les élèves peuvent rejoindre une classe et participer à des jeux de révision.
 								</p>
-								<ul class="space-y-1 text-sm text-muted-foreground">
-									<li>• Système de codes de classe</li>
-									<li>• Gestion des élèves et des classes</li>
-									<li>• Diagrammes de progression</li>
-									<li>• Suivi des réponses des élèves</li>
-								</ul>
 							</div>
 							<div>
 								<h3 class="mb-4 text-xl font-semibold">Jeu Unity</h3>
-								<p class="mb-4 leading-relaxed text-muted-foreground">
+								<p class="mb-4 leading-relaxed text-muted-foreground text-justify">
 									<a
 										href="https://github.com/LudoLaboApp/ludolabo-game"
 										target="_blank"
@@ -356,12 +350,6 @@
 									avec des mondes représentant différents chapitres de physique-chimie. Chaque monde
 									contient des questions sur un thème particulier.
 								</p>
-								<ul class="space-y-1 text-sm text-muted-foreground">
-									<li>• Mondes thématiques (lacs chimiques, terres cinétiques)</li>
-									<li>• Système de points et classement</li>
-									<li>• Questions adaptées au niveau terminale</li>
-									<li>• Interface intuitive et engageante</li>
-								</ul>
 							</div>
 						</div>
 
@@ -370,13 +358,13 @@
 							<div class="grid grid-cols-1 gap-4 text-sm md:grid-cols-2">
 								<div>
 									<h5 class="mb-1 font-medium">Gestion des classes</h5>
-									<p class="text-muted-foreground">
+									<p class="text-muted-foreground text-justify">
 										Ajout d'élèves, changement de l'ordre des chapitres
 									</p>
 								</div>
 								<div>
 									<h5 class="mb-1 font-medium">Analytics détaillés</h5>
-									<p class="text-muted-foreground">Points forts et faibles de chaque élève</p>
+									<p class="text-muted-foreground text-justify">Points forts et faibles de chaque élève</p>
 								</div>
 							</div>
 						</div>
@@ -409,10 +397,9 @@
 
 						<div class="mt-6 rounded-lg bg-gradient-to-r from-yellow-50 to-orange-50 p-4 dark:from-yellow-500/10 dark:to-orange-500/10">
 							<h4 class="mb-3 font-semibold">Décision technique importante</h4>
-							<p class="text-sm text-muted-foreground">
+							<p class="text-sm text-muted-foreground text-justify">
 								Initialement prévu avec Faser.js, nous avons finalement décidé de réaliser le jeu en
-								Unity pour des raisons de performance et de facilité de développement, malgré le
-								changement de technologie en cours de projet.
+								Unity pour des raisons de facilité et de performance de développement.
 							</p>
 						</div>
 					</CardContent>
@@ -464,13 +451,13 @@
 					</CardHeader>
 					<CardContent>
 						<div class="space-y-4">
-							<p class="leading-relaxed text-muted-foreground">
+							<p class="leading-relaxed text-muted-foreground text-justify">
 								Ce projet a été une expérience très enrichissante car j'ai eu l'occasion de
 								m'intégrer dans une équipe plus conséquente par rapport aux projets précédents. J'ai
 								participé à la réalisation de l'interface web en utilisant Vue.js, une technologie
 								déjà utilisée, complétée avec Tailwind CSS et PrelineUI.
 							</p>
-							<p class="leading-relaxed text-muted-foreground">
+							<p class="leading-relaxed text-muted-foreground text-justify">
 								Ce projet a aussi été un énorme défi car nous avons réalisé l'application et le jeu
 								en respectant les critères du cahier des charges en seulement trois semaines.
 								L'adaptation au changement de technologie (Faser.js vers Unity) en cours de projet a

@@ -1,21 +1,17 @@
 <script lang="ts">
-	import { Motion } from 'svelte-motion';
-	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import {
-		ExternalLink,
-		Calendar,
-		Users,
-		Gamepad2,
-		Lightbulb,
-		Target,
-		ArrowLeft
-	} from '@lucide/svelte';
+	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card/index.js';
+	import { ArrowLeft, Calendar, ExternalLink, Gamepad2, Lightbulb, Target } from '@lucide/svelte';
+	import { Motion } from 'svelte-motion';
 
 	const technologies = [
 		{ name: 'Vue.js 3', color: '#4FC08D', url: 'https://vuejs.org/' },
-		{ name: 'JavaScript', color: '#F7DF1E', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+		{
+			name: 'JavaScript',
+			color: '#F7DF1E',
+			url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+		},
 		{ name: 'Vuetify', color: '#1867C0', url: 'https://vuetifyjs.com/' },
 		{ name: 'GitLab', color: '#FCA326', url: 'https://about.gitlab.com/' },
 		{ name: 'Figma', color: '#F24E1E', url: 'https://www.figma.com/' },
@@ -25,19 +21,14 @@
 	const deliverables = [
 		{
 			title: 'Jeu interactif "Au pas de course !"',
-			description:
-				'Illustration du principe de groupement/proximité à travers un jeu de course dans des rayons de supermarché',
 			type: 'professionnel'
 		},
 		{
 			title: 'Page explicative du principe',
-			description:
-				'Documentation détaillée du concept de groupement/proximité avec exemples concrets',
 			type: 'professionnel'
 		},
 		{
 			title: 'Documentation technique',
-			description: 'Journal de bord hebdomadaire et documentation technique complète',
 			type: 'personnel'
 		}
 	];
@@ -108,7 +99,7 @@
 						<h1 class="font-display mb-6 text-4xl font-bold text-foreground sm:text-5xl">
 							ErgoGames - Au pas de course !
 						</h1>
-						<p class="mb-6 text-lg leading-relaxed text-muted-foreground">
+						<p class="mb-6 text-lg leading-relaxed text-muted-foreground text-justify">
 							Développement du sixième jeu des
 							<a
 								href="https://www.ergogames.fr/"
@@ -125,6 +116,10 @@
 							interactive.
 						</p>
 						<div class="mb-6 flex flex-wrap gap-2">
+							<Badge variant="secondary" class="flex items-center gap-1">
+								<Calendar class="h-3 w-3" />
+								2e année de BUT
+							</Badge>
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<Calendar class="h-3 w-3" />
 								Stage Sogilis
@@ -201,20 +196,20 @@
 						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 							<div>
 								<h3 class="mb-4 text-xl font-semibold">Les ErgoGames</h3>
-								<p class="mb-4 leading-relaxed text-muted-foreground">
+								<p class="mb-4 text-justify leading-relaxed text-muted-foreground">
 									Le site des ErgoGames est conçu pour présenter de manière ludique les principes
 									ergonomiques du numérique, tels que les actions minimales ou la gestion des
 									erreurs. Il propose des jeux et un quiz pour faciliter l'apprentissage de ces
 									principes.
 								</p>
-								<p class="leading-relaxed text-muted-foreground">
+								<p class="text-justify leading-relaxed text-muted-foreground">
 									Mon sujet de stage portait sur le développement du sixième jeu "Au pas de course
 									!" qui illustre le principe ergonomique du groupement/proximité.
 								</p>
 							</div>
 							<div>
 								<h3 class="mb-4 text-xl font-semibold">Sogilis</h3>
-								<p class="leading-relaxed text-muted-foreground">
+								<p class="text-justify leading-relaxed text-muted-foreground">
 									Entreprise de génie logiciel basée à Grenoble, spécialisée dans la création de
 									solutions sur mesure de haute qualité pour divers secteurs industriels. Elle se
 									distingue par ses valeurs fortes et son engagement envers la qualité, l'innovation
@@ -323,12 +318,13 @@
 							{/each}
 						</div>
 
-						<div class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/10">
+						<div
+							class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/10"
+						>
 							<p class="text-sm text-muted-foreground">
 								<span class="font-medium">Mon rôle :</span> Stagiaire développeur - J'ai développé le
-								sixième jeu "Au pas de course !" illustrant le principe ergonomique du
-								groupement/proximité, en travaillant avec Vue.js 3 et Vuetify sous la supervision de
-								l'équipe Sogilis.
+								sixième jeu "Au pas de course !" en travaillant avec Vue.js 3 et Vuetify sous la supervision
+								de l'équipe Sogilis.
 							</p>
 						</div>
 					</CardContent>
@@ -373,10 +369,10 @@
 
 						<div>
 							<h3 class="mb-4 text-xl font-semibold">Livrables</h3>
-							<div class="space-y-4">
+							<div class="flex flex-wrap gap-4">
 								{#each deliverables as deliverable}
-									<div class="rounded-lg border p-4">
-										<div class="flex items-start gap-3">
+									<div class="flex-1 min-w-[250px] rounded-lg border p-4">
+										<div class="flex items-center gap-3">
 											<div
 												class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full {deliverable.type ===
 												'professionnel'
@@ -391,10 +387,7 @@
 													{deliverable.type === 'professionnel' ? 'P' : 'L'}
 												</span>
 											</div>
-											<div>
-												<h4 class="font-semibold">{deliverable.title}</h4>
-												<p class="text-sm text-muted-foreground">{deliverable.description}</p>
-											</div>
+											<h4 class="font-semibold">{deliverable.title}</h4>
 										</div>
 									</div>
 								{/each}
@@ -484,8 +477,7 @@
 							</p>
 							<p class="leading-relaxed text-muted-foreground">
 								Le travail en autonomie dans un cadre structuré et la collaboration avec des experts
-								du domaine ont été des aspects particulièrement enrichissants de cette expérience
-								professionnelle.
+								du domaine ont été des aspects particulièrement enrichissants.
 							</p>
 						</div>
 					</CardContent>

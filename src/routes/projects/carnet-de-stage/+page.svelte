@@ -88,12 +88,16 @@
 						<h1 class="font-display mb-6 text-4xl font-bold text-foreground sm:text-5xl">
 							Carnet de Stage IUT2
 						</h1>
-						<p class="mb-6 text-lg leading-relaxed text-muted-foreground">
+						<p class="mb-6 text-justify text-lg leading-relaxed text-muted-foreground">
 							Projet de réparation et amélioration de l'application Android et du site web du carnet
 							de stage de l'IUT2 de Grenoble. Ce projet a été réalisé dans le cadre de la formation
 							BUT Informatique lors du quatrième semestre, en équipe de 6 personnes.
 						</p>
 						<div class="mb-6 flex flex-wrap gap-2">
+							<Badge variant="secondary" class="flex items-center gap-1">
+								<Calendar class="h-3 w-3" />
+								2e année de BUT
+							</Badge>
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<Calendar class="h-3 w-3" />
 								5 jours de travail
@@ -117,7 +121,7 @@
 									<p class="text-sm text-muted-foreground">Carnet de stage mobile</p>
 								</div>
 							</div>
-							<p class="text-sm text-muted-foreground">
+							<p class="text-sm text-muted-foreground text-justify">
 								Application pour trouver les offres de stage, postuler et suivre l'avancement de la
 								recherche.
 							</p>
@@ -130,7 +134,7 @@
 									<p class="text-sm text-muted-foreground">Interface web complémentaire</p>
 								</div>
 							</div>
-							<p class="text-sm text-muted-foreground">
+							<p class="text-sm text-muted-foreground text-justify">
 								Plateforme web pour la gestion des offres et le suivi des candidatures.
 							</p>
 						</div>
@@ -286,7 +290,7 @@
 						</div>
 
 						<div class="mt-6 rounded-lg border border-green-200 bg-green-50 p-4 dark:border-green-500/30 dark:bg-green-500/10">
-							<p class="text-sm text-muted-foreground">
+							<p class="text-sm text-muted-foreground text-justify">
 								<span class="font-medium">Mon rôle :</span> Développeur Android - J'ai travaillé sur
 								l'amélioration de l'application mobile, en optimisant le cycle de vie, en corrigeant
 								des bugs tout en ajoutant de nouvelles fonctionnalités pour améliorer l'expérience
@@ -321,16 +325,6 @@
 									<p class="text-sm text-muted-foreground">{improvement.description}</p>
 								</div>
 							{/each}
-						</div>
-
-						<div class="mt-8 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 p-6 dark:from-blue-500/10 dark:to-indigo-500/10">
-							<h4 class="mb-3 font-semibold">Résultat final</h4>
-							<p class="text-muted-foreground">
-								Nous avons livré une application plus performante et plus conviviale, prête à
-								répondre aux besoins des utilisateurs. L'optimisation du cycle de vie de
-								l'application Android et la refonte de l'interface utilisateur du client web ont
-								considérablement amélioré l'expérience utilisateur.
-							</p>
 						</div>
 					</CardContent>
 				</Card>
@@ -381,13 +375,13 @@
 					</CardHeader>
 					<CardContent>
 						<div class="space-y-4">
-							<p class="leading-relaxed text-muted-foreground">
+							<p class="leading-relaxed text-muted-foreground text-justify">
 								Ce projet nous a permis d'améliorer nos compétences techniques en optimisant le
 								cycle de vie de l'application Android et en repensant l'interface utilisateur du
 								client web. Nous avons renforcé notre capacité à travailler en équipe et à résoudre
 								des problèmes techniques complexes.
 							</p>
-							<p class="leading-relaxed text-muted-foreground">
+							<p class="leading-relaxed text-muted-foreground text-justify">
 								L'intervention sur un code existant pour le réparer et l'améliorer a été une
 								expérience formatrice qui nous a permis de comprendre l'importance de la maintenance
 								et de l'optimisation dans le développement logiciel.

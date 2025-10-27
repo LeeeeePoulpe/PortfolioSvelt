@@ -84,7 +84,7 @@
 						<h1 class="font-display mb-6 text-4xl font-bold text-foreground sm:text-5xl">
 							Alternance chez Enogrid
 						</h1>
-						<p class="mb-6 text-lg leading-relaxed text-muted-foreground">
+						<p class="mb-6 text-lg leading-relaxed text-muted-foreground text-justify">
 							Au cours de mon alternance chez
 							<a
 								href="https://www.enogrid.com/"
@@ -105,6 +105,10 @@
 							<span class="text-primary"> EnoConso </span>.
 						</p>
 						<div class="mb-6 flex flex-wrap gap-2">
+							<Badge variant="secondary" class="flex items-center gap-1">
+								<Calendar class="h-3 w-3" />
+								3e année de BUT
+							</Badge>
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<Users class="h-3 w-3" />
 								Équipe technique
@@ -170,7 +174,7 @@
 			</div>
 		</Motion>
 
-		<!-- Projet 1: Mon Energie Collective -->
+		<!-- Présentation Enogrid -->
 		<Motion
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
@@ -180,124 +184,16 @@
 			<div use:motion class="mb-16">
 				<Card>
 					<CardHeader>
-						<CardTitle class="text-2xl">Semestre 1 : Mon Energie Collective</CardTitle>
-					</CardHeader>
-					<CardContent class="space-y-6">
-						<div>
-							<h3 class="mb-4 text-xl font-semibold">Contexte</h3>
-							<p class="leading-relaxed text-muted-foreground">
-								Enogrid est une entreprise spécialisée dans la gestion de l'énergie et la transition
-								énergétique. Fondée en 2018 par trois ingénieurs passionnés, cette start-up s'est
-								construite autour d'une mission ambitieuse : démocratiser la transition énergétique
-								à l'échelle locale.
-							</p>
-							<p class="mt-4 leading-relaxed text-muted-foreground">
-								Mon Energie Collective est une plateforme centrale pour la mise en œuvre
-								opérationnelle des projets d'autoconsommation collective. Cet outil accompagne
-								l'ensemble du processus, depuis la création de la Personne Morale Organisatrice
-								(PMO) jusqu'au recrutement des bénéficiaires.
-							</p>
-						</div>
-
-						<div>
-							<h3 class="mb-4 text-xl font-semibold">Objectifs</h3>
-							<p class="leading-relaxed text-muted-foreground">
-								Mon objectif principal était de m'intégrer dans l'équipe technique et de comprendre
-								le fonctionnement d'un projet d'entreprise réel. Les sprints tournaient autour de
-								l'ajout de la gestion de la création d'un projet depuis le début, incluant
-								l'intégration d'une timeline interactive et le développement d'interfaces pour la
-								PMO.
-							</p>
-						</div>
-
-						<div>
-							<h3 class="mb-4 text-xl font-semibold">Réalisations</h3>
-							<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-								{#each achievements.slice(0, 3) as achievement}
-									<div class="rounded-lg border p-4">
-										<h4 class="mb-2 font-semibold">{achievement.title}</h4>
-										<p class="text-sm text-muted-foreground">{achievement.description}</p>
-									</div>
-								{/each}
-							</div>
-						</div>
-					</CardContent>
-				</Card>
-			</div>
-		</Motion>
-
-		<!-- Projet 2: EnoConso -->
-		<Motion
-			let:motion
-			initial={{ opacity: 0, y: 20 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.4 }}
-		>
-			<div use:motion class="mb-16">
-				<Card>
-					<CardHeader>
-						<CardTitle class="text-2xl">Semestre 2: EnoConso</CardTitle>
-					</CardHeader>
-					<CardContent class="space-y-6">
-						<div>
-							<h3 class="mb-4 text-xl font-semibold">Contexte</h3>
-							<p class="leading-relaxed text-muted-foreground">
-								EnoConso regroupe sur une application web les différents éléments du projet pour
-								tous les participants. L'application donne accès à la consommation d'énergie et son
-								historique, présente des éléments administratifs comme les factures, et permet la
-								communication entre participants, producteurs et support Enogrid.
-							</p>
-						</div>
-
-						<div>
-							<h3 class="mb-4 text-xl font-semibold">Objectifs</h3>
-							<p class="leading-relaxed text-muted-foreground">
-								Travailler en autonomie sur un produit existant pour le rendre plus utilisable et
-								plus intuitif pour les utilisateurs, en réalisant des modifications en profondeur.
-							</p>
-						</div>
-
-						<div>
-							<h3 class="mb-4 text-xl font-semibold">Réalisations</h3>
-							<div class="rounded-lg border p-4">
-								<h4 class="mb-2 font-semibold">Refonte UI/UX complète</h4>
-								<p class="text-sm text-muted-foreground">
-									Refonte des couleurs et de l'interface pour l'accorder avec la charte graphique de
-									Mon Energie Collective, en utilisant la librairie shadcn/ui pour une expérience
-									utilisateur moderne et cohérente.
-								</p>
-							</div>
-						</div>
-					</CardContent>
-				</Card>
-			</div>
-		</Motion>
-
-		<!-- Technologies -->
-		<Motion
-			let:motion
-			initial={{ opacity: 0, y: 20 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.6 }}
-		>
-			<div use:motion class="mb-16">
-				<Card>
-					<CardHeader>
-						<CardTitle class="text-2xl">Technologies utilisées</CardTitle>
+						<CardTitle class="text-2xl">À propos d'Enogrid</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-							{#each technologies as tech}
-								<a
-									href={tech.url}
-									target="_blank"
-									class="flex items-center gap-3 rounded-lg border p-3 transition-shadow hover:shadow-md"
-								>
-									<div class="h-4 w-4 rounded-full" style="background-color: {tech.color}"></div>
-									<span class="font-medium">{tech.name}</span>
-								</a>
-							{/each}
-						</div>
+						<p class="leading-relaxed text-muted-foreground text-justify">
+							Enogrid est une entreprise spécialisée dans la gestion de l'énergie et la transition
+							énergétique. Fondée en 2018 par trois ingénieurs passionnés, cette start-up s'est
+							construite autour d'une mission ambitieuse : démocratiser la transition énergétique
+							à l'échelle locale. L'entreprise développe des solutions innovantes pour faciliter
+							l'autoconsommation collective et le suivi de consommation énergétique.
+						</p>
 					</CardContent>
 				</Card>
 			</div>
@@ -308,7 +204,7 @@
 			let:motion
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.8 }}
+			transition={{ duration: 0.6, delay: 0.3 }}
 		>
 			<div use:motion class="mb-16">
 				<Card>
@@ -318,7 +214,7 @@
 					<CardContent class="space-y-6">
 						<div>
 							<h3 class="mb-4 text-xl font-semibold">Méthode Agile Scrum</h3>
-							<p class="mb-4 leading-relaxed text-muted-foreground">
+							<p class="mb-4 leading-relaxed text-muted-foreground text-justify">
 								Chez Enogrid, nous utilisons une méthode Agile basée sur le framework Scrum avec des
 								cycles de deux semaines (sprints), des réunions quotidiennes (Daily Stand-up), des
 								"Features Lunch" (Sprint Planning) et des rétrospectives mensuelles.
@@ -375,6 +271,133 @@
 			</div>
 		</Motion>
 
+		<!-- Projet 1: Mon Energie Collective -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.4 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Semestre 1 : Mon Energie Collective</CardTitle>
+					</CardHeader>
+					<CardContent class="space-y-6">
+						<div>
+							<h3 class="mb-4 text-xl font-semibold">Contexte</h3>
+							<p class="leading-relaxed text-muted-foreground text-justify">
+								Mon Energie Collective est une plateforme centrale pour la mise en œuvre
+								opérationnelle des projets d'autoconsommation collective. Cet outil accompagne
+								l'ensemble du processus, depuis la création de la Personne Morale Organisatrice
+								(PMO) jusqu'au recrutement des bénéficiaires.
+							</p>
+						</div>
+
+						<div>
+							<h3 class="mb-4 text-xl font-semibold">Objectifs</h3>
+							<p class="leading-relaxed text-muted-foreground text-justify">
+								Mon objectif principal était de m'intégrer dans l'équipe technique et de comprendre
+								le fonctionnement d'un projet d'entreprise réel. Les sprints tournaient autour de
+								l'ajout de la gestion de la création d'un projet depuis le début, incluant
+								l'intégration d'une timeline interactive et le développement d'interfaces pour la
+								PMO.
+							</p>
+						</div>
+
+						<div>
+							<h3 class="mb-4 text-xl font-semibold">Réalisations</h3>
+							<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+								{#each achievements.slice(0, 3) as achievement}
+									<div class="rounded-lg border p-4">
+										<h4 class="mb-2 font-semibold">{achievement.title}</h4>
+										<p class="text-sm text-muted-foreground">{achievement.description}</p>
+									</div>
+								{/each}
+							</div>
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
+		<!-- Projet 2: EnoConso -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.5 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Semestre 2: EnoConso</CardTitle>
+					</CardHeader>
+					<CardContent class="space-y-6">
+						<div>
+							<h3 class="mb-4 text-xl font-semibold">Contexte</h3>
+							<p class="leading-relaxed text-muted-foreground text-justify">
+								EnoConso regroupe sur une application web les différents éléments du projet pour
+								tous les participants. L'application donne accès à la consommation d'énergie et son
+								historique, présente des éléments administratifs comme les factures, et permet la
+								communication entre participants, producteurs et support Enogrid.
+							</p>
+						</div>
+
+						<div>
+							<h3 class="mb-4 text-xl font-semibold">Objectifs</h3>
+							<p class="leading-relaxed text-muted-foreground text-justify">
+								Travailler en autonomie sur un produit existant pour le rendre plus utilisable et
+								plus intuitif pour les utilisateurs, en réalisant des modifications en profondeur.
+							</p>
+						</div>
+
+						<div>
+							<h3 class="mb-4 text-xl font-semibold">Réalisations</h3>
+							<div class="rounded-lg border p-4">
+								<h4 class="mb-2 font-semibold">Refonte UI/UX complète</h4>
+								<p class="text-sm text-muted-foreground text-justify">
+									Refonte des couleurs et de l'interface pour l'accorder avec la charte graphique de
+									Mon Energie Collective, en utilisant la librairie shadcn/ui pour une expérience
+									utilisateur moderne et cohérente.
+								</p>
+							</div>
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
+		<!-- Technologies -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.6 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Technologies utilisées</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+							{#each technologies as tech}
+								<a
+									href={tech.url}
+									target="_blank"
+									class="flex items-center gap-3 rounded-lg border p-3 transition-shadow hover:shadow-md"
+								>
+									<div class="h-4 w-4 rounded-full" style="background-color: {tech.color}"></div>
+									<span class="font-medium">{tech.name}</span>
+								</a>
+							{/each}
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
 		<!-- Bilan -->
 		<Motion
 			let:motion
@@ -389,13 +412,13 @@
 					</CardHeader>
 					<CardContent>
 						<div class="space-y-4">
-							<p class="leading-relaxed text-muted-foreground">
+							<p class="leading-relaxed text-muted-foreground text-justify">
 								Cette alternance m'a permis de développer mes compétences en React et TypeScript,
 								des technologies que je ne maîtrisais pas auparavant. J'ai appris à travailler en
 								équipe sur un projet d'entreprise avec des enjeux réels, ce qui diffère
 								significativement des projets académiques.
 							</p>
-							<p class="leading-relaxed text-muted-foreground">
+							<p class="leading-relaxed text-muted-foreground text-justify">
 								L'environnement de travail est stimulant et propice à l'apprentissage. Cette
 								dynamique me motive profondément à contribuer activement au projet, avec l'objectif
 								d'aider un maximum d'utilisateurs à bénéficier des solutions innovantes proposées

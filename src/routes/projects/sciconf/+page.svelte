@@ -111,10 +111,11 @@
 						<h1 class="font-display mb-6 text-4xl font-bold text-foreground sm:text-5xl">
 							Sciconf
 						</h1>
-						<p class="mb-6 text-lg leading-relaxed text-muted-foreground">
+						<p class="mb-6 text-justify text-lg leading-relaxed text-muted-foreground">
 							Application de gestion d'événements scientifiques développée lors du second semestre
-							du BUT Informatique à l'IUT2 de Grenoble. Projet réalisé en équipe de 5 étudiants pour
-							gérer les conférences, intervenants, participants et salles.
+							de ma première année de BUT Informatique à l'IUT2 de Grenoble. Projet réalisé en
+							équipe de 5 étudiants pour gérer les conférences, intervenants, participants et
+							salles.
 						</p>
 						<div class="mb-6 flex flex-wrap gap-2">
 							<Badge variant="secondary" class="flex items-center gap-1">
@@ -129,32 +130,6 @@
 								<Database class="h-3 w-3" />
 								Java & MySQL
 							</Badge>
-						</div>
-					</div>
-					<div class="flex w-full flex-col gap-4 lg:w-80">
-						<div class="rounded-lg border p-4">
-							<div class="mb-3 flex items-center gap-3">
-								<Database class="h-8 w-8 text-blue-500" />
-								<div>
-									<h3 class="font-semibold">Sciconf</h3>
-									<p class="text-sm text-muted-foreground">Gestion d'événements</p>
-								</div>
-							</div>
-							<p class="text-sm text-muted-foreground">
-								Application de gestion des conférences scientifiques avec interface JavaFX.
-							</p>
-						</div>
-						<div class="rounded-lg border p-4">
-							<div class="mb-3 flex items-center gap-3">
-								<Code class="h-8 w-8 text-green-500" />
-								<div>
-									<h3 class="font-semibold">Technologies</h3>
-									<p class="text-sm text-muted-foreground">Java, JavaFX, MySQL</p>
-								</div>
-							</div>
-							<p class="text-sm text-muted-foreground">
-								Back-end en Java, front-end en JavaFX, base de données MySQL.
-							</p>
 						</div>
 					</div>
 				</div>
@@ -177,13 +152,13 @@
 						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 							<div>
 								<h3 class="mb-4 text-xl font-semibold">Objectif pédagogique</h3>
-								<p class="mb-4 leading-relaxed text-muted-foreground">
+								<p class="mb-4 text-justify leading-relaxed text-muted-foreground">
 									L'objectif du projet était de nous faire comprendre toutes les étapes du déroulé
 									d'un projet : de la réflexion à la réalisation en passant par la conception. Nous
 									avions le choix sur le type d'événement et avons choisi les conférences
 									scientifiques.
 								</p>
-								<p class="leading-relaxed text-muted-foreground">
+								<p class="text-justify leading-relaxed text-muted-foreground">
 									L'application devait permettre de gérer les conférences, les intervenants, les
 									participants et les salles.
 								</p>
@@ -294,7 +269,8 @@
 									<h4 class="font-semibold">Développeurs Front-end (JavaFX)</h4>
 								</div>
 								<p class="text-sm text-muted-foreground">
-									2 développeurs concentrés sur le développement des interfaces utilisateur avec JavaFX
+									2 développeurs concentrés sur le développement des interfaces utilisateur avec
+									JavaFX
 								</p>
 							</div>
 							<div class="rounded-lg border p-4">
@@ -303,25 +279,30 @@
 									<h4 class="font-semibold">Développeurs Back-end & BDD</h4>
 								</div>
 								<p class="text-sm text-muted-foreground">
-									3 développeurs dédiés au développement du back-end en Java et de la base de données
-									MySQL
+									3 développeurs dédiés au développement du back-end en Java et de la base de
+									données MySQL
 								</p>
 							</div>
 						</div>
 
-						<div class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/10">
-							<p class="text-sm text-muted-foreground">
+						<div
+							class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/10"
+						>
+							<p class="text-sm text-muted-foreground text-justify">
 								<span class="font-medium">Mon rôle :</span> Développeur Front-end - J'ai participé au
-								développement des interfaces utilisateur avec JavaFX, en travaillant sur l'ergonomie et
-								l'expérience utilisateur de l'application de gestion de conférences scientifiques.
+								développement des interfaces utilisateur avec JavaFX, en travaillant sur l'ergonomie
+								et l'expérience utilisateur de l'application de gestion de conférences scientifiques.
 							</p>
 						</div>
 
-						<div class="mt-4 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4 dark:from-green-500/10 dark:to-blue-500/10">
-							<p class="text-sm text-muted-foreground">
-								Le travail d'équipe et la communication ont été des éléments clés pour le respect des
-								délais imposés par l'IUT et la conformité aux contraintes techniques. La répartition
-								équitable des tâches en fonction des compétences de chacun a permis le succès du projet.
+						<div
+							class="mt-4 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4 dark:from-green-500/10 dark:to-blue-500/10"
+						>
+							<p class="text-sm text-muted-foreground text-justify">
+								Le travail d'équipe et la communication ont été des éléments clés pour le respect
+								des délais imposés par l'IUT et la conformité aux contraintes techniques. La
+								répartition équitable des tâches en fonction des compétences de chacun a permis le
+								succès du projet.
 							</p>
 						</div>
 					</CardContent>
@@ -376,16 +357,6 @@
 								</div>
 							{/each}
 						</div>
-
-						<div class="rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4 dark:from-green-500/10 dark:to-blue-500/10">
-							<h4 class="mb-3 font-semibold">Succès du projet</h4>
-							<p class="text-sm text-muted-foreground">
-								Nous avons réussi à développer cette application grâce à notre travail d'équipe et à
-								notre répartition équitable des tâches en fonction des compétences de chacun. Le
-								respect des délais imposés par l'IUT et la conformité aux contraintes techniques ont
-								été des éléments clés du succès.
-							</p>
-						</div>
 					</CardContent>
 				</Card>
 			</div>
@@ -435,12 +406,12 @@
 					</CardHeader>
 					<CardContent>
 						<div class="space-y-4">
-							<p class="leading-relaxed text-muted-foreground">
+							<p class="leading-relaxed text-muted-foreground text-justify">
 								Ce projet nous a permis de comprendre toutes les étapes d'un projet, de la réflexion
 								à la réalisation. Nous avons également appris à travailler en équipe pour réaliser
 								un projet complet.
 							</p>
-							<p class="leading-relaxed text-muted-foreground">
+							<p class="leading-relaxed text-muted-foreground text-justify">
 								Ce projet nous a permis de mettre en pratique les connaissances acquises lors de
 								notre formation, notamment en
 								<a

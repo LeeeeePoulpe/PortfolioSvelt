@@ -24,7 +24,7 @@
 		},
 		{
 			role: 'Développeurs gameplay',
-			description: 'Cartes, physique, menus, chronométrage',
+			description: 'Cartes, physique, menus, chronométrage, mécanique de changement de rôle',
 			icon: Gamepad2
 		}
 	];
@@ -109,7 +109,7 @@
 						<div class="mb-6 flex flex-wrap gap-2">
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<Calendar class="h-3 w-3" />
-								GameJam 2024
+								3e année de BUT
 							</Badge>
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<Users class="h-3 w-3" />
@@ -117,7 +117,7 @@
 							</Badge>
 							<Badge variant="secondary" class="flex items-center gap-1">
 								<Network class="h-3 w-3" />
-								Multijoueur
+								Multijoueurs
 							</Badge>
 						</div>
 					</div>
@@ -147,11 +147,11 @@
 								<Zap class="h-8 w-8 text-yellow-500" />
 								<div>
 									<h3 class="font-semibold">GameJam 2024</h3>
-									<p class="text-sm text-muted-foreground">Événement stimulant</p>
+									<p class="text-sm text-muted-foreground">Événement national</p>
 								</div>
 							</div>
 							<p class="text-sm text-muted-foreground">
-								Conception et développement d'un jeu multijoueur en une semaine.
+								Développement d'un jeu vidéo avec contraintes en une semaine.
 							</p>
 						</div>
 					</div>
@@ -242,7 +242,9 @@
 							{/each}
 						</div>
 
-						<div class="mt-6 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 p-4 dark:from-blue-500/10 dark:to-purple-500/10">
+						<div
+							class="mt-6 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 p-4 dark:from-blue-500/10 dark:to-purple-500/10"
+						>
 							<h4 class="mb-3 font-semibold">Nations et capacités</h4>
 							<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 								{#each nations as nation}
@@ -288,29 +290,13 @@
 								</div>
 							{/each}
 						</div>
-
-						<div class="mt-6 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4 dark:from-green-500/10 dark:to-blue-500/10">
-							<h4 class="mb-3 font-semibold">Répartition des tâches</h4>
-							<div class="grid grid-cols-1 gap-4 text-sm md:grid-cols-2">
-								<div>
-									<h5 class="mb-1 font-medium">Spécialiste réseau</h5>
-									<p class="text-muted-foreground">
-										Gestion complète de la communication entre joueurs
-									</p>
-								</div>
-								<div>
-									<h5 class="mb-1 font-medium">Développeurs gameplay</h5>
-									<p class="text-muted-foreground">
-										Cartes, physique, menus, chronométrage, mécanique de changement de rôle
-									</p>
-								</div>
-							</div>
-							<div class="mt-4 rounded-lg border border-blue-200 bg-blue-50 p-3 dark:border-blue-500/30 dark:bg-blue-500/10">
-								<p class="text-sm text-muted-foreground">
-									<span class="font-medium">Mon rôle :</span> Développeur gameplay - J'ai contribué au développement
-									des cartes, de la physique, des menus et du système de chronométrage.
-								</p>
-							</div>
+						<div
+							class="mt-4 rounded-lg border border-blue-200 bg-blue-50 p-3 dark:border-blue-500/30 dark:bg-blue-500/10"
+						>
+							<p class="text-sm text-muted-foreground">
+								<span class="font-medium">Mon rôle :</span> Développeur gameplay - J'ai contribué au
+								développement des cartes, de la physique, des menus et du système de chronométrage.
+							</p>
 						</div>
 					</CardContent>
 				</Card>
@@ -367,11 +353,10 @@
 			<div use:motion class="mb-16">
 				<Card>
 					<CardHeader>
-						<CardTitle class="text-2xl">Résultats</CardTitle>
+						<CardTitle class="text-2xl">Résultat final</CardTitle>
 					</CardHeader>
 					<CardContent class="space-y-6">
 						<div>
-							<h3 class="mb-4 text-xl font-semibold">Jeu final</h3>
 							<p class="mb-4 leading-relaxed text-muted-foreground">
 								Le jeu final permet à deux joueurs de s'affronter dans une arène. Après avoir choisi
 								leur nation, l'un des joueurs commence en tant que "loup". Le but est de toucher
@@ -383,22 +368,6 @@
 								spéciales de chaque nation offrent des opportunités tactiques pour attraper ou
 								s'échapper.
 							</p>
-						</div>
-
-						<div class="rounded-lg bg-gradient-to-r from-yellow-50 to-orange-50 p-4 dark:from-yellow-500/10 dark:to-orange-500/10">
-							<h4 class="mb-3 font-semibold">Défis relevés</h4>
-							<div class="grid grid-cols-1 gap-4 text-sm md:grid-cols-2">
-								<div>
-									<h5 class="mb-1 font-medium">Développement multijoueur</h5>
-									<p class="text-muted-foreground">
-										Concrétisation d'un projet multijoueur en Python et Pygame
-									</p>
-								</div>
-								<div>
-									<h5 class="mb-1 font-medium">Gestion du temps</h5>
-									<p class="text-muted-foreground">Développement complet en un temps record</p>
-								</div>
-							</div>
 						</div>
 					</CardContent>
 				</Card>
@@ -449,12 +418,12 @@
 					</CardHeader>
 					<CardContent>
 						<div class="space-y-4">
-							<p class="leading-relaxed text-muted-foreground">
+							<p class="leading-relaxed text-muted-foreground text-justify">
 								Cette GameJam 2024 a été une expérience très formatrice. Elle nous a permis de
 								concrétiser un projet multijoueur en Python et Pygame, en partant de zéro et en
 								gérant les aspects techniques et collaboratifs en un temps record.
 							</p>
-							<p class="leading-relaxed text-muted-foreground">
+							<p class="leading-relaxed text-muted-foreground text-justify">
 								Le développement des mécaniques de jeu, des capacités uniques et surtout de la
 								brique réseau a constitué un apprentissage significatif pour toute l'équipe. Malgré
 								la pression du délai, nous sommes fiers d'avoir pu livrer un jeu fonctionnel et
