@@ -1,0 +1,438 @@
+<script lang="ts">
+	import { Motion } from 'svelte-motion';
+	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card/index.js';
+	import { Badge } from '$lib/components/ui/badge/index.js';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import {
+		ExternalLink,
+		Calendar,
+		Users,
+		Gamepad2,
+		Code,
+		Zap,
+		ArrowLeft,
+		Target,
+		Clock,
+		Trophy
+	} from '@lucide/svelte';
+
+	import { onMount } from 'svelte';
+	
+	onMount(() => {
+		if (typeof document !== 'undefined') {
+			document.title = 'GameJam 2023 - Hugo Föllmi';
+		}
+	});
+
+	const technologies = [
+		{ name: 'Python', color: '#3776AB', url: 'https://www.python.org/' },
+		{ name: 'PyGame', color: '#FF6B6B', url: 'https://www.pygame.org/' }
+	];
+
+	const gameFeatures = [
+		{
+			title: 'Style Pokémon',
+			description: "Jeu dans le style de Pokémon se passant au premier étage de l'IUT"
+		},
+		{
+			title: 'Salles de boss',
+			description: 'Chaque salle représente une salle de boss à affronter'
+		},
+		{
+			title: 'Système de combat',
+			description: 'Combats avec barre de rythme pour attaquer'
+		},
+		{
+			title: 'Mécaniques de jeu',
+			description: 'Soins aux toilettes, récupération des clés, boss final'
+		}
+	];
+
+	const challenges = [
+		'Apprendre Python en 4 jours consécutifs',
+		'Développer un jeu complet en une semaine',
+		'Travail en équipe sur une nouvelle technologie',
+		'Respecter les contraintes de temps et de thème'
+	];
+</script>
+
+<svelte:head>
+	<title>GameJam 2023 - Time Striker - Hugo Föllmi</title>
+	<meta
+		name="description"
+		content="Développement du jeu Time Striker lors de la GameJam 2023 à l'IUT2 de Grenoble sur le thème 'Le merveilleux monde de l'IUT2'."
+	/>
+</svelte:head>
+
+<main class="min-h-screen pt-32 pb-16">
+	<div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+		<!-- Back Button -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, x: -20 }}
+			animate={{ opacity: 1, x: 0 }}
+			transition={{ duration: 0.4 }}
+		>
+			<div use:motion class="mb-6">
+				<Button variant="ghost" href="/projects" class="gap-2">
+					<ArrowLeft class="h-4 w-4" />
+					Retour aux projets
+				</Button>
+			</div>
+		</Motion>
+
+		<!-- Header Section -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6 }}
+		>
+			<div use:motion class="mb-12">
+				<div class="flex flex-col items-start gap-8 lg:flex-row">
+					<div class="flex-1">
+						<h1 class="font-display mb-6 text-4xl font-bold text-foreground sm:text-5xl">
+							GameJam 2023 - Time Striker
+						</h1>
+						<p class="mb-6 text-justify text-lg leading-relaxed text-muted-foreground">
+							Participation à la
+							<a
+								href="https://fr.wikipedia.org/wiki/Game_jam"
+								target="_blank"
+								class="text-primary hover:underline"
+							>
+								GameJam
+							</a>
+							nationale lors du deuxième semestre de ma première année de BUT Informatique à l'IUT2 de Grenoble. Développement
+							du jeu
+							<a
+								href="https://github.com/sadspear/gamejam2023"
+								target="_blank"
+								class="text-primary hover:underline"
+							>
+								Time Striker
+							</a>
+							sur le thème "Le merveilleux monde de l'IUT2" en équipe de 4 étudiants.
+						</p>
+						<div class="mb-6 flex flex-wrap gap-2">
+							<Badge variant="secondary" class="flex items-center gap-1">
+								<Calendar class="h-3 w-3" />
+								1ère année de BUT
+							</Badge>
+							<Badge variant="secondary" class="flex items-center gap-1">
+								<Users class="h-3 w-3" />
+								Équipe de 4
+							</Badge>
+							<Badge variant="secondary" class="flex items-center gap-1">
+								<Gamepad2 class="h-3 w-3" />
+								Style Pokémon
+							</Badge>
+						</div>
+					</div>
+					<div class="flex w-full flex-col gap-4 lg:w-80">
+						<a
+							href="https://github.com/sadspear/gamejam2023"
+							target="_blank"
+							class="group rounded-lg border p-4 transition-all hover:shadow-lg"
+						>
+							<div class="flex items-center gap-3">
+								<div
+									class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-600"
+								>
+									<span class="text-lg font-bold text-white">TS</span>
+								</div>
+								<div>
+									<h3 class="font-semibold">Time Striker</h3>
+									<p class="text-sm text-muted-foreground">Repository GitHub</p>
+								</div>
+								<ExternalLink
+									class="ml-auto h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"
+								/>
+							</div>
+						</a>
+						<div class="rounded-lg border p-4">
+							<div class="mb-3 flex items-center gap-3">
+								<Zap class="h-8 w-8 text-yellow-500" />
+								<div>
+									<h3 class="font-semibold">GameJam</h3>
+									<p class="text-sm text-muted-foreground">Événement national</p>
+								</div>
+							</div>
+							<p class="text-sm text-muted-foreground text-justify">
+								Développement d'un jeu vidéo avec contraintes en une semaine.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</Motion>
+
+		<!-- Contexte -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.2 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Contexte du projet</CardTitle>
+					</CardHeader>
+					<CardContent class="space-y-6">
+						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+							<div>
+								<h3 class="mb-4 text-xl font-semibold">La GameJam</h3>
+								<p class="mb-4 text-justify leading-relaxed text-muted-foreground">
+									La GameJam est un événement national durant lequel les étudiants doivent réaliser
+									un jeu vidéo avec des contraintes en une semaine. Nous devions développer en
+									<a
+										href="https://developer.mozilla.org/fr/docs/Glossary/Python"
+										target="_blank"
+										class="text-primary hover:underline"
+									>
+										Python
+									</a>
+									avec la bibliothèque
+									<a
+										href="https://www.pygame.org/"
+										target="_blank"
+										class="text-primary hover:underline"
+									>
+										PyGame
+									</a>.
+								</p>
+								<p class="text-justify leading-relaxed text-muted-foreground">
+									Le thème imposé était "Le merveilleux monde de l'IUT2" et nous avions le choix du
+									style de jeu.
+								</p>
+							</div>
+							<div>
+								<h3 class="mb-4 text-xl font-semibold">Time Striker</h3>
+								<p class="text-justify leading-relaxed text-muted-foreground">
+									Nous avons choisi de réaliser un jeu dans le style de Pokémon, se passant au
+									premier étage de l'IUT où chaque salle représente une salle de boss. Le joueur
+									doit récupérer les clés de l'IUT et vaincre le boss final : son diplôme.
+								</p>
+							</div>
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
+		<!-- Objectifs -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.4 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Objectifs du projet</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+							<div class="rounded-lg border p-4 text-center">
+								<div
+									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/10 dark:bg-blue-500/20"
+								>
+									<Target class="h-6 w-6 text-blue-600 dark:text-blue-400" />
+								</div>
+								<h3 class="mb-2 font-semibold">Créer un jeu complet</h3>
+								<p class="text-sm text-muted-foreground">
+									Développer un jeu vidéo fonctionnel avec niveau, boss et mécaniques de jeu en une
+									semaine.
+								</p>
+							</div>
+							<div class="rounded-lg border p-4 text-center">
+								<div
+									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-green-500/10 dark:bg-green-500/20"
+								>
+									<Code class="h-6 w-6 text-green-600 dark:text-green-400" />
+								</div>
+								<h3 class="mb-2 font-semibold">Apprendre Python</h3>
+								<p class="text-sm text-muted-foreground">
+									Découvrir et maîtriser Python et PyGame, technologies non enseignées dans le cursus.
+								</p>
+							</div>
+							<div class="rounded-lg border p-4 text-center">
+								<div
+									class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-purple-500/10 dark:bg-purple-500/20"
+								>
+									<Clock class="h-6 w-6 text-purple-600 dark:text-purple-400" />
+								</div>
+								<h3 class="mb-2 font-semibold">Respecter les contraintes</h3>
+								<p class="text-sm text-muted-foreground">
+									Livrer un jeu respectant le thème imposé et les délais de la GameJam en 4 jours.
+								</p>
+							</div>
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
+		<!-- Organisation de l'équipe -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.6 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Organisation de l'équipe</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+							<div class="rounded-lg border p-4">
+								<div class="mb-3 flex items-center gap-3">
+									<Code class="h-6 w-6 text-blue-500" />
+									<h4 class="font-semibold">Développeurs du niveau</h4>
+								</div>
+								<p class="text-sm text-muted-foreground text-justify">
+									Création de l'intégralité du niveau, des salles de boss, et du système
+									d'animation du joueur
+								</p>
+							</div>
+							<div class="rounded-lg border p-4">
+								<div class="mb-3 flex items-center gap-3">
+									<Gamepad2 class="h-6 w-6 text-green-500" />
+									<h4 class="font-semibold">Développeurs gameplay</h4>
+								</div>
+								<p class="text-sm text-muted-foreground text-justify">
+									Système de combat avec barre de rythme, mécaniques de jeu et boss final
+								</p>
+							</div>
+						</div>
+
+						<div class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/10">
+							<p class="text-sm text-muted-foreground text-justify">
+								<span class="font-medium">Mon rôle :</span> Développeur du niveau - J'ai réalisé
+								l'intégralité du niveau représentant l'étage de l'IUT avec toutes les salles de boss,
+								ainsi que le développement des fonctions d'animation et de déplacement du joueur.
+							</p>
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
+		<!-- Fonctionnalités du jeu -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 0.8 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Fonctionnalités du jeu</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+							{#each gameFeatures as feature}
+								<div class="rounded-lg border p-4 transition-shadow hover:shadow-md">
+									<h4 class="mb-2 font-semibold">{feature.title}</h4>
+									<p class="text-sm text-muted-foreground text-justify">{feature.description}</p>
+								</div>
+							{/each}
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
+		<!-- Défis -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 1.0 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Défis rencontrés</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+							{#each challenges as challenge}
+								<div class="flex items-start gap-3 rounded-lg border p-4">
+									<div class="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-orange-500"></div>
+									<p class="text-muted-foreground text-justify">{challenge}</p>
+								</div>
+							{/each}
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
+		<!-- Technologies -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 1.2 }}
+		>
+			<div use:motion class="mb-16">
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Technologies utilisées</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+							{#each technologies as tech}
+								<a
+									href={tech.url}
+									target="_blank"
+									class="flex items-center gap-3 rounded-lg border p-4 transition-shadow hover:shadow-md"
+								>
+									<div class="h-6 w-6 rounded-full" style="background-color: {tech.color}"></div>
+									<span class="font-medium text-justify">{tech.name}</span>
+								</a>
+							{/each}
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+
+		<!-- Conclusion -->
+		<Motion
+			let:motion
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, delay: 1.6 }}
+		>
+			<div use:motion>
+				<Card>
+					<CardHeader>
+						<CardTitle class="text-2xl">Conclusion</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div class="space-y-4">
+							<p class="leading-relaxed text-muted-foreground text-justify">
+								Cette GameJam a été une expérience enrichissante qui nous a permis d'apprendre une
+								nouvelle technologie, le Python, et de travailler en équipe. Malgré les difficultés
+								de délais rencontrées, nous avons réussi à réaliser un jeu vidéo en une semaine.
+							</p>
+							<p class="leading-relaxed text-muted-foreground text-justify">
+								Ce projet nous a permis d'acquérir de nouvelles compétences et de renforcer notre
+								cohésion en tant qu'équipe. L'apprentissage accéléré d'une nouvelle technologie dans
+								un contexte de pression temporelle a été particulièrement formateur pour notre
+								développement professionnel.
+							</p>
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		</Motion>
+	</div>
+</main>

@@ -23,7 +23,6 @@ Ce site a été développé avec des technologies modernes et performantes :
 - **[TailwindCSS](https://tailwindcss.com/)** - Simplification du développement CSS
 - **[shadcn-svelte](https://shadcn-svelte.com/)** - Bibliothèque de composants UI accessibles et personnalisables
 
-
 ## 🚀 Installation et lancement
 
 ### Prérequis

@@ -1,7 +1,18 @@
-    <script lang="ts">
-        import Button from "../lib/components/ui/button/button.svelte";
-    </script>
-    <h1>Welcome to your library project</h1>
-    <p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-    <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
-    <Button variant="default">Click me</Button>
+<script lang="ts">
+	import HeroSection from '$lib/components/page/hero-section.svelte';
+	import ProjectSection from '$lib/components/page/project-section.svelte';
+	import AboutSection from '$lib/components/page/about-section.svelte';
+	import ScrollIndicator from '$lib/components/page/scroll-indicator.svelte';
+</script>
+
+<svelte:head>
+	<title>Hugo Föllmi - Portfolio</title>
+	<meta name="description" content="Portfolio professionnel de Hugo Föllmi - Développeur web et mobile passionné" />
+</svelte:head>
+
+<main class="min-h-screen pt-16">
+	<ScrollIndicator />
+	<HeroSection />
+	<ProjectSection />
+	<AboutSection />
+</main>
