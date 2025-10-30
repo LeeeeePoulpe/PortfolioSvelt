@@ -212,6 +212,11 @@
 	];
 </script>
 
+<svelte:head>
+	<title>À propos - Hugo Föllmi</title>
+	<meta name="description" content="Découvrez mon parcours, mes compétences et mes valeurs en développement web et mobile" />
+</svelte:head>
+
 <main class="min-h-screen pt-32 pb-16">
 	<div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
 		<!-- Introduction Section -->

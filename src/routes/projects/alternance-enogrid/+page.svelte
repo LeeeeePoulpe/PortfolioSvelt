@@ -13,6 +13,14 @@
 		Zap
 	} from '@lucide/svelte';
 
+	import { onMount } from 'svelte';
+	
+	onMount(() => {
+		if (typeof document !== 'undefined') {
+			document.title = 'Alternance Enogrid - Hugo Föllmi';
+		}
+	});
+
 	const technologies = [
 		{ name: 'React', color: '#61DAFB', url: 'https://react.dev/' },
 		{ name: 'TypeScript', color: '#3178C6', url: 'https://www.typescriptlang.org/' },

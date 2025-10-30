@@ -16,6 +16,14 @@
 		Trophy
 	} from '@lucide/svelte';
 
+	import { onMount } from 'svelte';
+	
+	onMount(() => {
+		if (typeof document !== 'undefined') {
+			document.title = 'GameJam 2023 - Hugo Föllmi';
+		}
+	});
+
 	const technologies = [
 		{ name: 'Python', color: '#3776AB', url: 'https://www.python.org/' },
 		{ name: 'PyGame', color: '#FF6B6B', url: 'https://www.pygame.org/' }

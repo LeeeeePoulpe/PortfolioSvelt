@@ -4,6 +4,13 @@
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { ExternalLink, Calendar, Users, Gamepad2, Network, Zap, ArrowLeft } from '@lucide/svelte';
+	import { onMount } from 'svelte';
+	
+	onMount(() => {
+		if (typeof document !== 'undefined') {
+			document.title = 'GameJam 2024 - Hugo Föllmi';
+		}
+	});
 
 	const technologies = [
 		{ name: 'Python', color: '#3776AB', url: 'https://www.python.org/' },

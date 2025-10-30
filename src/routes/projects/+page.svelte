@@ -87,6 +87,11 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Projets - Hugo Föllmi</title>
+	<meta name="description" content="Découvrez mes projets en développement web, mobile et jeux vidéo" />
+</svelte:head>
+
 <main class="min-h-screen px-4 pt-32 pb-16 sm:px-6 lg:px-8">
 	<div class="mx-auto max-w-5xl">
 		<Motion

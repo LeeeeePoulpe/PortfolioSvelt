@@ -13,6 +13,14 @@
 		ArrowLeft
 	} from '@lucide/svelte';
 
+	import { onMount } from 'svelte';
+	
+	onMount(() => {
+		if (typeof document !== 'undefined') {
+			document.title = 'LudoLabo - Hugo Föllmi';
+		}
+	});
+
 	const technologies = [
 		{ name: 'Vue.js', color: '#4FC08D', url: 'https://vuejs.org/' },
 		{ name: 'Tailwind CSS', color: '#06B6D4', url: 'https://tailwindcss.com/' },

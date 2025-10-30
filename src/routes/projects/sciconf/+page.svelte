@@ -13,6 +13,14 @@
 		ArrowLeft
 	} from '@lucide/svelte';
 
+	import { onMount } from 'svelte';
+	
+	onMount(() => {
+		if (typeof document !== 'undefined') {
+			document.title = 'Sciconf - Hugo Föllmi';
+		}
+	});
+
 	const technologies = [
 		{ name: 'Java', color: '#007396', url: 'https://www.java.com/' },
 		{ name: 'JavaFX', color: '#FF6B6B', url: 'https://openjfx.io/' },

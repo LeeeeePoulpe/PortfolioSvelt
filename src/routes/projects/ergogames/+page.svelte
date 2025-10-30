@@ -4,6 +4,13 @@
 	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card/index.js';
 	import { ArrowLeft, Calendar, ExternalLink, Gamepad2, Lightbulb, Target } from '@lucide/svelte';
 	import { Motion } from 'svelte-motion';
+	import { onMount } from 'svelte';
+	
+	onMount(() => {
+		if (typeof document !== 'undefined') {
+			document.title = 'ErgoGames - Hugo Föllmi';
+		}
+	});
 
 	const technologies = [
 		{ name: 'Vue.js 3', color: '#4FC08D', url: 'https://vuejs.org/' },

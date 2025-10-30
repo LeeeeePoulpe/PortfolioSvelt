@@ -14,6 +14,14 @@
 		Lightbulb
 	} from '@lucide/svelte';
 
+	import { onMount } from 'svelte';
+	
+	onMount(() => {
+		if (typeof document !== 'undefined') {
+			document.title = 'Carnet de Stage - Hugo Föllmi';
+		}
+	});
+
 	const technologies = [
 		{ name: 'Android', color: '#3DDC84', url: 'https://developer.android.com/' },
 		{ name: 'Java', color: '#007396', url: 'https://www.java.com/' },
