@@ -8,19 +8,34 @@
 
 	onMount(() => {
 		scrollHandler = () => {
-			const scrollPosition = window.scrollY;
+			const sections = document.querySelectorAll('main > section');
+			const scrollPosition = window.scrollY + window.innerHeight / 3;
+			const documentHeight = document.documentElement.scrollHeight;
 			const windowHeight = window.innerHeight;
 
-			if (scrollPosition < windowHeight - 64) {
-				activeSection.set(0);
-			} else if (scrollPosition < windowHeight * 2 - 64) {
-				activeSection.set(1);
-			} else {
-				activeSection.set(2);
+			// Si on est proche du bas de la page, forcer la dernière section
+			if (window.scrollY + windowHeight >= documentHeight - 100) {
+				activeSection.set(sections.length - 1);
+				return;
 			}
+
+			let currentSection = 0;
+			sections.forEach((section, index) => {
+				const rect = section.getBoundingClientRect();
+				const sectionTop = rect.top + window.scrollY;
+				const sectionBottom = sectionTop + rect.height;
+
+				if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+					currentSection = index;
+				}
+			});
+
+			activeSection.set(currentSection);
 		};
 
 		window.addEventListener('scroll', scrollHandler);
+		// Appel initial pour définir la section active au chargement
+		scrollHandler();
 	});
 
 	onDestroy(() => {
@@ -30,8 +45,13 @@
 	});
 
 	function scrollToSection(index: number) {
-		const targetScroll = index * (window.innerHeight - 64);
-		window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+		const sections = document.querySelectorAll('main > section');
+		if (sections[index]) {
+			const section = sections[index] as HTMLElement;
+			const offset = 64;
+			const targetScroll = section.offsetTop - offset;
+			window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+		}
 	}
 </script>
 
