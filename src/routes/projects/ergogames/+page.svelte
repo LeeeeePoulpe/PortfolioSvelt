@@ -5,7 +5,7 @@
 	import { ArrowLeft, Calendar, ExternalLink, Gamepad2, Lightbulb, Target } from '@lucide/svelte';
 	import { Motion } from 'svelte-motion';
 	import { onMount } from 'svelte';
-	
+
 	onMount(() => {
 		if (typeof document !== 'undefined') {
 			document.title = 'ErgoGames - Hugo Föllmi';
@@ -106,7 +106,7 @@
 						<h1 class="font-display mb-6 text-4xl font-bold text-foreground sm:text-5xl">
 							ErgoGames - Au pas de course !
 						</h1>
-						<p class="mb-6 text-lg leading-relaxed text-muted-foreground text-justify">
+						<p class="mb-6 text-justify text-lg leading-relaxed text-muted-foreground">
 							Développement du sixième jeu des
 							<a
 								href="https://www.ergogames.fr/"
@@ -378,7 +378,7 @@
 							<h3 class="mb-4 text-xl font-semibold">Livrables</h3>
 							<div class="flex flex-wrap gap-4">
 								{#each deliverables as deliverable}
-									<div class="flex-1 min-w-[250px] rounded-lg border p-4">
+									<div class="min-w-[250px] flex-1 rounded-lg border p-4">
 										<div class="flex items-center gap-3">
 											<div
 												class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full {deliverable.type ===

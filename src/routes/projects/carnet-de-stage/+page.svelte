@@ -15,7 +15,7 @@
 	} from '@lucide/svelte';
 
 	import { onMount } from 'svelte';
-	
+
 	onMount(() => {
 		if (typeof document !== 'undefined') {
 			document.title = 'Carnet de Stage - Hugo Föllmi';

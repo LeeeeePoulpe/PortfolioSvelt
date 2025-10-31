@@ -14,7 +14,7 @@
 	} from '@lucide/svelte';
 
 	import { onMount } from 'svelte';
-	
+
 	onMount(() => {
 		if (typeof document !== 'undefined') {
 			document.title = 'Sciconf - Hugo Föllmi';
@@ -296,7 +296,7 @@
 						<div
 							class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/10"
 						>
-							<p class="text-sm text-muted-foreground text-justify">
+							<p class="text-justify text-sm text-muted-foreground">
 								<span class="font-medium">Mon rôle :</span> Développeur Front-end - J'ai participé au
 								développement des interfaces utilisateur avec JavaFX, en travaillant sur l'ergonomie
 								et l'expérience utilisateur de l'application de gestion de conférences scientifiques.
@@ -306,7 +306,7 @@
 						<div
 							class="mt-4 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4 dark:from-green-500/10 dark:to-blue-500/10"
 						>
-							<p class="text-sm text-muted-foreground text-justify">
+							<p class="text-justify text-sm text-muted-foreground">
 								Le travail d'équipe et la communication ont été des éléments clés pour le respect
 								des délais imposés par l'IUT et la conformité aux contraintes techniques. La
 								répartition équitable des tâches en fonction des compétences de chacun a permis le
@@ -414,12 +414,12 @@
 					</CardHeader>
 					<CardContent>
 						<div class="space-y-4">
-							<p class="leading-relaxed text-muted-foreground text-justify">
+							<p class="text-justify leading-relaxed text-muted-foreground">
 								Ce projet nous a permis de comprendre toutes les étapes d'un projet, de la réflexion
 								à la réalisation. Nous avons également appris à travailler en équipe pour réaliser
 								un projet complet.
 							</p>
-							<p class="leading-relaxed text-muted-foreground text-justify">
+							<p class="text-justify leading-relaxed text-muted-foreground">
 								Ce projet nous a permis de mettre en pratique les connaissances acquises lors de
 								notre formation, notamment en
 								<a

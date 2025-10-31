@@ -16,8 +16,8 @@
 					À propos
 				</h2>
 				<p class="mb-8 text-center text-lg leading-relaxed text-muted-foreground">
-					Développeur passionné par le développement web et mobile, je crée des applications modernes
-					et performantes. Spécialisé en React, Svelte, Next.js et bien plus encore.
+					Développeur passionné par le développement web et mobile, je crée des applications
+					modernes et performantes. Spécialisé en React, Svelte, Next.js et bien plus encore.
 				</p>
 				<div class="text-center">
 					<Button variant="outline">

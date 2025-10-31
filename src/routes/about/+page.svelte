@@ -214,7 +214,10 @@
 
 <svelte:head>
 	<title>À propos - Hugo Föllmi</title>
-	<meta name="description" content="Découvrez mon parcours, mes compétences et mes valeurs en développement web et mobile" />
+	<meta
+		name="description"
+		content="Découvrez mon parcours, mes compétences et mes valeurs en développement web et mobile"
+	/>
 </svelte:head>
 
 <main class="min-h-screen pt-32 pb-16">
@@ -231,13 +234,15 @@
 					À propos de moi
 				</h1>
 				<div class="prose prose-lg max-w-none">
-					<p class="mb-6 text-lg leading-relaxed text-muted-foreground text-justify
-">
+					<p
+						class="mb-6 text-justify text-lg leading-relaxed text-muted-foreground
+"
+					>
 						Je m'appelle Hugo Föllmi, j'ai 21 ans et je suis né le 11 novembre 2004 à Santiago du
 						Chili. Je suis passionné par le développement informatique et la création d'applications
 						innovantes.
 					</p>
-					<p class="mb-6 text-lg leading-relaxed text-muted-foreground text-justify">
+					<p class="mb-6 text-justify text-lg leading-relaxed text-muted-foreground">
 						Mon parcours m'a permis d'acquérir des compétences variées en développement web et
 						mobile, de la conception à la mise en production. J'aime relever des défis techniques et
 						apprendre de nouvelles technologies pour créer des solutions efficaces et élégantes.
@@ -367,7 +372,7 @@
 			<div use:motion class="mt-16">
 				<h2 class="font-display mb-6 text-3xl font-bold text-foreground">Mon parcours</h2>
 				<div class="prose prose-lg max-w-none">
-					<p class="mb-6 text-lg leading-relaxed text-muted-foreground text-justify">
+					<p class="mb-6 text-justify text-lg leading-relaxed text-muted-foreground">
 						Passionné par la technologie depuis mon plus jeune âge, j'ai commencé à coder en
 						autodidacte avant de me former de manière plus structurée. Après un BAC technologique
 						STI2D obtenu en 2022, j'ai eu l'opportunité de poursuivre mes études en BUT Informatique

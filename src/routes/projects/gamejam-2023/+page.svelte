@@ -17,7 +17,7 @@
 	} from '@lucide/svelte';
 
 	import { onMount } from 'svelte';
-	
+
 	onMount(() => {
 		if (typeof document !== 'undefined') {
 			document.title = 'GameJam 2023 - Hugo Föllmi';
@@ -103,8 +103,8 @@
 							>
 								GameJam
 							</a>
-							nationale lors du deuxième semestre de ma première année de BUT Informatique à l'IUT2 de Grenoble. Développement
-							du jeu
+							nationale lors du deuxième semestre de ma première année de BUT Informatique à l'IUT2 de
+							Grenoble. Développement du jeu
 							<a
 								href="https://github.com/sadspear/gamejam2023"
 								target="_blank"
@@ -158,7 +158,7 @@
 									<p class="text-sm text-muted-foreground">Événement national</p>
 								</div>
 							</div>
-							<p class="text-sm text-muted-foreground text-justify">
+							<p class="text-justify text-sm text-muted-foreground">
 								Développement d'un jeu vidéo avec contraintes en une semaine.
 							</p>
 						</div>
@@ -255,7 +255,8 @@
 								</div>
 								<h3 class="mb-2 font-semibold">Apprendre Python</h3>
 								<p class="text-sm text-muted-foreground">
-									Découvrir et maîtriser Python et PyGame, technologies non enseignées dans le cursus.
+									Découvrir et maîtriser Python et PyGame, technologies non enseignées dans le
+									cursus.
 								</p>
 							</div>
 							<div class="rounded-lg border p-4 text-center">
@@ -294,9 +295,9 @@
 									<Code class="h-6 w-6 text-blue-500" />
 									<h4 class="font-semibold">Développeurs du niveau</h4>
 								</div>
-								<p class="text-sm text-muted-foreground text-justify">
-									Création de l'intégralité du niveau, des salles de boss, et du système
-									d'animation du joueur
+								<p class="text-justify text-sm text-muted-foreground">
+									Création de l'intégralité du niveau, des salles de boss, et du système d'animation
+									du joueur
 								</p>
 							</div>
 							<div class="rounded-lg border p-4">
@@ -304,17 +305,19 @@
 									<Gamepad2 class="h-6 w-6 text-green-500" />
 									<h4 class="font-semibold">Développeurs gameplay</h4>
 								</div>
-								<p class="text-sm text-muted-foreground text-justify">
+								<p class="text-justify text-sm text-muted-foreground">
 									Système de combat avec barre de rythme, mécaniques de jeu et boss final
 								</p>
 							</div>
 						</div>
 
-						<div class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/10">
-							<p class="text-sm text-muted-foreground text-justify">
-								<span class="font-medium">Mon rôle :</span> Développeur du niveau - J'ai réalisé
-								l'intégralité du niveau représentant l'étage de l'IUT avec toutes les salles de boss,
-								ainsi que le développement des fonctions d'animation et de déplacement du joueur.
+						<div
+							class="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/10"
+						>
+							<p class="text-justify text-sm text-muted-foreground">
+								<span class="font-medium">Mon rôle :</span> Développeur du niveau - J'ai réalisé l'intégralité
+								du niveau représentant l'étage de l'IUT avec toutes les salles de boss, ainsi que le
+								développement des fonctions d'animation et de déplacement du joueur.
 							</p>
 						</div>
 					</CardContent>
@@ -339,7 +342,7 @@
 							{#each gameFeatures as feature}
 								<div class="rounded-lg border p-4 transition-shadow hover:shadow-md">
 									<h4 class="mb-2 font-semibold">{feature.title}</h4>
-									<p class="text-sm text-muted-foreground text-justify">{feature.description}</p>
+									<p class="text-justify text-sm text-muted-foreground">{feature.description}</p>
 								</div>
 							{/each}
 						</div>
@@ -365,7 +368,7 @@
 							{#each challenges as challenge}
 								<div class="flex items-start gap-3 rounded-lg border p-4">
 									<div class="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-orange-500"></div>
-									<p class="text-muted-foreground text-justify">{challenge}</p>
+									<p class="text-justify text-muted-foreground">{challenge}</p>
 								</div>
 							{/each}
 						</div>
@@ -395,7 +398,7 @@
 									class="flex items-center gap-3 rounded-lg border p-4 transition-shadow hover:shadow-md"
 								>
 									<div class="h-6 w-6 rounded-full" style="background-color: {tech.color}"></div>
-									<span class="font-medium text-justify">{tech.name}</span>
+									<span class="text-justify font-medium">{tech.name}</span>
 								</a>
 							{/each}
 						</div>
@@ -418,12 +421,12 @@
 					</CardHeader>
 					<CardContent>
 						<div class="space-y-4">
-							<p class="leading-relaxed text-muted-foreground text-justify">
+							<p class="text-justify leading-relaxed text-muted-foreground">
 								Cette GameJam a été une expérience enrichissante qui nous a permis d'apprendre une
 								nouvelle technologie, le Python, et de travailler en équipe. Malgré les difficultés
 								de délais rencontrées, nous avons réussi à réaliser un jeu vidéo en une semaine.
 							</p>
-							<p class="leading-relaxed text-muted-foreground text-justify">
+							<p class="text-justify leading-relaxed text-muted-foreground">
 								Ce projet nous a permis d'acquérir de nouvelles compétences et de renforcer notre
 								cohésion en tant qu'équipe. L'apprentissage accéléré d'une nouvelle technologie dans
 								un contexte de pression temporelle a été particulièrement formateur pour notre

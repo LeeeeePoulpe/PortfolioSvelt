@@ -7,7 +7,10 @@
 
 <svelte:head>
 	<title>Hugo Föllmi - Portfolio</title>
-	<meta name="description" content="Portfolio professionnel de Hugo Föllmi - Développeur web et mobile passionné" />
+	<meta
+		name="description"
+		content="Portfolio professionnel de Hugo Föllmi - Développeur web et mobile passionné"
+	/>
 </svelte:head>
 
 <main class="min-h-screen pt-16">

@@ -14,7 +14,7 @@
 	} from '@lucide/svelte';
 
 	import { onMount } from 'svelte';
-	
+
 	onMount(() => {
 		if (typeof document !== 'undefined') {
 			document.title = 'LudoLabo - Hugo Föllmi';
@@ -111,7 +111,7 @@
 						<h1 class="font-display mb-6 text-4xl font-bold text-foreground sm:text-5xl">
 							LudoLabo
 						</h1>
-						<p class="mb-6 text-lg leading-relaxed text-muted-foreground text-justify">
+						<p class="mb-6 text-justify text-lg leading-relaxed text-muted-foreground">
 							Interface et jeu ludiques pour aider les élèves de terminale à réviser leur
 							enseignement de spécialité en physique-chimie et permettre aux professeurs de suivre
 							les progrès. Projet réalisé dans le cadre du BUT Informatique à l'IUT2 de Grenoble
@@ -186,12 +186,12 @@
 						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 							<div>
 								<h3 class="mb-4 text-xl font-semibold">Objectif éducatif</h3>
-								<p class="mb-4 leading-relaxed text-muted-foreground text-justify">
+								<p class="mb-4 text-justify leading-relaxed text-muted-foreground">
 									Le jeu devait être basé sur des questions et des énigmes des différents chapitres
 									de physique-chimie vus en terminale. Chaque bonne réponse permettait aux élèves de
 									gagner des points et de réaliser un classement entre les élèves d'une même classe.
 								</p>
-								<p class="leading-relaxed text-muted-foreground text-justify">
+								<p class="text-justify leading-relaxed text-muted-foreground">
 									L'objectif était de rendre le processus de révision ludique et de le relier à des
 									situations de la vie quotidienne pour rendre l'apprentissage plus attrayant.
 								</p>
@@ -245,7 +245,8 @@
 									<h4 class="font-semibold">Développeurs Front-end (Vue.js)</h4>
 								</div>
 								<p class="text-sm text-muted-foreground">
-									Développement de l'interface utilisateur web avec Vue.js, Tailwind CSS et PrelineUI
+									Développement de l'interface utilisateur web avec Vue.js, Tailwind CSS et
+									PrelineUI
 								</p>
 							</div>
 							<div class="rounded-lg border p-4">
@@ -260,8 +261,10 @@
 							</div>
 						</div>
 
-						<div class="mt-6 rounded-lg border border-green-200 bg-green-50 p-4 dark:border-green-500/30 dark:bg-green-500/10">
-							<p class="text-sm text-muted-foreground text-justify">
+						<div
+							class="mt-6 rounded-lg border border-green-200 bg-green-50 p-4 dark:border-green-500/30 dark:bg-green-500/10"
+						>
+							<p class="text-justify text-sm text-muted-foreground">
 								<span class="font-medium">Équipe :</span> Projet réalisé en équipe de 8 personnes avec
 								une répartition claire entre le développement web (Vue.js) et le développement des jeux
 								(Unity). Collaboration étroite pour intégrer les jeux dans l'application web et assurer
@@ -295,7 +298,9 @@
 							{/each}
 						</div>
 
-						<div class="mt-6 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 p-4 dark:from-blue-500/10 dark:to-purple-500/10">
+						<div
+							class="mt-6 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 p-4 dark:from-blue-500/10 dark:to-purple-500/10"
+						>
 							<h4 class="mb-3 font-semibold">Mondes de révision</h4>
 							<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 								{#each worlds as world}
@@ -333,7 +338,7 @@
 						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 							<div>
 								<h3 class="mb-4 text-xl font-semibold">Plateforme web</h3>
-								<p class="mb-4 leading-relaxed text-muted-foreground text-justify">
+								<p class="mb-4 text-justify leading-relaxed text-muted-foreground">
 									<a
 										href="https://github.com/LudoLaboApp/ludolabo-client"
 										target="_blank"
@@ -347,7 +352,7 @@
 							</div>
 							<div>
 								<h3 class="mb-4 text-xl font-semibold">Jeu Unity</h3>
-								<p class="mb-4 leading-relaxed text-muted-foreground text-justify">
+								<p class="mb-4 text-justify leading-relaxed text-muted-foreground">
 									<a
 										href="https://github.com/LudoLaboApp/ludolabo-game"
 										target="_blank"
@@ -361,18 +366,22 @@
 							</div>
 						</div>
 
-						<div class="rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4 dark:from-green-500/10 dark:to-blue-500/10">
+						<div
+							class="rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-4 dark:from-green-500/10 dark:to-blue-500/10"
+						>
 							<h4 class="mb-3 font-semibold">Fonctionnalités avancées</h4>
 							<div class="grid grid-cols-1 gap-4 text-sm md:grid-cols-2">
 								<div>
 									<h5 class="mb-1 font-medium">Gestion des classes</h5>
-									<p class="text-muted-foreground text-justify">
+									<p class="text-justify text-muted-foreground">
 										Ajout d'élèves, changement de l'ordre des chapitres
 									</p>
 								</div>
 								<div>
 									<h5 class="mb-1 font-medium">Analytics détaillés</h5>
-									<p class="text-muted-foreground text-justify">Points forts et faibles de chaque élève</p>
+									<p class="text-justify text-muted-foreground">
+										Points forts et faibles de chaque élève
+									</p>
 								</div>
 							</div>
 						</div>
@@ -403,9 +412,11 @@
 							{/each}
 						</div>
 
-						<div class="mt-6 rounded-lg bg-gradient-to-r from-yellow-50 to-orange-50 p-4 dark:from-yellow-500/10 dark:to-orange-500/10">
+						<div
+							class="mt-6 rounded-lg bg-gradient-to-r from-yellow-50 to-orange-50 p-4 dark:from-yellow-500/10 dark:to-orange-500/10"
+						>
 							<h4 class="mb-3 font-semibold">Décision technique importante</h4>
-							<p class="text-sm text-muted-foreground text-justify">
+							<p class="text-justify text-sm text-muted-foreground">
 								Initialement prévu avec Faser.js, nous avons finalement décidé de réaliser le jeu en
 								Unity pour des raisons de facilité et de performance de développement.
 							</p>
@@ -459,13 +470,13 @@
 					</CardHeader>
 					<CardContent>
 						<div class="space-y-4">
-							<p class="leading-relaxed text-muted-foreground text-justify">
+							<p class="text-justify leading-relaxed text-muted-foreground">
 								Ce projet a été une expérience très enrichissante car j'ai eu l'occasion de
 								m'intégrer dans une équipe plus conséquente par rapport aux projets précédents. J'ai
 								participé à la réalisation de l'interface web en utilisant Vue.js, une technologie
 								déjà utilisée, complétée avec Tailwind CSS et PrelineUI.
 							</p>
-							<p class="leading-relaxed text-muted-foreground text-justify">
+							<p class="text-justify leading-relaxed text-muted-foreground">
 								Ce projet a aussi été un énorme défi car nous avons réalisé l'application et le jeu
 								en respectant les critères du cahier des charges en seulement trois semaines.
 								L'adaptation au changement de technologie (Faser.js vers Unity) en cours de projet a

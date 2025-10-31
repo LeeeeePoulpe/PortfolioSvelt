@@ -86,7 +86,10 @@
 
 <svelte:head>
 	<title>Contact - Hugo Föllmi</title>
-	<meta name="description" content="Contactez-moi pour discuter de vos projets ou opportunités professionnelles" />
+	<meta
+		name="description"
+		content="Contactez-moi pour discuter de vos projets ou opportunités professionnelles"
+	/>
 </svelte:head>
 
 <main class="min-h-screen px-4 pt-32 pb-16 sm:px-6 lg:px-8">

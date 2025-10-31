@@ -5,7 +5,7 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { ExternalLink, Calendar, Users, Gamepad2, Network, Zap, ArrowLeft } from '@lucide/svelte';
 	import { onMount } from 'svelte';
-	
+
 	onMount(() => {
 		if (typeof document !== 'undefined') {
 			document.title = 'GameJam 2024 - Hugo Föllmi';
@@ -425,12 +425,12 @@
 					</CardHeader>
 					<CardContent>
 						<div class="space-y-4">
-							<p class="leading-relaxed text-muted-foreground text-justify">
+							<p class="text-justify leading-relaxed text-muted-foreground">
 								Cette GameJam 2024 a été une expérience très formatrice. Elle nous a permis de
 								concrétiser un projet multijoueur en Python et Pygame, en partant de zéro et en
 								gérant les aspects techniques et collaboratifs en un temps record.
 							</p>
-							<p class="leading-relaxed text-muted-foreground text-justify">
+							<p class="text-justify leading-relaxed text-muted-foreground">
 								Le développement des mécaniques de jeu, des capacités uniques et surtout de la
 								brique réseau a constitué un apprentissage significatif pour toute l'équipe. Malgré
 								la pression du délai, nous sommes fiers d'avoir pu livrer un jeu fonctionnel et
