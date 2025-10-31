@@ -3,6 +3,7 @@
 	import Navigation from '$lib/components/navigation.svelte';
 	import ThemeProvider from '$lib/components/theme-provider.svelte';
 	import Analytics from '$lib/components/analytics.svelte';
+	import Footer from '$lib/components/footer.svelte';
 
 	let { children } = $props();
 </script>
@@ -17,5 +18,6 @@
 	<div class="min-h-screen">
 		{@render children()}
 	</div>
+	<Footer />
 	<Analytics />
 </ThemeProvider>
